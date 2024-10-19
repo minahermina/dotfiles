@@ -14,9 +14,9 @@ function M.open_tmux_pane(dir)
     local tmux_cmd = ""
 
     if dir == 0 then
-        tmux_cmd = string.format("tmux split-window -v -l 15 -c '%s'", file_dir)
+        tmux_cmd = string.format("tmux split-window -v -l 10 -c '%s'", file_dir)
     else
-        tmux_cmd = string.format("tmux split-window -h -l 70 -c '%s'", file_dir)
+        tmux_cmd = string.format("tmux split-window -h -l 60 -c '%s'", file_dir)
     end
 
     vim.fn.system(tmux_cmd)

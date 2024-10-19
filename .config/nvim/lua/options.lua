@@ -8,6 +8,7 @@ vim.o.guifont = "IosevkaTerm Nerd Font:h9" -- text below applies for VimScript
 
 
 opt.laststatus = 3 -- global statusline
+opt.numberwidth = 1 -- global statusline
 opt.showmode = true
 opt.cursorline = true
 opt.cmdheight = 1

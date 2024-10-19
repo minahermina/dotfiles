@@ -2,13 +2,13 @@ local plugins = {
 
     -- Themes
     { "RRethy/base16-nvim" },
+
     { "xiyaowong/transparent.nvim" },
-    {
-        '2hdddg/fex.nvim',
-        config = function()
-            require("fex").setup({ls = "-al"})
-        end
-    },
+
+    { "preservim/vimux" },
+
+    { "mg979/vim-visual-multi" },
+
 
     {
         "christoomey/vim-tmux-navigator",
@@ -84,15 +84,6 @@ local plugins = {
     },
 
 
-    {
-        "X3eRo0/dired.nvim",
-        dependencies = {
-            "MunifTanjim/nui.nvim"
-        },
-        config = function()
-            require("plugins.configs.dired");
-        end
-    },
     {
         'stevearc/oil.nvim',
         config = function()

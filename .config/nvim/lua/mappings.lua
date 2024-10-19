@@ -60,7 +60,7 @@ map("v", "<leader>/", "<ESC><cmd>lua require('Comment.api').toggle.blockwise(vim
 -- Fzf-lua & Telescope Keymaps 
 -- map('n', "<leader>ff",  function () telescope.find_files({ hidden = true, follow= true})  end,{ desc = "Find files" })
 map('n', "<leader>ff",  function() fzf_lua.files() end                   , { desc = "Find files" })
-map('n', "<leader>lg",  function() fzf_lua.live_grep() end               , { desc = "Live Grep" })
+map('n', "<leader>lg",  function() fzf_lua.live_grep_resume() end        , { desc = "Live Grep with last search" })
 map('n', "<leader>fh",  function() fzf_lua.files({cwd = "~"}) end        , { desc = "Find files from ~" })
 map('n', "<leader>lp",  "<cmd> Telescope projects<CR>"                   , { desc = "List Projects" })
 map('n', "<leader>b" ,  function() fzf_lua.buffers() end                 , { desc = "List Buffers" })
@@ -70,8 +70,12 @@ map('n', "<leader>fo",  function() fzf_lua.oldfiles() end                , { des
 -- map('n', "<leader>lr",  function() fzf_lua.lsp_references() end         , { desc = "List References" })
 map('n', "<leader>m" ,   function() fzf_lua.man_pages() end              , { desc = "Show man_pages" })
 map('n', "<leader>c" ,   function() fzf_lua.command_history() end        , { desc = "Show Command History" })
-map("n", "<leader>S" , "<cmd>SymbolsOutline <cr>"                        , { desc = "Start SymbolsOutline" })
+map("n", "<leader>S" ,  "<cmd>SymbolsOutline <cr>"                       , { desc = "Start SymbolsOutline" })
 map("n", "gr", vim.lsp.buf.references                                    , { desc = "Go to references" })
+
+
+-- You can now run fzflua's live_grep with the above custom action.
+
 
 -- harpoon bindings
 
@@ -93,7 +97,7 @@ map("n", "gr", vim.lsp.buf.references                                    , { des
 -- Git keymaps
 map("n", "<leader>gd", "<cmd> Gitsigns diffthis <CR>"                   , { desc = "Diff Buffer" })
 map("n", "<leader>gr", "<cmd> Gitsigns reset_buffer <CR>"               , { desc = "Reset Buffer" })
-map("n", "<leader>ga", "<cmd> Gitsigns stage_buffer<CR>"                , { desc = "Diff Buffer" })
+map("n", "<leader>ga", "<cmd> Gitsigns stage_buffer<CR>"                , { desc = "Stage Buffer" })
 map("n", "<leader>gs", "<cmd>FzfLua git_status <CR>"                    , { desc = "Display git status" })
 map("n", "<leader>gc", function() require("tinygit").smartCommit() end  , { desc = "git commit " })
 map("n", "<leader>gp", function() require("tinygit").push() end         , { desc = "git push" })
@@ -127,7 +131,7 @@ map("n", "<C-j>", ":TmuxNavigateDown  <cr>")
 map("n", "<C-k>", ":TmuxNavigateUp    <cr>")
 map("n", "<C-l>", ":TmuxNavigateRight <cr>")
 
-map("n", "<leader>i", "<CMD>Oil<CR>", { desc = "Open parent directory as a Buffer" })
+map("n", "-", function() require("oil").toggle_float() end, { desc = "Open parent directory as a Buffer" })
 
 local build = require("CustomScripts.build")
 
@@ -139,3 +143,7 @@ local functions = require('my_functions')
 map('n', '<leader>,' , function () functions.toggle_quickfix() end,     { desc = "Toggle Quickfix list " }                         , options)
 map('n', '<leader>th', function () functions.open_tmux_pane(0) end,     { desc = "Open Horizontal Tmux Pane in current file dir" } , options)
 map('n', '<leader>tv', function () functions.open_tmux_pane(1) end,     { desc = "Open Vertical Tmux Pane in current file dir" }   , options)
+map('n', '<leader>ee', ":VimuxPromptCommand <CR>",                       { desc = "Open Vertical Tmux Pane in current file dir" }   , options)
+map('n', '<leader>e', ":VimuxRunLastCommand <CR>",                      { desc = "Open Vertical Tmux Pane in current file dir" }   , options)
+map('n', '<leader>e', ":VimuxRunLastCommand <CR>",                      { desc = "Open Vertical Tmux Pane in current file dir" }   , options)
+map('n', '<leader>e', ":VimuxRunLastCommand <CR>",                      { desc = "Open Vertical Tmux Pane in current file dir" }   , options)

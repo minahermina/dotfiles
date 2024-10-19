@@ -25,7 +25,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     -- vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
     vim.keymap.set("n", "<space>F", function()
       vim.lsp.buf.format { async = true }
-    end, opts)
+    end, opts )
   end,
 })
 
