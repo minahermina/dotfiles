@@ -7,7 +7,7 @@ case "$focused_window_name" in
     *"Brave"*) 
         xdotool key Ctrl+v
     ;;
-    *"st"*) 
+    *"tmux"*) 
         xdotool key Ctrl+Shift+p
     ;;
     *) 

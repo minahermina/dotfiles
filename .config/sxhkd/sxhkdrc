@@ -1,9 +1,20 @@
 alt + w
     $BROWSER
 
+super + p
+   playerctl play-pause	
+
+super + n
+   playerctl next
+
+super + b
+   playerctl previous
+
 super + c
    ~/.local/bin/freee
 
+super + c
+   ~/.local/bin/freee
 alt + Return
     $HOME/.local/scripts/tmux_new_window.sh
 

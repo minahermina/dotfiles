@@ -68,6 +68,7 @@ cmd open &{{
     case "$(file --mime-type "$f" -b)" in    
         text/*) $DOTFILES/.local/scripts/tmux_new_window.sh "nvim "$fx" " & disown  ;;    
         application/pdf) $PDFVIEWER "$fx" & disown;;
+        application/gzip) xournalpp "$fx" & disown;;
         image/*) sxiv "$fx" & disown;;
         audio/*) mpv --player-operation-mode=pseudo-gui "$fx" & disown;; 
         video/*) mpv --player-operation-mode=pseudo-gui "$fx" & disown;;
