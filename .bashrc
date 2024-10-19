@@ -14,6 +14,7 @@ alias grep='grep --color=auto'
 alias cs='clear'
 alias vim='nvim'
 alias t='tmux'
+alias sz='du -sh'
 
 
 # Pacman Aliases
@@ -32,12 +33,18 @@ alias ys='yay -Ss'
 
 alias lf='lfub'
  
-goto(){
-    local file=$(find . | fzf --reverse --header="Jump to location" --border --height=50% )
-    [ -d "$file" ] && cd $file || cd $(dirname "$file")
+fzf_open(){
+    local selection=$(find . | fzf --reverse --header="Jump to location" --height=50% )
+    if [ -d "$selection" ] ;then 
+        cd "$selection"
+    elif [ -f "$selection" ] ;then 
+        xdg-open "$selection" & disown
+    fi 
+
+
 }
 
-alias ff=goto
+alias ff=fzf_open
 alias transa='trans :en+ara'
 alias gput='nvidia-settings -q gpucoretemp -t'
 alias dot='cd $REPOS/dotfiles/'
@@ -48,13 +55,13 @@ parse_git_branch() {
 }
 
 fzf_history(){
-    local selected_command=$(tac ~/.bash_history | fzf --reverse --height=40% --border)
+    local selected_command=$(tac ~/.bash_history | fzf --reverse --height=40% )
     READLINE_LINE="${READLINE_LINE:+$READLINE_LINE }$selected_command"
     READLINE_POINT=${#READLINE_LINE}
 }
 
 fzf_dir() {
-    local selected_dir=$(find "$HOME" -type d | fzf --reverse --height=50% --border)
+    local selected_dir=$(find "$HOME" -type d | fzf --reverse --height=50% )
     cd "$selected_dir" && echo "cd $selected_dir"
 }  
 

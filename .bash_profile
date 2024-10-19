@@ -2,10 +2,12 @@ doas loadkeys ~/.config/loadkeysrc/loadkeysrc
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 export EDITOR="nvim"
+export HISTCONTROL=ignoreboth:erasedups
 export EMACSDIR="$HOME/.config/emacs"
 export BROWSER="brave"
 export REPOS="$HOME/repos"
 export DOTFILES="$REPOS/dotfiles"
+export SCRIPTS="$HOME/.local/scripts/"
 export PDFVIEWER="zathura"
 export dmenufont="Iosevka Term Nerd Font :style=Medium:size=11"    
 export TERMINAL="st"
