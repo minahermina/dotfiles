@@ -7,7 +7,7 @@
  */
 static char *font = "Iosevka Term Nerd Font :style=Regular:pixelsize=18:antialias=true:autohint=true";
 static char *font2[] = { 
-    "NotoColorEmoji:pixelsize=15:antialias=true:autohint=true"  // fallback font
+    "NotoColorEmoji:pixelsize=15:antialias=true:autohint=true"  ,// fallback font
 };
 
 static int borderpx = 0;
