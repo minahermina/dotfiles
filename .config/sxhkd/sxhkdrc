@@ -15,11 +15,15 @@ super + c
 
 super + c
    ~/.local/bin/freee
+
 alt + Return
     $HOME/.local/scripts/tmux_new_window.sh
 
 alt + p
-    dmenu_run -i 
+    dmenu_run -i
+
+alt + r
+    boomer
 
 alt + o
     mpv $(xclip -o)
@@ -55,7 +59,7 @@ alt + g
 alt + b
 	brave --app=https://excalidraw.com/ && xdotool key Alt+Shift+0 && xdotool key Alt+0
 
-alt + Print 
+alt + Print
     ~/.local/scripts/screencast.sh 
 
 alt + End
@@ -74,7 +78,7 @@ alt + shift + Delete
     slock
 
 # Take screenshot
-alt + Insert
+alt + shift + s
 	maim -us -m 10  | xclip -selection clipboard -t image/png
 
 # Manipulate Sound

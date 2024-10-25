@@ -2,13 +2,43 @@ local plugins = {
 
     -- Themes
     { "RRethy/base16-nvim" },
+    { "tpope/vim-dadbod" },
+    { "blazkowolf/gruber-darker.nvim" },
+    {
+  'thimc/gruber-darker.nvim',
+  config = function()
+    require('gruber-darker').setup({
+      -- OPTIONAL
+      transparent = true, -- removes the background
+      -- underline = false, -- disables underline fonts
+      -- bold = false, -- disables bold fonts
+    })
+    vim.cmd.colorscheme('gruber-darker')
+  end,
+},
 
+    {
+        'kristijanhusak/vim-dadbod-ui',
+        dependencies = {
+            { 'tpope/vim-dadbod',                     lazy = true },
+            { 'kristijanhusak/vim-dadbod-completion', ft = { 'sql', 'mysql', 'plsql' }, lazy = true }, -- Optional
+        },
+        cmd = {
+            'DBUI',
+            'DBUIToggle',
+            'DBUIAddConnection',
+            'DBUIFindBuffer',
+        },
+        init = function()
+            -- Your DBUI configuration
+            vim.g.db_ui_use_nerd_fonts = 1
+        end,
+    },
     { "xiyaowong/transparent.nvim" },
 
     { "preservim/vimux" },
 
     { "mg979/vim-visual-multi" },
-
 
     {
         "christoomey/vim-tmux-navigator",
