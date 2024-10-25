@@ -4,7 +4,7 @@ set info size
 set ignorecase true
 set mouse true
 set icons true
-# set drawbox true
+set drawbox true
 set cleaner '~/.config/lf/cleaner'
 set previewer '~/.config/lf/scope'
 set preview true
@@ -44,8 +44,11 @@ cmd selectfiles select-type f
 cmd openwith ${{
     printf "Enter program name: "
     read ans
-    [ "$ans" = "nvim"] && $DOTFILES/.local/scripts/tmux_new_window.sh "nvim "$fx"" 
-    $ans "$fx" & disown
+    if [ "$ans" = "nvim" ]; then
+        $ $DOTFILES/.local/scripts/tmux_new_window.sh "nvim $f"
+    else
+         "$ans" "$f" > /dev/null 2>&1 & disown
+    fi
 }}
 
 #-----------------------------------------------------------------------
@@ -133,12 +136,19 @@ cmd fzf_jump ${{
     fi
 }}
 
+cmd copy_img ${{
+    xclip -selection clipboard "$f" -t image/png
+    echomsg "ASDASD"
+}}
+
 #-----------------------------------------------------------------------
 
 # Bindings
 map d
 map m
 map f
+map y
+map e shell
 map o openwith
 map L redraw
 map ff :fzf_jump
@@ -155,6 +165,7 @@ map dr restore_trash
 map p paste
 map dd cut
 map yy copy
+map yc copy_img
 map R reload
 map mf mkfile
 map md mkdir
