@@ -1,5 +1,4 @@
 acpi
-alacritty
 alsa-tools
 alsa-utils
 aria2
@@ -22,7 +21,6 @@ efibootmgr
 emacs
 ffmpeg
 ffmpegthumbnailer
-firefox
 freeglut
 fribidi
 fzf
@@ -42,6 +40,8 @@ hplip
 htop
 i2c-tools
 iptables-nft
+jdk-openjdk
+kitty
 lazygit
 lf
 libreoffice-fresh
@@ -61,13 +61,13 @@ musl
 ncdu
 nemo
 neofetch
-neovide
 neovim
 network-manager-applet
 networkmanager
 nodejs
 noto-fonts
 noto-fonts-emoji
+npm
 ntfs-3g
 ntp
 nvidia-dkms
@@ -107,7 +107,10 @@ qemu-ui-sdl
 qemu-user
 ripgrep
 rsync
+rust
+rust-analyzer
 screenkey
+skim
 slurp
 sof-firmware
 speedtest-cli

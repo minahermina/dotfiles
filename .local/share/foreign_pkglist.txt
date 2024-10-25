@@ -3,5 +3,6 @@ gitmux-bin
 rar
 rofi-greenclip
 ttf-cairo
+vscodium-bin
 xkblayout-state-git
 yay
