@@ -21,10 +21,13 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
 export PATH="$PATH:$HOME/.local/bin/"
+#"#73D936",  /* green   */
+#"#FFDD33",  /* yellow  */
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
   --color=fg:#ffffff,fg+:#d0d0d0,bg:-1,bg+:#262626
-  --color=hl:#89B4FA,hl+:#89B4FA,info:#afaf87,marker:#87ff00
-  --color=pointer:#89B4FA
+  # --color=hl:#89B4FA,hl+:#89B4FA,info:#afaf87,marker:#87ff00
+  --color=hl:#FFDD33,hl+:#FFDD33,info:#afaf87,marker:#87ff00
+  --color=pointer:#73D936
   --marker=">" --pointer="◆" --separator="─" --scrollbar="│"'
 
 [ $(tty) = "/dev/tty1" ] && startx

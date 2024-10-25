@@ -33,18 +33,12 @@ alias ys='yay -Ss'
 
 alias lf='lfub'
  
-fzf_open(){
-    local selection=$(find . | fzf --reverse --header="Jump to location" --height=50% )
-    if [ -d "$selection" ] ;then 
-        cd "$selection"
-    elif [ -f "$selection" ] ;then 
-        xdg-open "$selection" & disown
-    fi 
-
-
+goto(){
+    local file=$(find . | fzf --reverse --header="Jump to location"  --height=50% )
+    [ -d "$file" ] && cd $file || cd $(dirname "$file")
 }
 
-alias ff=fzf_open
+alias ff=goto
 alias transa='trans :en+ara'
 alias gput='nvidia-settings -q gpucoretemp -t'
 alias dot='cd $REPOS/dotfiles/'
