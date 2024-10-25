@@ -2,16 +2,17 @@ local M = {}
 
 local group = vim.api.nvim_create_augroup("AbstractAutoCmdsGroup", { clear = true })
 
-----------------------------------------------
+-- -----------------------------------------------------
 
 function M.create_autocmd(events, opts)
-	opts = vim.tbl_extend("force", opts, { group = group })
-	vim.api.nvim_create_autocmd(events, opts)
+    opts = vim.tbl_extend("force", opts, { group = group })
+    vim.api.nvim_create_autocmd(events, opts)
 end
-----------------------------------------------
+
+-- -----------------------------------------------------
 
 function M.opts_extend(default, opts)
-	return vim.tbl_extend("force", default, opts ~= nil and opts or {})
+    return vim.tbl_extend("force", default, opts ~= nil and opts or {})
 end
 
 -- Compile dmenu, dwm, and st after :w in config.def.h || config.h
@@ -26,20 +27,21 @@ end
 --     end,
 -- })
 
-----------------------------------------------
+-- -----------------------------------------------------
 vim.api.nvim_create_autocmd('TextYankPost', {
     desc = "Highlight when yanking text",
-    group = vim.api.nvim_create_augroup('my-highlight-yank', {clear = true }),
-    callback = function ()
-       vim.highlight.on_yank()
+    group = vim.api.nvim_create_augroup('my-highlight-yank', { clear = true }),
+    callback = function()
+        vim.highlight.on_yank()
     end,
 })
-----------------------------------------------
+
+-- -----------------------------------------------------
 vim.api.nvim_create_autocmd({ "BufEnter", "FileType" }, {
-		desc = "don't auto comment new line",
-		pattern = "*",
-        group = vim.api.nvim_create_augroup('dont-comment', {clear = true }),
-		command = "setlocal formatoptions-=c formatoptions-=r formatoptions-=o",
+    desc = "don't auto comment new line",
+    pattern = "*",
+    group = vim.api.nvim_create_augroup('dont-comment', { clear = true }),
+    command = "setlocal formatoptions-=c formatoptions-=r formatoptions-=o",
 })
 
 return M

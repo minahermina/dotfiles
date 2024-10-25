@@ -1,6 +1,7 @@
-local bg_dark = "#1f2335"
-local bg = "#24283b"
-local fg = "#89B4FA"
+-- local bg_dark = "#1f2335"
+local white = "#ffffff"
+-- local bg = "#24283b"
+local fg = "#FFDD33"
 require("lualine").setup {
 
     options = {
@@ -11,16 +12,15 @@ require("lualine").setup {
     sections = {
         -- a b c     x y z
         lualine_a = {
-            "mode",
+            -- "mode",
         },
 
         lualine_c =  {
             {
-                "branch" ,
                 use_mode_colors = true,
                 buffers_color = {
-                    -- active = { bg = '', fg = '#fff' },
-                    -- inactive = { bg = '', fg = fg_gutter },
+                    active = { bg = '', fg = '#fff' },
+                    inactive = { bg = '', fg = fg_gutter },
                 }
             }
         },
@@ -32,7 +32,7 @@ require("lualine").setup {
                 use_mode_colors = true,
                 buffers_color = {
                     active = { bg = '', fg = fg },
-                    inactive = { bg = '', fg = "#fff" },
+                    inactive = { bg = '', fg = white },
                 }
 
             },
@@ -45,6 +45,7 @@ require("lualine").setup {
                 timeout = 10000,
             },
 
+                "branch" ,
             { "filename", path = 4 },
         },
 

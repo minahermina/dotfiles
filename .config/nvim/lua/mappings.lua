@@ -6,15 +6,14 @@ require "plugins"
 local map = vim.keymap.set
 local options = { noremap = true, silent = true }
 local fzf_lua = require('fzf-lua')
--- local harpoon = require("harpoon")
 
-
--- local telescope = require('telescope.builtin')
 map("n", "<Esc>", "<cmd> :noh <CR>")
 map("i", "<C-e>", "<C-o>w")
 
-map("n", "<leader>q", "<cmd> :bd! <CR>",            { desc = "Close current buffer" })           --
--- map("n", "<leader>e", "<cmd> NvimTreeToggle <CR>",  { desc = "Open file explorer" })
+map("i", "<C-f>", "<Right>")
+map("i", "<C-b>", "<Left>")
+
+map("n", "<leader>q", "<cmd> :bd! <CR>",            { desc = "Close current buffer" })
 
 -- Move group of lines
 map('v', "K", ":m '<-2<CR>gv=gv", options)
@@ -31,7 +30,6 @@ map('v', "<leader>p", "\"_dP" )
 map({ 'n', 'v' }, "<leader>d", "\"_d",{ desc = "Delete Text forever" })
 
 -- Matching Pairs
-map('i' , "<", "<><Left>")
 map('i' , "(", "()<Left>")
 map('i' , "[", "[]<Left>")
 map('i' , "{", "{}<Left>")
@@ -58,7 +56,7 @@ map("n", "<leader>/", function() require("Comment.api").toggle.linewise.current(
 map("v", "<leader>/", "<ESC><cmd>lua require('Comment.api').toggle.blockwise(vim.fn.visualmode())<CR>" , { desc = "Comment Current Block" })
 
 -- Fzf-lua & Telescope Keymaps 
--- map('n', "<leader>ff",  function () telescope.find_files({ hidden = true, follow= true})  end,{ desc = "Find files" })
+map({ "n", "v", "i" }, "<C-x><C-f>", function() fzf_lua.complete_path() end, { silent = true, desc = "Fuzzy complete path" })
 map('n', "<leader>ff",  function() fzf_lua.files() end                   , { desc = "Find files" })
 map('n', "<leader>lg",  function() fzf_lua.live_grep_resume() end        , { desc = "Live Grep with last search" })
 map('n', "<leader>fh",  function() fzf_lua.files({cwd = "~"}) end        , { desc = "Find files from ~" })
@@ -73,32 +71,11 @@ map('n', "<leader>c" ,   function() fzf_lua.command_history() end        , { des
 map("n", "<leader>S" ,  "<cmd>SymbolsOutline <cr>"                       , { desc = "Start SymbolsOutline" })
 map("n", "gr", vim.lsp.buf.references                                    , { desc = "Go to references" })
 
-
--- You can now run fzflua's live_grep with the above custom action.
-
-
--- harpoon bindings
-
--- REQUIRED
--- REQUIRED
-
--- map('n', "<leader>ha", function() harpoon:list():add() end)
--- map('n', "<leader>ht", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
--- map('n', "<leader>h1", function() harpoon:list():select(1) end)
--- map('n', "<leader>h2", function() harpoon:list():select(2) end)
--- map('n', "<leader>h3", function() harpoon:list():select(3) end)
--- map('n', "<leader>h4", function() harpoon:list():select(4) end)
-
--- MiniIndentscope
--- map({ "n", "v" }, "gt", "<CMD> lua MiniIndentscope.operator('top', true)<CR>"    , { desc = "Go to begining of the scope" })
--- map({ "n", "v" }, "gb", "<CMD> lua MiniIndentscope.operator('bottom', true)<CR>" , { desc = "Go to end of the scope" })
-
-
 -- Git keymaps
 map("n", "<leader>gd", "<cmd> Gitsigns diffthis <CR>"                   , { desc = "Diff Buffer" })
 map("n", "<leader>gr", "<cmd> Gitsigns reset_buffer <CR>"               , { desc = "Reset Buffer" })
 map("n", "<leader>ga", "<cmd> Gitsigns stage_buffer<CR>"                , { desc = "Stage Buffer" })
-map("n", "<leader>gs", "<cmd>FzfLua git_status <CR>"                    , { desc = "Display git status" })
+map("n", "<leader>gs", "<cmd> FzfLua git_status <CR>"                   , { desc = "Display git status" })
 map("n", "<leader>gc", function() require("tinygit").smartCommit() end  , { desc = "git commit " })
 map("n", "<leader>gp", function() require("tinygit").push() end         , { desc = "git push" })
 
@@ -143,7 +120,6 @@ local functions = require('my_functions')
 map('n', '<leader>,' , function () functions.toggle_quickfix() end,     { desc = "Toggle Quickfix list " }                         , options)
 map('n', '<leader>th', function () functions.open_tmux_pane(0) end,     { desc = "Open Horizontal Tmux Pane in current file dir" } , options)
 map('n', '<leader>tv', function () functions.open_tmux_pane(1) end,     { desc = "Open Vertical Tmux Pane in current file dir" }   , options)
-map('n', '<leader>ee', ":VimuxPromptCommand <CR>",                       { desc = "Open Vertical Tmux Pane in current file dir" }   , options)
-map('n', '<leader>e', ":VimuxRunLastCommand <CR>",                      { desc = "Open Vertical Tmux Pane in current file dir" }   , options)
-map('n', '<leader>e', ":VimuxRunLastCommand <CR>",                      { desc = "Open Vertical Tmux Pane in current file dir" }   , options)
-map('n', '<leader>e', ":VimuxRunLastCommand <CR>",                      { desc = "Open Vertical Tmux Pane in current file dir" }   , options)
+map('n', '<leader>ee', ":VimuxPromptCommand <CR>",                      { desc = "Prompt command to run in tmux pane" }   , options)
+map('n', '<leader>ei', ":VimuxZoomRunner <CR>",                         { desc = "Open Vertical Tmux Pane in current file dir" }   , options)
+map('n', '<leader>et', ":VimuxTogglePane <CR>",                         { desc = "Open Vertical Tmux Pane in current file dir" }   , options)

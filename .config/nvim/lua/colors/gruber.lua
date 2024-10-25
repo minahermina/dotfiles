@@ -1,16 +1,16 @@
 -- gruber.lua
 -- Neovim color scheme based on the Gruber Dark theme
 
-vim.cmd('highlight clear')
+-- vim.cmd('highlight clear')
 if vim.fn.exists("syntax_on") == 1 then
     vim.cmd('syntax reset')
 end
 
-vim.o.background = "dark"
-vim.g.colors_name = "gruber"
+-- vim.o.background = "dark"
+-- vim.g.colors_name = "gruber"
 
 local colors = {
-    black =     {"#16181d", 234},
+    black =     {"#181818", 234},
     brown =     {"#af875f", 137},
     cyan =      {"#afd7af", 151},
     blue =      {"#89B4FA", 235},
@@ -42,11 +42,11 @@ local function hl(group, attrs)
     vim.cmd(table.concat(command, " "))
 end
 
-hl("ColorColumn",   {bg = colors.blue})
+-- hl("ColorColumn",   {bg = colors.blue})
 hl("Comment",       {fg = colors.comment})
-hl("Constant",      {fg = colors.white})
+-- hl("Constant",      {fg = colors.white})
 -- hl("CursorLine",     {bg = colors.blue})
-hl("DiffAdd",       { fg = colors.yellow})
+--[[ hl("DiffAdd",       { fg = colors.yellow})
 hl("DiffChange",    { fg = colors.white})
 hl("DiffDelete",    { fg = colors.red})
 hl("DiffText",      { fg = colors.white, style = "underline"})
@@ -81,7 +81,6 @@ hl("Statement",     { fg = colors.blue, style = "bold"})
 hl("StatusLine",    { fg = colors.white, bg = colors.black, style = "bold"})
 hl("TabLine",       {  bg = colors.black})
 hl("StatusLineNC",  { fg = colors.white, bg = colors.black})
-hl("String",        { fg = colors.yellow})
 hl("Title",         { fg = colors.white})
 hl("IncSearch",     { fg = colors.black , bg = colors.blue})
 hl("Todo",          { fg = colors.brown, style = "italic"})
@@ -101,4 +100,5 @@ hl("diffSubname",   { fg = colors.white})
 hl("NonText",       { fg = colors.non})
 hl("Oil",           { bg = colors.black})
 hl("NormalFloat",   { bg = colors.black})
-hl("NonText",       { fg = colors.non})
+hl("NonText",       { fg = colors.non}) ]]
+hl("String",        { fg = colors.yellow})

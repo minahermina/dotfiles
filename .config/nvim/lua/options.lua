@@ -1,11 +1,7 @@
 local opt = vim.opt
-
 vim.g.mapleader = " "
 vim.g.base16_colorspace = 256
-
-vim.g.neovide_cursor_vfx_mode = "railgun"
-vim.o.guifont = "IosevkaTerm Nerd Font:h9" -- text below applies for VimScript
-
+vim.diagnostic.config({virtual_text=false})
 
 opt.laststatus = 3 -- global statusline
 opt.numberwidth = 1 -- global statusline
@@ -28,27 +24,23 @@ opt.swapfile = false
 opt.ignorecase = true
 opt.smartcase = true
 opt.mouse = "a"
--- opt.foldmethod = "syntax"
--- Assuming g:netrw_browsex_viewer is a global variable for a plugin
--- vim.g.netrw_browsex_viewer = "brave"
 
 -- Numbers
 opt.number = true
 opt.relativenumber = true
-opt.ruler = true
+opt.ruler = false
 
 opt.signcolumn = "yes"
 opt.splitbelow = true
 opt.splitright = true
 opt.termguicolors = true
-opt.timeoutlen = 400
 opt.undofile = true
 
 opt.scrolloff = 8
-opt.timeoutlen = 400
 opt.updatetime = 250
 opt.list = true
-opt.listchars = { tab = '  ', leadmultispace = '» ', nbsp = '␣' }
+-- opt.listchars = { tab = '  ', leadmultispace = '» ', nbsp = '␣' }
+opt.listchars = { tab = '   ', leadmultispace = ' ', nbsp = '␣' }
 
 
 -- add binaries installed by mason.nvim to path
