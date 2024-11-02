@@ -12,17 +12,15 @@ end
 local colors = {
     black =     {"#181818", 234},
     brown =     {"#af875f", 137},
-    cyan =      {"#afd7af", 151},
+    cyan =      {"#7cbe7c", 151},
     blue =      {"#89B4FA", 235},
-    yellow =    {"#afd7af", 113},
+    yellow =    {"#7cbe7c", 113},
+    dark_yellow =    {"#ffdd33", 13},
     red =       {"#F38BA8", 203},
     white =     {"#ffffff", 254},
     non =       {"#2E2E2E" , 100},
     comment =   {"#5e5f70", 201 },
     gray =      {"#A0ABC3", 241 }
-
-
-
 }
 
 local function hl(group, attrs)
@@ -43,10 +41,13 @@ local function hl(group, attrs)
 end
 
 -- hl("ColorColumn",   {bg = colors.blue})
-hl("Comment",       {fg = colors.comment})
--- hl("Constant",      {fg = colors.white})
--- hl("CursorLine",     {bg = colors.blue})
---[[ hl("DiffAdd",       { fg = colors.yellow})
+hl("Comment",       { fg = colors.comment   })
+hl("Function",      { fg = colors.white     })
+hl("CursorLineNr",    { fg = colors.dark_yellow })
+hl("String",        { fg = colors.yellow    })
+--[[ 
+hl("DiffAdd",       { fg = colors.yellow})
+hl("Constant",      {fg = colors.white})
 hl("DiffChange",    { fg = colors.white})
 hl("DiffDelete",    { fg = colors.red})
 hl("DiffText",      { fg = colors.white, style = "underline"})
@@ -56,7 +57,6 @@ hl("Error",         { fg = colors.red})
 hl("ErrorMsg",      { fg = colors.red})
 hl("FoldColumn",    { fg = colors.brown, bg = colors.blue})
 hl("Folded",        { fg = colors.brown, bg = colors.blue, style = "italic"})
-hl("Function",      { fg = colors.gray })
 hl("identifier",    { fg = colors.white})
 hl("Ignore",        { fg = colors.black})
 hl("MatchParen",    { fg = colors.blue, style = "bold"})
@@ -100,5 +100,5 @@ hl("diffSubname",   { fg = colors.white})
 hl("NonText",       { fg = colors.non})
 hl("Oil",           { bg = colors.black})
 hl("NormalFloat",   { bg = colors.black})
-hl("NonText",       { fg = colors.non}) ]]
-hl("String",        { fg = colors.yellow})
+hl("NonText",       { fg = colors.non}) 
+]]
