@@ -1,6 +1,7 @@
 acpi
 alsa-tools
 alsa-utils
+arandr
 aria2
 base
 base-devel
@@ -21,6 +22,7 @@ efibootmgr
 emacs
 ffmpeg
 ffmpegthumbnailer
+firefox
 freeglut
 fribidi
 fzf
@@ -30,7 +32,6 @@ git-lfs
 github-cli
 glfw
 glm
-gnome-disk-utility
 grim
 grub
 gstreamer
@@ -74,6 +75,7 @@ nvidia-dkms
 nvidia-prime
 nvidia-settings
 nvidia-utils
+octave
 openbsd-netcat
 opencl-nvidia
 opendoas
@@ -110,13 +112,14 @@ rsync
 rust
 rust-analyzer
 screenkey
-skim
 slurp
 sof-firmware
 speedtest-cli
 strace
 sxhkd
 sxiv
+tcc
+texlive-latexextra
 texlive-latexrecommended
 tmux
 trash-cli
@@ -127,7 +130,6 @@ ufw
 unrar-free
 unzip
 usbutils
-vi
 virglrenderer
 virt-manager
 wget
@@ -179,5 +181,4 @@ xwallpaper
 yt-dlp
 zathura
 zathura-pdf-mupdf
-zellij
 zip

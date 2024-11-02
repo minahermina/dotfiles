@@ -26,7 +26,7 @@ alias s='doas pacman -Ss'
 
 # yay Aliases
 alias yi='yay -S'
-alias ycc='yay -Scc'
+alias ycc='yay -Scc && doas pacman -Sc'
 alias yq='yay -Qs'
 alias yu='yay -Syu'
 alias ys='yay -Ss'

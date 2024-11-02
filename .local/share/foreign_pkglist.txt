@@ -1,5 +1,6 @@
 brave-bin
 gitmux-bin
+kanata-bin
 rar
 rofi-greenclip
 ttf-cairo

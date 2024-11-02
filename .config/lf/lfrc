@@ -4,7 +4,7 @@ set info size
 set ignorecase true
 set mouse true
 set icons true
-set drawbox true
+set drawbox false
 set cleaner '~/.config/lf/cleaner'
 set previewer '~/.config/lf/scope'
 set preview true
@@ -69,12 +69,14 @@ cmd choose_pdf_app ${{
 cmd open &{{    
     test -L $f && f=$(readlink -f $f)    
     case "$(file --mime-type "$f" -b)" in    
-        text/*) $DOTFILES/.local/scripts/tmux_new_window.sh "nvim "$fx" " & disown  ;;    
-        application/pdf) $PDFVIEWER "$fx" & disown;;
-        application/gzip) xournalpp "$fx" & disown;;
-        image/*) sxiv "$fx" & disown;;
-        audio/*) mpv --player-operation-mode=pseudo-gui "$fx" & disown;; 
-        video/*) mpv --player-operation-mode=pseudo-gui "$fx" & disown;;
+        text/*) $DOTFILES/.local/scripts/tmux_new_window.sh "nvim "$f" " & disown  ;;    
+        application/pdf) $PDFVIEWER "$f" & disown;;
+        application/gzip) xournalpp "$f" & disown;;
+        image/*) sxiv "$f" & disown;;
+        audio/*) mpv --player-operation-mode=pseudo-gui "$f" & disown;; 
+        video/*) mpv --player-operation-mode=pseudo-gui "$f" & disown;;
+        application/vnd.openxmlformats-officedocument.presentationml.presentation) libreoffice --impress "$f" & disown;;
+        application/vnd.openxmlformats-officedocument.wordprocessingml.document) libreoffice --writer "$f" & disown;;
         *) for f in $fx; do xdg-open $f > /dev/null 2> /dev/null & done;;    
     esac    
 }}  
@@ -138,7 +140,6 @@ cmd fzf_jump ${{
 
 cmd copy_img ${{
     xclip -selection clipboard "$f" -t image/png
-    echomsg "ASDASD"
 }}
 
 #-----------------------------------------------------------------------
