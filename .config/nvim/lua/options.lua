@@ -23,7 +23,7 @@ opt.swapfile = false
 
 opt.ignorecase = true
 opt.smartcase = true
-opt.mouse = "a"
+opt.mouse = ""
 
 -- Numbers
 opt.number = true

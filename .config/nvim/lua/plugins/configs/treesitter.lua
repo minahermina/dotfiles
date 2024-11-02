@@ -8,7 +8,7 @@ require("nvim-treesitter.configs").setup {
         "html",
         "java",
         "make",
-        "markdown"
+        "markdown",
         },
 
   highlight = {

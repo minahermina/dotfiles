@@ -4,18 +4,29 @@ local plugins = {
     { "RRethy/base16-nvim" },
     { "tpope/vim-dadbod" },
     { "blazkowolf/gruber-darker.nvim" },
+
     {
-  'thimc/gruber-darker.nvim',
-  config = function()
-    require('gruber-darker').setup({
-      -- OPTIONAL
-      transparent = true, -- removes the background
-      -- underline = false, -- disables underline fonts
-      -- bold = false, -- disables bold fonts
-    })
-    vim.cmd.colorscheme('gruber-darker')
-  end,
-},
+        'MeanderingProgrammer/render-markdown.nvim',
+        dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' }, -- if you use the mini.nvim suite
+        -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
+        -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
+        ---@module 'render-markdown'
+        ---@type render.md.UserConfig
+        opts = {},
+    },
+
+    {
+        'thimc/gruber-darker.nvim',
+        config = function()
+            require('gruber-darker').setup({
+                -- OPTIONAL
+                transparent = true, -- removes the background
+                -- underline = false, -- disables underline fonts
+                -- bold = false, -- disables bold fonts
+            })
+            vim.cmd.colorscheme('gruber-darker')
+        end,
+    },
 
     {
         'kristijanhusak/vim-dadbod-ui',
@@ -34,7 +45,7 @@ local plugins = {
             vim.g.db_ui_use_nerd_fonts = 1
         end,
     },
-    { "xiyaowong/transparent.nvim" },
+
 
     { "preservim/vimux" },
 
@@ -189,7 +200,7 @@ local plugins = {
     -- we use cmp plugin only when in insert mode
     -- so lets lazyload it at InsertEnter event, to know all the events check h-events
     -- completion , now all of these plugins are dependent on cmp, we load them after cmp
-    {
+    --[[ {
         "hrsh7th/nvim-cmp",
         event = "InsertEnter",
         dependencies = {
@@ -216,7 +227,7 @@ local plugins = {
         config = function()
             require "plugins.configs.cmp"
         end,
-    },
+    }, ]]
 
     -- Mason (package manager for LSP servers, Linters, Formatters, DAP servers)
     {

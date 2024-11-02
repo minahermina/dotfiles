@@ -5,8 +5,9 @@ require("oil").setup({
     keymaps = {
         ["<CR>"] = "actions.select",
         ["g."] = "actions.toggle_hidden",
-        ["<C-,>"] = { "actions.select", opts = { vertical = true }, desc = "Open the entry in a vertical split" },
-        ["<C-.>"] = { "actions.select", opts = { horizontal = true }, desc = "Open the entry in a horizontal split" },
+        ["<C-l>"] = { "actions.select", opts = { vertical = true }, desc = "Open the entry in a vertical split" },
+        ["<C-h>"] = { "actions.select", opts = { horizontal = true }, desc = "Open the entry in a horizontal split" },
+        ["q"] = "actions.close",
     },
 
     view_options = {

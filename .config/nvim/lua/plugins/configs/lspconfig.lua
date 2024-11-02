@@ -74,7 +74,6 @@ lspconfig.ts_ls.setup {
 
 }
 
-
 local servers = { "jdtls", "rust_analyzer", "ts_ls", "clangd", "lua_ls", "pyright" }
 
 for _, lsp in ipairs(servers) do

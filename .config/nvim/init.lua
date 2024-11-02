@@ -15,9 +15,9 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 vim.cmd('set nofoldenable')
-vim.cmd("set guicursor+=a:blinkoff150-blinkon175")
 require("options")
 require("mappings")
 vim.cmd('colorscheme gruber-darker')
--- require("colors.gruber")
+require("colors.gruber")
 require("autocmds")
+vim.cmd("set guicursor+=a:blinkoff150-blinkon175")
