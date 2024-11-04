@@ -22,7 +22,6 @@ efibootmgr
 emacs
 ffmpeg
 ffmpegthumbnailer
-firefox
 freeglut
 fribidi
 fzf
@@ -42,7 +41,6 @@ htop
 i2c-tools
 iptables-nft
 jdk-openjdk
-kitty
 lazygit
 lf
 libreoffice-fresh
