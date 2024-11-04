@@ -15,6 +15,7 @@ alias cs='clear'
 alias vim='nvim'
 alias t='tmux'
 alias sz='du -sh'
+alias lg='lazygit'
 
 
 # Pacman Aliases
