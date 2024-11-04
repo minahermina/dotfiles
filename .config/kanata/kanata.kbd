@@ -1,0 +1,60 @@
+(defcfg
+    process-unmapped-keys yes)
+
+(defsrc
+   ;; f a j ; s l 
+    caps
+    lalt
+    ralt
+    lmeta
+    rmeta
+)
+
+(defvar
+    tap-time 200
+    hold-time 175
+)
+
+(defalias
+    #|
+    f-mod (tap-hold $tap-time $hold-time f lctrl)
+    a-mod (tap-hold $tap-time $hold-time a lalt)
+    j-mod (tap-hold $tap-time $hold-time j rctrl)
+    ;-mod (tap-hold $tap-time $hold-time ; ralt)
+    s-mod (tap-hold $tap-time $hold-time s lsft)
+    l-mod (tap-hold $tap-time $hold-time l rsft)
+    |#
+    caps-mod (tap-hold $tap-time $hold-time esc (layer-while-held  nav))
+    lalt-mod (tap-hold $tap-time $hold-time lmeta lmeta)
+    ralt-mod (tap-hold $tap-time $hold-time rmeta rmeta) 
+    lmeta-mod (tap-hold $tap-time $hold-time lalt lalt )
+    rmeta-mod (tap-hold $tap-time $hold-time ralt ralt)
+)
+
+(deflayer base
+#|
+    @f-mod
+    @a-mod
+    @j-mod
+    @;-mod
+    @s-mod
+    @l-mod
+|#
+    @caps-mod
+    @lalt-mod
+    @ralt-mod 
+    @lmeta-mod
+    @rmeta-mod
+)
+
+(deflayermap (nav)
+    h left  
+    k up
+    l right  
+    j down  
+    f pgup  
+    b pgdn  
+    d Backspace  
+)
+
+
