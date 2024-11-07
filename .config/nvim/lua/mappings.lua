@@ -76,8 +76,6 @@ map("n", "<leader>gd", "<cmd> Gitsigns diffthis <CR>"                   , { desc
 map("n", "<leader>gr", "<cmd> Gitsigns reset_buffer <CR>"               , { desc = "Reset Buffer" })
 map("n", "<leader>ga", "<cmd> Gitsigns stage_buffer<CR>"                , { desc = "Stage Buffer" })
 map("n", "<leader>gs", "<cmd> FzfLua git_status <CR>"                   , { desc = "Display git status" })
-map("n", "<leader>gc", function() require("tinygit").smartCommit() end  , { desc = "git commit " })
-map("n", "<leader>gp", function() require("tinygit").push() end         , { desc = "git push" })
 
 -- Navigate Windows from terminal mode
 -- map('t', '<Esc>', '<C-\\><C-n>'       , options)
@@ -108,7 +106,7 @@ map("n", "<C-j>", ":TmuxNavigateDown  <cr>")
 map("n", "<C-k>", ":TmuxNavigateUp    <cr>")
 map("n", "<C-l>", ":TmuxNavigateRight <cr>")
 
-map("n", "-", function() require("oil").toggle_float() end, { desc = "Open parent directory as a Buffer" })
+map("n", "-", function() require("oil").open_float() end, { desc = "Open parent directory as a Buffer" })
 
 local build = require("CustomScripts.build")
 
@@ -125,3 +123,4 @@ map('n', '<leader>th', function () functions.open_tmux_pane(0) end  , { desc = "
 map('n', '<leader>ee', ":VimuxPromptCommand <CR>"                   , { desc = "Prompt command to run in tmux pane" }             , options)
 map('n', '<leader>ei', ":VimuxZoomRunner <CR>"                      , { desc = "Open Vertical Tmux Pane in current file dir" }    , options)
 map('n', '<leader>et', ":VimuxTogglePane <CR>"                      , { desc = "Open Vertical Tmux Pane in current file dir" }    , options)
+map('n', '<leader>c', ":Compile <CR>"                              , { desc = "Run Compile command" }                            , options)
