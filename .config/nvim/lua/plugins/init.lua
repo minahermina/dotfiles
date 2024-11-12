@@ -2,14 +2,46 @@ local plugins = {
 
     -- Themes
     { "RRethy/base16-nvim" },
-    { "tpope/vim-dadbod" },
-    { "blazkowolf/gruber-darker.nvim" },
+
+    {
+        "m00qek/baleia.nvim",
+        version = "*",
+        config = function()
+            vim.g.baleia = require("baleia").setup({ log = 'INFO' })
+
+            -- Command to colorize the current buffer
+            vim.api.nvim_create_user_command("BaleiaColorize", function()
+                vim.g.baleia.once(vim.api.nvim_get_current_buf())
+            end, { bang = true })
+
+            -- Command to show logs
+            vim.api.nvim_create_user_command("BaleiaLogs", vim.g.baleia.logger.show, { bang = true })
+        end,
+    },
+    {
+        "ej-shafran/compile-mode.nvim",
+        tag = "v5.3.1",
+        -- you can just use the latest version:
+        branch = "latest",
+        -- or the most up-to-date updates:
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            -- if you want to enable coloring of ANSI escape codes in
+            -- compilation output, add:
+            { "m00qek/baleia.nvim" },
+        },
+        config = function()
+            ---@type CompileModeOpts
+            vim.g.compile_mode = {
+                -- to add ANSI escape code support, add:
+                baleia_setup = true,
+            }
+        end
+    },
 
     {
         'MeanderingProgrammer/render-markdown.nvim',
-        dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' }, -- if you use the mini.nvim suite
-        -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
-        -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
+        dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
         ---@module 'render-markdown'
         ---@type render.md.UserConfig
         opts = {},
@@ -20,7 +52,7 @@ local plugins = {
         config = function()
             require('gruber-darker').setup({
                 -- OPTIONAL
-                transparent = true, -- removes the background
+                transparent = false, -- removes the background
                 -- underline = false, -- disables underline fonts
                 -- bold = false, -- disables bold fonts
             })
@@ -28,6 +60,7 @@ local plugins = {
         end,
     },
 
+    { "tpope/vim-dadbod" },
     {
         'kristijanhusak/vim-dadbod-ui',
         dependencies = {
@@ -47,7 +80,6 @@ local plugins = {
     },
 
 
-    { "preservim/vimux" },
 
     { "mg979/vim-visual-multi" },
 
@@ -58,23 +90,16 @@ local plugins = {
             "TmuxNavigateDown",
             "TmuxNavigateUp",
             "TmuxNavigateRight",
-            --"TmuxNavigatePrevious",
-        },
-        keys = {
-            { "<c-h>", "<cmd>TmuxNavigateLeft<cr>" },
-            { "<c-j>", "<cmd>TmuxNavigateDown<cr>" },
-            { "<c-k>", "<cmd>TmuxNavigateUp<cr>" },
-            { "<c-l>", "<cmd>TmuxNavigateRight<cr>" },
-            --{ "<c-\\>", "<cmd>TmuxNavigatePrevious<cr>" },
+            "TmuxNavigatePrevious",
         },
     },
 
-    {
+    --[[ {
         'stevearc/dressing.nvim',
         config = function()
             require('plugins.configs.dressing')
         end
-    },
+    }, ]]
 
     {
         "ahmedkhalf/project.nvim",
@@ -85,7 +110,7 @@ local plugins = {
     },
 
     -- fill git integration in neovim
-    {
+    --[[ {
         "chrisgrieser/nvim-tinygit",
         ft = { "gitrebase", "gitcommit" }, -- so ftplugins are loaded
         dependencies = {
@@ -93,9 +118,9 @@ local plugins = {
             "ibhagwan/fzf-lua",
             "rcarriga/nvim-notify", -- optional, but will lack some features without it
         },
-    },
+    }, ]]
 
-    {
+    --[[ {
         "rcarriga/nvim-notify", -- optional, but will lack some features without it
         config = function()
             require("notify").setup {
@@ -106,7 +131,7 @@ local plugins = {
             vim.notify = require('notify')
         end
 
-    },
+    }, ]]
 
     {
         'brenoprata10/nvim-highlight-colors',
@@ -141,8 +166,6 @@ local plugins = {
             vim.fn["mkdp#util#install"]()
         end,
     },
-
-
 
     -- -- file tree
     -- {

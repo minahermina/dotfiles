@@ -48,8 +48,12 @@ map('n', '<leader>6', '<Cmd>LualineBuffersJum 6<CR>', options)
 map('n', '<leader>7', '<Cmd>LualineBuffersJum 7<CR>', options)
 map('n', '<leader>8', '<Cmd>LualineBuffersJum 8<CR>', options)
 
--- Replacing current word with another
-map({'n',  'x'}, "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],  { desc = "Replace Word Under cursor" })
+-- Replacing word under cursor
+map('n', "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],  { desc = "Replace Word Under cursor" })
+
+-- Replacing visually highlighted text
+map('x', "<leader>s", [["zy:%s/<C-r>z/<C-r>z/gI<Left><Left><Left>]],           { desc = "Replace Selected Text" })
+
 
 -- comment.nvim
 map("n", "<leader>/", function() require("Comment.api").toggle.linewise.current() end ,                 { desc = "Comment Current line" })
@@ -83,6 +87,7 @@ map('t', '<C-h>', '<C-\\><C-n><C-w>h' , options)
 map('t', '<C-j>', '<C-\\><C-n><C-w>j' , options)
 map('t', '<C-k>', '<C-\\><C-n><C-w>k' , options)
 map('t', '<C-l>', '<C-\\><C-n><C-w>l' , options)
+map('t', '<C-q>', '<C-\\><C-n>' , options)
 
 -- Resize Buffers
 map("n", "<Up>"    , ":resize +3<CR>"      , options)
@@ -105,6 +110,7 @@ map("n", "<C-h>", ":TmuxNavigateLeft  <cr>")
 map("n", "<C-j>", ":TmuxNavigateDown  <cr>")
 map("n", "<C-k>", ":TmuxNavigateUp    <cr>")
 map("n", "<C-l>", ":TmuxNavigateRight <cr>")
+map("n", "<C-]>", ":TmuxNavigatePrevious <cr>")
 
 map("n", "-", function() require("oil").open_float() end, { desc = "Open parent directory as a Buffer" })
 
@@ -120,7 +126,4 @@ map('n', '<leader>n' , ":cnext <CR>"                                , { desc = "
 map('n', '<leader>m' , ":cpre <CR>"                                 , { desc = "Toggle Quickfix list " }                          , options)
 map('n', '<leader>tv', function () functions.open_tmux_pane(1) end  , { desc = "Open Vertical Tmux Pane in current file dir" }    , options)
 map('n', '<leader>th', function () functions.open_tmux_pane(0) end  , { desc = "Open Horizontal Tmux Pane in current file dir" }    , options)
-map('n', '<leader>ee', ":VimuxPromptCommand <CR>"                   , { desc = "Prompt command to run in tmux pane" }             , options)
-map('n', '<leader>ei', ":VimuxZoomRunner <CR>"                      , { desc = "Open Vertical Tmux Pane in current file dir" }    , options)
-map('n', '<leader>et', ":VimuxTogglePane <CR>"                      , { desc = "Open Vertical Tmux Pane in current file dir" }    , options)
 map('n', '<leader>c', ":Compile <CR>"                              , { desc = "Run Compile command" }                            , options)

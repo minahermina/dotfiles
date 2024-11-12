@@ -12,7 +12,7 @@ end
 local colors = {
     black =     {"#181818", 234},
     brown =     {"#af875f", 137},
-    cyan =      {"#7cbe7c", 151},
+    cyan =      {"#95a99f", 151},
     blue =      {"#89B4FA", 235},
     yellow =    {"#7cbe7c", 113},
     dark_yellow =    {"#ffdd33", 13},
@@ -42,9 +42,10 @@ end
 
 -- hl("ColorColumn",   {bg = colors.blue})
 hl("Comment",       { fg = colors.comment   })
-hl("Function",      { fg = colors.white     })
-hl("CursorLineNr",    { fg = colors.dark_yellow })
+-- hl("Function",      { fg = colors.white     })
+hl("CursorLineNr",  { fg = colors.dark_yellow })
 hl("String",        { fg = colors.yellow    })
+hl("Type",          { fg = colors.cyan    })
 --[[ 
 hl("DiffAdd",       { fg = colors.yellow})
 hl("Constant",      {fg = colors.white})

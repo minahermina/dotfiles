@@ -5,21 +5,29 @@ local M = {}
 function M.open_tmux_pane(dir)
     local file_path = vim.api.nvim_buf_get_name(0)
     local file_dir = vim.fn.fnamemodify(file_path, ":p:h")
+    tmux = vim.fn.exists('$TMUX')
 
     if file_dir == "" then
         print("No file is open")
         return
     end
 
-    local tmux_cmd = ""
+    if tmux == 1 then
+        print("Running inside tmux!")
+        local tmux_cmd = ""
 
-    if dir == 0 then
-        tmux_cmd = string.format("tmux split-window -v -l 10 -c '%s'", file_dir)
+        if dir == 0 then
+            tmux_cmd = string.format("tmux split-window -v -l 10 -c '%s'", file_dir)
+        else
+            tmux_cmd = string.format("tmux split-window -h -l 60 -c '%s'", file_dir)
+        end
+
+        vim.fn.system(tmux_cmd)
     else
-        tmux_cmd = string.format("tmux split-window -h -l 60 -c '%s'", file_dir)
+        vim.cmd('20 | sp | term')
     end
 
-    vim.fn.system(tmux_cmd)
+
 end
 
 function M.toggle_quickfix()

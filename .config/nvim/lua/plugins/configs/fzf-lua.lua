@@ -1,5 +1,5 @@
 require("fzf-lua").setup({
-    'fzf-vim',
+    'fzf-tmux',
     fzf_opts = {
         ["--ansi"]           = true,
         ["--info"]           = "inline-right",
@@ -17,5 +17,5 @@ require("fzf-lua").setup({
         border = { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' },
     },
 
-    -- preview_wrap = 'nowrap:hidden',
+    preview_wrap = 'nowrap:hidden',
 })
