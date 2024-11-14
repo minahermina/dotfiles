@@ -46,7 +46,7 @@ static const Rule rules[] = {
     /* class                    instance                title           tags mask     switchtotag    isfloating   monitor */
     { "st-256color"             ,NULL ,                 NULL,           1 << 0,            1,           0,          -1 },
     { BROWSER                   ,NULL ,                 NULL,           1 << 1,            1,           0,          -1 },
-    // { NULL                      ,NULL ,                 NULL,           1 << 2,            1,           0,          -1 },
+    { "octave-gui"              ,NULL ,                 NULL,           1 << 2,            1,           0,          -1 },
     { "Zathura"                 ,NULL ,                 NULL,           1 << 3,            1,           0,          -1 },
     { "Com.github.xournalpp.xournalpp"                 ,NULL ,                 NULL,           1 << 3,            1,           0,          -1 },
     { "mpv"                     ,NULL ,                 NULL,           1 << 4,            1,           0,          -1 },
@@ -100,7 +100,7 @@ static const Key keys[] = {
 	{ MODKEY,                               XK_Tab,         view,               {0} }, 
     { MODKEY,                               XK_comma,       focusmon,           {.i = -1 } },
     { MODKEY,                               XK_period,      focusmon,           {.i = +1 } },
-    { MODKEY|ShiftMask,                     XK_f,           togglefullscr,      {0} },
+    { MODKEY,                               XK_f,           togglefullscr,      {0} },
 	{ MODKEY|ShiftMask,                     XK_h,           setcfact,           {.f = +0.25} },
 	{ MODKEY|ShiftMask,                     XK_l,           setcfact,           {.f = -0.25} },
     { MODKEY|ShiftMask,                     XK_b,           togglebar,          {0} },
