@@ -6,11 +6,12 @@ This is the configuration of my Arch linux System using [DWM](https://dwm.suckle
 - Window Manager : `dwm`
 - Terminal Multiplexer: `tmux`
 - Text Editor: `nvim`
+- Git TUI App: `lazygit`
 - Image Viewer: `sxiv`
 - Video Player: `mpv` with a nice UI using [uosc](https://github.com/tomasklaen/uosc)
 - Document Viewer: `zathura`
 - Zathura pdf plugin: `zathura-pdf-mupdf`
-- Fonts: `ttf-victor-mono-nerd` `ttf-cairo`
+- Fonts: `IosevkaTerm Nerd Font ` `ttf-cairo`
 - Menu: `dmenu` 
 - Web Browser: `brave-bin` 
 - Recording tool: `ffmpeg`
