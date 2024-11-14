@@ -2,6 +2,8 @@ doas loadkeys ~/.config/loadkeysrc/loadkeysrc
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 export EDITOR="nvim"
+export MAINMOD="Super"
+export XMONAD_CONFIG_DIR="$XDG_CONFIG_HOME/xmonad/xmonad.hs"
 export HISTCONTROL=ignoreboth:erasedups
 export EMACSDIR="$HOME/.config/emacs"
 export BROWSER="brave"

@@ -14,9 +14,15 @@ alias grep='grep --color=auto'
 alias cs='clear'
 alias vim='nvim'
 alias t='tmux'
+alias lf='lfub'
 alias sz='du -sh'
 alias lg='lazygit'
 
+
+alias vbr='nvim $HOME/.bashrc'
+alias vbp='nvim $HOME/.bash_profile'
+alias sb='source $HOME/.bashrc && source $HOME/.bashrc'
+alias vt='nvim $XDG_CONFIG_HOME/tmux/tmux.conf'
 
 # Pacman Aliases
 alias i='doas pacman -S'
@@ -27,12 +33,11 @@ alias s='doas pacman -Ss'
 
 # yay Aliases
 alias yi='yay -S'
-alias ycc='yay -Scc && doas pacman -Sc'
+alias ycc='yay -Scc ; doas pacman -Sc'
 alias yq='yay -Qs'
 alias yu='yay -Syu'
 alias ys='yay -Ss'
 
-alias lf='lfub'
  
 goto(){
     local file=$(find . | fzf --reverse --header="Jump to location"  --height=50% )
