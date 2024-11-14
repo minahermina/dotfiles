@@ -1,7 +1,10 @@
 brave-bin
+mongodb-bin
+mongodb-compass
+mongodb-tools
+mongosh-bin
 rar
 rofi-greenclip
 ttf-cairo
-vscodium-bin
 xkblayout-state-git
 yay

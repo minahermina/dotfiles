@@ -46,6 +46,7 @@ hl("Comment",       { fg = colors.comment   })
 hl("CursorLineNr",  { fg = colors.dark_yellow })
 hl("String",        { fg = colors.yellow    })
 hl("Type",          { fg = colors.cyan    })
+hl("NonText",       { fg = colors.non})
 --[[ 
 hl("DiffAdd",       { fg = colors.yellow})
 hl("Constant",      {fg = colors.white})

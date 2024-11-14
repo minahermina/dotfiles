@@ -177,7 +177,8 @@ map gdf cd ~/hdd/D/Mina/Films/
 map gdr cd ~/hdd/D/Mina/recordings/
 map gdd cd ~/hdd/D
 map gdm cd ~/hdd/D/music
-map gf cd ~/hdd/F
+map gff cd ~/hdd/F
+map gfc cd ~/hdd/F/college
 map gt cd ~/.local/share/Trash/files/
 map gD cd ~/Downloads/
 map gl cd ~/.local

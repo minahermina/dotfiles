@@ -1,16 +1,16 @@
 super + w
     $BROWSER
 
-alt + p
+super + BackSpace
    playerctl play-pause	
 
-alt + n
+super + bracketright
    playerctl next
 
-alt + b
+super + bracketleft
    playerctl previous
 
-alt + c
+super + Insert
    ~/.local/bin/freee
 
 super + Return
@@ -34,8 +34,8 @@ super + v
 super + i
     ~/.local/scripts/bookmarks
 
-super + f
-    ~/.local/scripts/tmux_new_window.sh lfub
+#super + f
+#    ~/.local/scripts/tmux_new_window.sh lfub
 
 # Open List of Vms installed in ~/vms 
 super + Home

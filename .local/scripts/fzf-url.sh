@@ -10,7 +10,7 @@ open_url() {
             nohup "$BROWSER" "$url" &>/dev/null &
         fi
     done 
-    xdotool key Alt+2
+    xdotool key $MAINMOD+2
 }
 
 pane_content="$(tmux capture-pane -J -p -e -S -)"

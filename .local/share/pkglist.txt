@@ -17,7 +17,6 @@ dash
 dbus-glib
 dhcp
 dnsmasq
-dunst
 efibootmgr
 emacs
 ffmpeg
@@ -39,8 +38,11 @@ gvfs-mtp
 hplip
 htop
 i2c-tools
+imagemagick
 iptables-nft
+irssi
 jdk-openjdk
+kitty
 lazygit
 lf
 libreoffice-fresh
@@ -60,6 +62,7 @@ musl
 ncdu
 nemo
 neofetch
+neovide
 neovim
 network-manager-applet
 networkmanager
@@ -128,8 +131,8 @@ ufw
 unrar-free
 unzip
 usbutils
+vim
 virglrenderer
-virt-manager
 wget
 xclip
 xcolor
@@ -175,6 +178,7 @@ xorg-xsetroot
 xorg-xwd
 xorg-xwininfo
 xournalpp
+xterm
 xwallpaper
 yt-dlp
 zathura

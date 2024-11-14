@@ -3,7 +3,7 @@ command=$1
 TERMINAL="$TERMINAL"
 
 move_2_temrinal_tag(){
-    xdotool key Alt+1
+    xdotool key $MAINMOD+1
 }
 
 create_tmux_window(){

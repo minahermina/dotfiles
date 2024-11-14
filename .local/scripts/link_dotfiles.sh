@@ -11,6 +11,8 @@ dirs=(
         ".config/sxhkd"
         ".config/tmux"
         ".config/zathura"
+        ".config/picom"
+        ".config/kanata"
         ".config/mpv"
         ".config/rofi"
         ".local/scripts"

@@ -16,11 +16,12 @@ x-scheme-handler/http=brave-browser.desktop
 x-scheme-handler/https=brave-browser.desktop
 x-scheme-handler/about=brave-browser.desktop
 x-scheme-handler/unknown=brave-browser.desktop
-text/*=editor.desktop
-text/x-c++src=editor.desktop
-text/plain=editor.desktop
-text/x0c=editor.desktop
-text/x-c=editor.desktop
+text/*=nvim.desktop
+text/x-c++src=nvim.desktop
+text/plain=nvim.desktop
+text/x0c=nvim.desktop
+text/x-c=nvim.desktop
+application/vnd.openxmlformats-officedocument.presentationml.presentation=libreoffice-impress.desktop
 
 [Added Associations]
 audio/*=mpv.desktop;

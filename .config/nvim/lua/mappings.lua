@@ -38,7 +38,7 @@ map('i' , "\"", "\"\"<Left>")
 map('i' , "`", "``<Left>")
 
 -- Buffers
-map("n", "<Tab>", "<cmd> bnext <CR>")
+map("n", "<Tab>", "<cmd> bnext <CR>", options)
 map('n', '<leader>1', '<Cmd>LualineBuffersJum 1<CR>', options)
 map('n', '<leader>2', '<Cmd>LualineBuffersJum 2<CR>', options)
 map('n', '<leader>3', '<Cmd>LualineBuffersJum 3<CR>', options)
@@ -52,11 +52,13 @@ map('n', '<leader>8', '<Cmd>LualineBuffersJum 8<CR>', options)
 map('n', "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],  { desc = "Replace Word Under cursor" })
 
 -- Replacing visually highlighted text
-map('x', "<leader>s", [["zy:%s/<C-r>z/<C-r>z/gI<Left><Left><Left>]],           { desc = "Replace Selected Text" })
+map('x', "<leader>s", [["zy:%s/<C-r>z/<C-r>z/gI<Left><Left><Left>]], { desc = "Replace Selected Text" })
+map('v', '<leader>g', 'y:silent grep -rn "<C-R>""<CR>',              { desc = "Grep highlighted Text" }, options)
+map('n', '<leader>g', ':silent grep <C-r><C-w> <CR>',                { desc = "Grep word Under cursor" }, options)
 
 
 -- comment.nvim
-map("n", "<leader>/", function() require("Comment.api").toggle.linewise.current() end ,                 { desc = "Comment Current line" })
+map("n", "<leader>/", function() require("Comment.api").toggle.linewise.current() end ,                  { desc = "Comment Current line" })
 map("v", "<leader>/", "<ESC><cmd>lua require('Comment.api').toggle.blockwise(vim.fn.visualmode())<CR>" , { desc = "Comment Current Block" })
 
 -- Fzf-lua & Telescope Keymaps 
@@ -125,5 +127,5 @@ map('n', '<leader>,' , function () functions.toggle_quickfix() end  , { desc = "
 map('n', '<leader>n' , ":cnext <CR>"                                , { desc = "Toggle Quickfix list " }                          , options)
 map('n', '<leader>m' , ":cpre <CR>"                                 , { desc = "Toggle Quickfix list " }                          , options)
 map('n', '<leader>tv', function () functions.open_tmux_pane(1) end  , { desc = "Open Vertical Tmux Pane in current file dir" }    , options)
-map('n', '<leader>th', function () functions.open_tmux_pane(0) end  , { desc = "Open Horizontal Tmux Pane in current file dir" }    , options)
-map('n', '<leader>c', ":Compile <CR>"                              , { desc = "Run Compile command" }                            , options)
+map('n', '<leader>th', function () functions.open_tmux_pane(0) end  , { desc = "Open Horizontal Tmux Pane in current file dir" }  , options)
+map('n', '<leader>c', ":Compile <CR>"                               , { desc = "Run Compile command" }                            , options)
