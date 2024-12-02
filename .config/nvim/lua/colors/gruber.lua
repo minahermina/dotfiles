@@ -1,26 +1,28 @@
 -- gruber.lua
 -- Neovim color scheme based on the Gruber Dark theme
 
--- vim.cmd('highlight clear')
+vim.cmd('highlight clear')
 if vim.fn.exists("syntax_on") == 1 then
     vim.cmd('syntax reset')
 end
 
--- vim.o.background = "dark"
--- vim.g.colors_name = "gruber"
+vim.o.background = "dark"
+vim.g.colors_name = "gruber"
 
 local colors = {
-    black =     {"#181818", 234},
+    black =     {"#111317", 234},
     brown =     {"#af875f", 137},
-    cyan =      {"#95a99f", 151},
-    blue =      {"#89B4FA", 235},
-    yellow =    {"#7cbe7c", 113},
-    dark_yellow =    {"#ffdd33", 13},
+    cyan =      {"#afd7af", 151},
+    blue =      {"#7ba2e1", 235},
+    yellow =    {"#afd7af", 113},
     red =       {"#F38BA8", 203},
     white =     {"#ffffff", 254},
     non =       {"#2E2E2E" , 100},
     comment =   {"#5e5f70", 201 },
-    gray =      {"#A0ABC3", 241 }
+    gray =      {"#9099AF", 241 }
+
+
+
 }
 
 local function hl(group, attrs)
@@ -40,67 +42,60 @@ local function hl(group, attrs)
     vim.cmd(table.concat(command, " "))
 end
 
--- hl("ColorColumn",   {bg = colors.blue})
-hl("Comment",       { fg = colors.comment   })
--- hl("Function",      { fg = colors.white     })
-hl("CursorLineNr",  { fg = colors.dark_yellow })
-hl("String",        { fg = colors.yellow    })
-hl("Type",          { fg = colors.cyan    })
-hl("NonText",       { fg = colors.non})
---[[ 
-hl("DiffAdd",       { fg = colors.yellow})
+hl("ColorColumn",   {bg = colors.blue})
+hl("Comment",       {fg = colors.comment})
 hl("Constant",      {fg = colors.white})
-hl("DiffChange",    { fg = colors.white})
-hl("DiffDelete",    { fg = colors.red})
-hl("DiffText",      { fg = colors.white, style = "underline"})
-hl("Directory",     { fg = colors.white})
-hl("EndOfBuffer",   { fg = colors.black})
-hl("Error",         { fg = colors.red})
-hl("ErrorMsg",      { fg = colors.red})
-hl("FoldColumn",    { fg = colors.brown, bg = colors.blue})
-hl("Folded",        { fg = colors.brown, bg = colors.blue, style = "italic"})
-hl("identifier",    { fg = colors.white})
-hl("Ignore",        { fg = colors.black})
-hl("MatchParen",    { fg = colors.blue, style = "bold"})
-hl("MoreMsg",       { fg = colors.yellow})
-hl("NonText",       { fg = colors.white})
-hl("Normal",        { fg = colors.white, bg = colors.black})
-hl("Pmenu",         { fg = colors.white, bg = colors.black})
-hl("PmenuSbar",     { bg = colors.blue})
-hl("PmenuSel",      { fg = colors.black, bg = colors.blue, style = "bold"})
-hl("PmenuThumb",    { bg = colors.black})
-hl("PreProc",       { fg = colors.blue})
-hl("Question",      { fg = colors.white})
-hl("Special",       { fg = colors.white})
-hl("SpecialChar",   { fg = colors.blue})
-hl("SpecialComment",{ fg = colors.brown})
-hl("SpecialKey",    { fg = colors.white})
-hl("SpellBad",      { fg = colors.red, style = "underline"})
-hl("SpellCap",      { fg = colors.white, style = "underline"})
-hl("SpellLocal",    { fg = colors.blue, style = "underline"})
-hl("SpellRare",     { style = "underline"})
-hl("Statement",     { fg = colors.blue, style = "bold"})
-hl("StatusLine",    { fg = colors.white, bg = colors.black, style = "bold"})
-hl("TabLine",       {  bg = colors.black})
-hl("StatusLineNC",  { fg = colors.white, bg = colors.black})
-hl("Title",         { fg = colors.white})
-hl("IncSearch",     { fg = colors.black , bg = colors.blue})
-hl("Todo",          { fg = colors.brown, style = "italic"})
-hl("Type",          { fg = colors.blue, style = "bold"})
-hl("Typedef",       { fg = colors.blue, style = "bold"})
-hl("StorageClass",  { fg = colors.blue, style = "bold"})
-hl("Structure",     { fg = colors.blue, style = "bold"})
-hl("CursorLineNr",  { fg = colors.blue})
-hl("Underlined",    { style = "underline"})
-hl("VertSplit",     { bg = colors.blue})
-hl("WarningMsg",    { fg = colors.red})
-hl("WildMenu",      { fg = colors.black, bg = colors.blue, style = "bold"})
-hl("Folded",        { fg = colors.blue, bg = colors.black, style = "bold"})
-hl("diffAdded",     { fg = colors.yellow})
-hl("diffRemoved",   { fg = colors.red})
-hl("diffSubname",   { fg = colors.white})
+-- hl("CursorLine",     {bg = colors.blue})
+hl("DiffAdd",       {fg = colors.yellow})
+hl("DiffChange",    {fg = colors.white})
+hl("DiffDelete",    {fg = colors.red})
+hl("DiffText",      {fg = colors.white, style = "underline"})
+hl("Directory",     {fg = colors.white})
+hl("EndOfBuffer",   {fg = colors.black})
+hl("Error",         {fg = colors.red})
+hl("ErrorMsg",      {fg = colors.red})
+hl("FoldColumn",    {fg = colors.brown, bg = colors.blue})
+hl("Folded",        {fg = colors.brown, bg = colors.blue, style = "italic"})
+hl("Function",      {fg = colors.gray })
+hl("identifier",    {fg = colors.white})
+hl("Ignore",        {fg = colors.black})
+hl("MatchParen",    {fg = colors.blue, style = "bold"})
+hl("MoreMsg",       {fg = colors.yellow})
+hl("NonText",       {fg = colors.white})
+hl("Normal",        {fg = colors.white, bg = colors.black})
+hl("Pmenu",         {fg = colors.white, bg = colors.black})
+hl("PmenuSbar",     {bg = colors.blue})
+hl("PmenuSel",      {fg = colors.black, bg = colors.blue, style = "bold"})
+hl("PmenuThumb",    {bg = colors.black})
+hl("PreProc",       {fg = colors.blue})
+hl("Question",      {fg = colors.white})
+hl("Special",       {fg = colors.white})
+hl("SpecialChar",   {fg = colors.blue})
+hl("SpecialComment",{fg = colors.brown})
+hl("SpecialKey",    {fg = colors.white})
+hl("SpellBad",      {fg = colors.red, style = "underline"})
+hl("SpellCap",      {fg = colors.white, style = "underline"})
+hl("SpellLocal",    {fg = colors.blue, style = "underline"})
+hl("SpellRare",     {style = "underline"})
+hl("Statement",     {fg = colors.blue, style = "bold"})
+hl("Keyword",       {fg = colors.blue, style = "bold"})
+hl("StatusLine",    {fg = colors.white, bg = colors.black, style = "bold"})
+hl("StatusLineNC",  {fg = colors.white, bg = colors.black})
+hl("String",        {fg = colors.yellow})
+hl("Title",         {fg = colors.white})
+hl("IncSearch",     {fg = colors.black , bg = colors.blue})
+hl("Todo",          {fg = colors.brown, style = "italic"})
+hl("Type",          {fg = colors.gray, style = "bold"})
+hl("Typedef",       {fg = colors.blue, style = "bold"})
+-- hl("Function",       {fg = colors.blue, style = "bold"})
+hl("StorageClass",  {fg = colors.blue, style = "bold"})
+hl("Structure",     {fg = colors.blue, style = "bold"})
+hl("CursorLineNr",  {fg = colors.blue})
+hl("Underlined",    {style = "underline"})
+hl("VertSplit",     {fg = colors.blue})
+hl("WarningMsg",    {fg = colors.red})
+hl("WildMenu",      {fg = colors.black, bg = colors.blue, style = "bold"})
+hl("diffAdded",     {fg = colors.yellow})
+hl("diffRemoved",   {fg = colors.red})
+hl("diffSubname",   {fg = colors.white})
 hl("NonText",       { fg = colors.non})
-hl("Oil",           { bg = colors.black})
-hl("NormalFloat",   { bg = colors.black})
-hl("NonText",       { fg = colors.non}) 
-]]
