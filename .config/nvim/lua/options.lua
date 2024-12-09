@@ -80,8 +80,8 @@ opt.undofile = true
 opt.scrolloff = 8
 opt.updatetime = 250
 opt.list = true
-            opt.listchars = { tab = '  ', leadmultispace = '·', nbsp = '␣' , trail =  ' '    }
--- opt.listchars = { tab = '   ', leadmultispace = ' ', nbsp = '␣',   trail = '•'  }                    
+            -- opt.listchars = { tab = '  ', leadmultispace = '·', nbsp = '␣' , trail =  ' '    }
+opt.listchars = { tab = '   ', leadmultispace = ' ', nbsp = '␣',   trail = '•'  }                    
 
 
 -- add binaries installed by mason.nvim to path
