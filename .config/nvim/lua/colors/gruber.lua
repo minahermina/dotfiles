@@ -1,6 +1,3 @@
--- gruber.lua
--- Neovim color scheme based on the Gruber Dark theme
-
 vim.cmd('highlight clear')
 if vim.fn.exists("syntax_on") == 1 then
     vim.cmd('syntax reset')
@@ -12,17 +9,13 @@ vim.g.colors_name = "gruber"
 local colors = {
     black =     {"#111317", 234},
     brown =     {"#af875f", 137},
-    cyan =      {"#afd7af", 151},
     blue =      {"#7ba2e1", 235},
-    yellow =    {"#afd7af", 113},
+    lgreen =    {"#afd7af", 113},
     red =       {"#F38BA8", 203},
     white =     {"#ffffff", 254},
     non =       {"#2E2E2E" , 100},
     comment =   {"#5e5f70", 201 },
     gray =      {"#9099AF", 241 }
-
-
-
 }
 
 local function hl(group, attrs)
@@ -46,7 +39,7 @@ hl("ColorColumn",   {bg = colors.blue})
 hl("Comment",       {fg = colors.comment})
 hl("Constant",      {fg = colors.white})
 -- hl("CursorLine",     {bg = colors.blue})
-hl("DiffAdd",       {fg = colors.yellow})
+hl("DiffAdd",       {fg = colors.lgreen})
 hl("DiffChange",    {fg = colors.white})
 hl("DiffDelete",    {fg = colors.red})
 hl("DiffText",      {fg = colors.white, style = "underline"})
@@ -60,7 +53,7 @@ hl("Function",      {fg = colors.gray })
 hl("identifier",    {fg = colors.white})
 hl("Ignore",        {fg = colors.black})
 hl("MatchParen",    {fg = colors.blue, style = "bold"})
-hl("MoreMsg",       {fg = colors.yellow})
+hl("MoreMsg",       {fg = colors.lgreen})
 hl("NonText",       {fg = colors.white})
 hl("Normal",        {fg = colors.white, bg = colors.black})
 hl("Pmenu",         {fg = colors.white, bg = colors.black})
@@ -81,7 +74,7 @@ hl("Statement",     {fg = colors.blue, style = "bold"})
 hl("Keyword",       {fg = colors.blue, style = "bold"})
 hl("StatusLine",    {fg = colors.white, bg = colors.black, style = "bold"})
 hl("StatusLineNC",  {fg = colors.white, bg = colors.black})
-hl("String",        {fg = colors.yellow})
+hl("String",        {fg = colors.lgreen})
 hl("Title",         {fg = colors.white})
 hl("IncSearch",     {fg = colors.black , bg = colors.blue})
 hl("Todo",          {fg = colors.brown, style = "italic"})
@@ -95,7 +88,7 @@ hl("Underlined",    {style = "underline"})
 hl("VertSplit",     {fg = colors.blue})
 hl("WarningMsg",    {fg = colors.red})
 hl("WildMenu",      {fg = colors.black, bg = colors.blue, style = "bold"})
-hl("diffAdded",     {fg = colors.yellow})
+hl("diffAdded",     {fg = colors.lgreen})
 hl("diffRemoved",   {fg = colors.red})
 hl("diffSubname",   {fg = colors.white})
 hl("NonText",       { fg = colors.non})

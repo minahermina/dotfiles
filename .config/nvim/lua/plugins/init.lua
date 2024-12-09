@@ -39,20 +39,9 @@ local plugins = {
         end
     },
 
-    {
-        'thimc/gruber-darker.nvim',
-        config = function()
-            require('gruber-darker').setup({
-                -- OPTIONAL
-                transparent = false, -- removes the background
-                -- underline = false, -- disables underline fonts
-                -- bold = false, -- disables bold fonts
-            })
-            vim.cmd.colorscheme('gruber-darker')
-        end,
-    },
 
     { "tpope/vim-dadbod" },
+
     {
         'kristijanhusak/vim-dadbod-ui',
         dependencies = {
@@ -159,14 +148,14 @@ local plugins = {
         end,
     },
 
-    -- -- file tree
-    -- {
-    --     "nvim-tree/nvim-tree.lua",
-    --     cmd = { "NvimTreeToggle", "NvimTreeFocus" },
-    --     config = function()
-    --         require("plugins.configs.nvim-tree");
-    --     end,
-    -- },
+    -- file tree
+    {
+        "nvim-tree/nvim-tree.lua",
+        cmd = { "NvimTreeToggle", "NvimTreeFocus" },
+        config = function()
+            require("plugins.configs.nvim-tree");
+        end,
+    },
 
     -- icons, for UI related plugins
     {
