@@ -31,39 +31,36 @@ super + Delete
 super + v
     $HOME/.local/scripts/tmux_new_window.sh nvim
 
-super + i
-    ~/.local/scripts/bookmarks
-
 #super + f
-#    ~/.local/scripts/tmux_new_window.sh lfub
+#    $SCRIPTS/tmux_new_window.sh lfub
 
 # Open List of Vms installed in ~/vms 
 super + Home
-	~/.local/scripts/virt.sh	
+	$SCRIPTS/virt.sh	
 
 # Opens clipboard manager 
 super + c
-    ~/.local/scripts/clipboard_xorg.sh
+    $SCRIPTS/clipboard_xorg.sh
 
 # Sytem Monitor (btop)
 super + m
-    ~/.local/scripts/tmux_new_window.sh btop
- 
-super + g
-    ~/.local/scripts/tmux_new_window.sh lazygit
+    $SCRIPTS/tmux_new_window.sh btop
 
 super + b
-	brave --app=https://excalidraw.com/ && xdotool key Alt+Shift+0 && xdotool key Alt+0
+    $SCRIPTS/get_gitrepos
+
+super + i
+    $SCRIPTS/bookmarks
 
 super + Print
-    ~/.local/scripts/screencast.sh 
+    $SCRIPTS/screencast.sh 
 
 super + End
-    ~/.local/scripts/screencast.sh ; pkill -RTMIN+22 dwmblocks
+    $SCRIPTS/screencast.sh ; pkill -RTMIN+22 dwmblocks
 
 # launch powermenu
 super + shift + q
-	~/.local/scripts/powermenu.sh	
+	$SCRIPTS/powermenu.sh	
 
 # Sends dwmblocks signal to update lang
 ctrl + space
@@ -75,11 +72,11 @@ super + shift + Delete
 
 # Take screenshot
 super + shift + s
-	maim -us -m 10  | xclip -selection clipboard -t image/png
+	maim -us -m 10 -D  | xclip -selection clipboard -t image/png
 
 # Manipulate Sound
 super + {F1,F2,F3}
-    ~/.local/scripts/sound.sh {=,-,+}
+    $SCRIPTS/sound.sh {=,-,+}
 
 # Decrease brightness
 super + F5
