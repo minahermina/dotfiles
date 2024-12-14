@@ -8,6 +8,8 @@ HISTFILE=~/.bash_history
 PROMPT_COMMAND="history -a; history -n; $PROMPT_COMMAND"
 HISTCONTROL=ignoredups
 
+alias 2..='../..'
+alias 3..='../../..'
 alias ls='ls --color=auto --group-directories-first'
 alias ll='ls -lah'
 alias grep='grep --color=auto'
@@ -40,7 +42,7 @@ alias ys='yay -Ss'
 
  
 goto(){
-    local file=$(find . | fzf --reverse --header="Jump to location"  --height=50% )
+    local file=$(find . | fzf --header="Jump to location"  )
     [ -d "$file" ] && cd $file || cd $(dirname "$file")
 }
 
