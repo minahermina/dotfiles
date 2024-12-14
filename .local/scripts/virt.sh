@@ -1,27 +1,21 @@
 #!/bin/sh
 #
-# IsoImages=$(ls /mnt/D/OSs/)
+diskImages=$(ls ~/vms/)
 
-# get all disk images
-DiskImages=$(ls ~/vms/)
+diskImage=$(echo  "$diskImages" | dmenu -i -p "Choose a Disk Image:")
 
-if pgrep -x "Hyprland" > /dev/null; then
-    diskImage=$(echo "$DiskImages" | rofi -dmenu -p "Choose a Disk Image:"  -theme ~/.config/rofi/launchers/type-1/style-3.rasi )
-else
-    diskImage=$(echo  "$DiskImages" | dmenu -i -p "Choose a Disk Image:")
-fi
 
 
 qemu-system-x86_64 \
-   -enable-kvm \
-   -bios /usr/share/edk2-ovmf/x64/OVMF.4m.fd \
-   -boot menu=on \
-   -drive file=/home/mina/vms/"$diskImage" \
-   -m 6G \
-   -cpu host \
-   -smp 4 \
-   -vga virtio \
-  -display sdl,gl=on \
+    -enable-kvm \
+    -bios /usr/share/edk2-ovmf/x64/OVMF.4m.fd \
+    -boot menu=on \
+    -drive file=/home/mina/vms/"$diskImage" \
+    -m 6G \
+    -cpu host \
+    -smp 4 \
+    -vga virtio \
+    -display gtk,gl=on \
    # -chardev socket,path=/tmp/port1,server=on,wait=off,id=port1-char \
    # -device virtio-serial \
    # -device virtserialport,id=port1,chardev=port1-char,name=mina-ssh \
