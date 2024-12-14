@@ -3,8 +3,20 @@ name = "GitHub"
 url = "https://github.com/minahermina"
 
 [[links]]
+name = "Graduation Project"
+url = "https://github.com/AbdelrahmanMohamed16/Graduation_Project"
+
+[[links]]
+name = "Figma"
+url = "https://www.figma.com/"
+
+[[links]]
 name = "FCAI 2025"
 url = "https://drive.google.com/drive/folders/1Uxp6obAt3XfiH5fhWH6xCYlowoGLEbjr"
+
+[[links]]
+name = "Cambridge Dictionary"
+url = "https://dictionary.cambridge.org/"
 
 [[links]]
 name = "FCAI 2024"
@@ -306,3 +318,7 @@ url = "https://jsoncrack.com/"
 [[links]]
 name = "Library Genesis"
 url = "https://www.libgen.rs/"
+
+[[links]]
+name = "C Utils Library"
+url = "https://github.com/barrust/c-utils?tab=readme-ov-file"
