@@ -19,12 +19,11 @@ static const char *fonts[]          = {
     
     
 static const char dmenufont[]       = "Iosevka Term Nerd Font :style=Medium:pixelsize=14:antialias=true:autohint=true";
-// static const char col_gray1[]       = "#16181d";
-static const char col_gray1[]       = "#181818";
-static const char col_gray2[]       = "#555555"; 
+static const char col_gray1[]       = "#111317";
+static const char col_gray2[]       = "#555555";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#cccccc";
+static const char col_cyan[]        = "#eeeeee";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	// [SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -46,7 +45,7 @@ static const Rule rules[] = {
     /* class                    instance                title           tags mask     switchtotag    isfloating   monitor */
     { "st-256color"             ,NULL ,                 NULL,           1 << 0,            1,           0,          -1 },
     { BROWSER                   ,NULL ,                 NULL,           1 << 1,            1,           0,          -1 },
-    // { NULL                      ,NULL ,                 NULL,           1 << 2,            1,           0,          -1 },
+    { "octave-gui"              ,NULL ,                 NULL,           1 << 2,            1,           0,          -1 },
     { "Zathura"                 ,NULL ,                 NULL,           1 << 3,            1,           0,          -1 },
     { "Com.github.xournalpp.xournalpp"                 ,NULL ,                 NULL,           1 << 3,            1,           0,          -1 },
     { "mpv"                     ,NULL ,                 NULL,           1 << 4,            1,           0,          -1 },
@@ -100,7 +99,7 @@ static const Key keys[] = {
 	{ MODKEY,                               XK_Tab,         view,               {0} }, 
     { MODKEY,                               XK_comma,       focusmon,           {.i = -1 } },
     { MODKEY,                               XK_period,      focusmon,           {.i = +1 } },
-    { MODKEY|ShiftMask,                     XK_f,           togglefullscr,      {0} },
+    { MODKEY,                               XK_f,           togglefullscr,      {0} },
 	{ MODKEY|ShiftMask,                     XK_h,           setcfact,           {.f = +0.25} },
 	{ MODKEY|ShiftMask,                     XK_l,           setcfact,           {.f = -0.25} },
     { MODKEY|ShiftMask,                     XK_b,           togglebar,          {0} },

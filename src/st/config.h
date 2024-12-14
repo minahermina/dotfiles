@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Iosevka Term Nerd Font :style=Regular:pixelsize=18:antialias=true:autohint=true";
+static char *font = "Iosevka Term Nerd Font :style=Medium:pixelsize=18:antialias=true:autohint=true";
 static char *font2[] = { 
     "NotoColorEmoji:pixelsize=15:antialias=true:autohint=true"  ,// fallback font
 };
@@ -98,10 +98,10 @@ char *termname = "st-256color";
 unsigned int tabspaces = 8;
 
 /* bg opacity */
-// float alpha = 0.95;
 float alpha = 1.0;
-#include "./gruber-darker.h"
-// #include "./mycolors.h"
+// float alpha = 0.0;
+// #include "./gruber-darker.h"
+#include "./mycolors.h"
 
 /*
  * https://invisible-island.net/xterm/ctlseqs/ctlseqs.html#h4-Functions-using-CSI-_-ordered-by-the-final-character-lparen-s-rparen:CSI-Ps-SP-q.1D81
@@ -170,9 +170,9 @@ static Shortcut shortcuts[] = {
 	{ ControlMask,          XK_Print,       toggleprinter,  {.i =  0} },
 	{ ShiftMask,            XK_Print,       printscreen,    {.i =  0} },
 	{ XK_ANY_MOD,           XK_Print,       printsel,       {.i =  0} },
-	{ TERMMOD,              XK_plus,        zoom,           {.f = +1} },
-	{ TERMMOD,              XK_underscore,       zoom,           {.f = -1} },
-	{ TERMMOD,              XK_Home,        zoomreset,      {.f =  0} },
+    { TERMMOD,              XK_plus,        zoom,           {.f = +1} },
+	{ TERMMOD,              XK_underscore,  zoom,           {.f = -1} },
+	{ TERMMOD,              XK_BackSpace,        zoomreset,      {.f =  0} },
 	{ TERMMOD,              XK_Y,           clipcopy,       {.i =  0} },
 	{ TERMMOD,              XK_P,           clippaste,      {.i =  0} },
 	// { TERMMOD,              XK_P,           selpaste,       {.i =  0} },

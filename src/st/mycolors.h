@@ -1,9 +1,9 @@
 /* /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
 	/* 8 normal colors */
-	"#585B70",
+    "#101010", /* black   */
 	"#F38BA8",
-	"#89B4FA",
+	"#7ba2e1",
 	"#F9E2AF",
 	"#FFFFFF",
 	"#F5C2E7",
@@ -11,18 +11,19 @@ static const char *colorname[] = {
 	"#F5F5F5",
 
 	/* 8 bright colors */
-	"#585B70",
+    "#111111", /* bright black   */
 	"#F38BA8",
 	"#FFFFFF",
 	"#F9E2AF",
-	"#89B4FA",
+	"#7ba2e1",
 	"#F5C2E7",
 	"#94E2D5",
 	"#F5F5F5",
 
 [256] = "#FFFFFF", /* default foreground colour */
-[257] = "#16181d", /* default background colour */
+[257] = "#111317", /* default background colour */
 [258] = "#FAF9F6", /*575268*/
+// [258] = "#7ba2e1", /*575268*/
 
 };
 
