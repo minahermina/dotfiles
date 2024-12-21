@@ -3,7 +3,8 @@ xmodmap $XDG_CONFIG_HOME/xmodmap/Xmodmap
 dbus-update-activation-environment --all
 sxhkd &
 ofh &
-xsetroot -solid "#111317"
+xsetroot -solid "#161616"
+xset r rate 200 30 &
 greenclip daemon &
 dwmblocks &
 dwm
