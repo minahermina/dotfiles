@@ -29,7 +29,6 @@ git
 git-lfs
 github-cli
 glfw
-glm
 grim
 grub
 gstreamer
@@ -38,7 +37,6 @@ gvfs-mtp
 hplip
 htop
 i2c-tools
-imagemagick
 iptables-nft
 irssi
 jdk-openjdk
@@ -58,8 +56,8 @@ mesa-utils
 mpv
 musl
 ncdu
+nemo
 neofetch
-neovide
 neovim
 net-tools
 network-manager-applet
@@ -67,7 +65,6 @@ networkmanager
 nodejs
 noto-fonts
 noto-fonts-emoji
-npm
 ntfs-3g
 ntp
 nvidia-dkms
@@ -81,7 +78,6 @@ opendoas
 os-prober
 p7zip
 pamixer
-pandoc-cli
 pavucontrol
 picom
 pipewire
@@ -118,8 +114,6 @@ qemu-ui-sdl
 qemu-user
 ripgrep
 rsync
-rust
-rust-analyzer
 screenkey
 slurp
 sof-firmware
@@ -127,6 +121,9 @@ speedtest-cli
 strace
 sxhkd
 sxiv
+tcc
+texlive-binextra
+texlive-fontsextra
 texlive-fontsrecommended
 texlive-latexextra
 texlive-latexrecommended
@@ -134,13 +131,11 @@ tmux
 trash-cli
 tree
 ttf-font-awesome
-ttf-victor-mono-nerd
 ueberzug
 ufw
 unrar-free
 unzip
 usbutils
-vim
 virglrenderer
 virt-manager
 wget
