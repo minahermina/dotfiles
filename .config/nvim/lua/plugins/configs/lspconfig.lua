@@ -1,5 +1,6 @@
 -- Global mappings.
-vim.keymap.set("n", "<space>a", vim.diagnostic.open_float) vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
+vim.keymap.set("n", "<space>a", vim.diagnostic.open_float) 
+-- vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
 -- vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
 -- vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist)
 --) Use LspAttach autocommand to only map the following keys
@@ -71,10 +72,16 @@ lspconfig.ts_ls.setup {
             disableSuggestions = true,
         }
     }
-
 }
 
-local servers = { "jdtls", "rust_analyzer", "ts_ls", "clangd", "lua_ls", "pyright" }
+lspconfig.ltex.setup {
+    cmd = { 'ltex-ls' },
+    on_attach = vim.lsp.common_on_attach,
+    root_dir = vim.fn.expand('%:p:h'),
+    single_file_support = true
+}
+
+local servers = { "jdtls", "rust_analyzer", "clangd", "lua_ls", "pyright", "ltex" }
 
 for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup {

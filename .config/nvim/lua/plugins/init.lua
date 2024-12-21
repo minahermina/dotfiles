@@ -2,23 +2,9 @@ local plugins = {
 
     -- Themes
     { "RRethy/base16-nvim" },
+    { "EdenEast/nightfox.nvim" },
 
-    {
-        "m00qek/baleia.nvim",
-        version = "*",
-        config = function()
-            vim.g.baleia = require("baleia").setup({ log = 'INFO' })
-
-            -- Command to colorize the current buffer
-            vim.api.nvim_create_user_command("BaleiaColorize", function()
-                vim.g.baleia.once(vim.api.nvim_get_current_buf())
-            end, { bang = true })
-
-            -- Command to show logs
-            vim.api.nvim_create_user_command("BaleiaLogs", vim.g.baleia.logger.show, { bang = true })
-        end,
-    },
-    {
+    --[[ {
         "ej-shafran/compile-mode.nvim",
         tag = "v5.3.1",
         -- you can just use the latest version:
@@ -37,7 +23,23 @@ local plugins = {
                 baleia_setup = true,
             }
         end
-    },
+    }, ]]
+
+    --[[ {
+        "m00qek/baleia.nvim",
+        version = "*",
+        config = function()
+            vim.g.baleia = require("baleia").setup({ log = 'INFO' })
+
+            -- Command to colorize the current buffer
+            vim.api.nvim_create_user_command("BaleiaColorize", function()
+                vim.g.baleia.once(vim.api.nvim_get_current_buf())
+            end, { bang = true })
+
+            -- Command to show logs
+            vim.api.nvim_create_user_command("BaleiaLogs", vim.g.baleia.logger.show, { bang = true })
+        end,
+    }, ]]
 
 
     { "tpope/vim-dadbod" },
@@ -62,7 +64,9 @@ local plugins = {
 
 
 
-    { "mg979/vim-visual-multi" },
+    {
+        "mg979/vim-visual-multi" 
+    },
 
     {
         "christoomey/vim-tmux-navigator",
@@ -149,13 +153,13 @@ local plugins = {
     },
 
     -- file tree
-    {
+    --[[ {
         "nvim-tree/nvim-tree.lua",
         cmd = { "NvimTreeToggle", "NvimTreeFocus" },
         config = function()
             require("plugins.configs.nvim-tree");
         end,
-    },
+    }, ]]
 
     -- icons, for UI related plugins
     {
@@ -204,15 +208,16 @@ local plugins = {
     -- we use cmp plugin only when in insert mode
     -- so lets lazyload it at InsertEnter event, to know all the events check h-events
     -- completion , now all of these plugins are dependent on cmp, we load them after cmp
-    --[[ {
+    {
         "hrsh7th/nvim-cmp",
         event = "InsertEnter",
         dependencies = {
             -- cmp sources
+            "onsails/lspkind.nvim",
             "hrsh7th/cmp-buffer",
             "hrsh7th/cmp-path",
             "hrsh7th/cmp-nvim-lsp",
-            "saadparwaiz1/cmp_luasnip",
+            -- "saadparwaiz1/cmp_luasnip",
             "hrsh7th/cmp-nvim-lua",
 
             -- snippets
@@ -220,18 +225,18 @@ local plugins = {
             "rafamadriz/friendly-snippets",
 
             -- snippets engine
-            {
+            --[[ {
                 "L3MON4D3/LuaSnip",
                 config = function()
                     require("luasnip.loaders.from_vscode").lazy_load()
                 end,
-            },
+            }, ]]
 
         },
         config = function()
-            require "plugins.configs.cmp"
+             require "plugins.configs.cmp"
         end,
-    }, ]]
+    }, 
 
     -- Mason (package manager for LSP servers, Linters, Formatters, DAP servers)
     {
@@ -283,15 +288,15 @@ local plugins = {
         lazy = true,
     },
 
-    -- -- Telescope
-    -- {
-    --     "nvim-telescope/telescope.nvim",
-    --     cmd = "Telescope",
-    --     config = function()
-    --         require "plugins.configs.telescope"
-    --     end,
-    -- },
-    --
+     -- Telescope
+     --[[ {
+         "nvim-telescope/telescope.nvim",
+         cmd = "Telescope",
+         config = function()
+             require "plugins.configs.telescope"
+         end,
+     }, ]]
+
 
     {
         "lewis6991/gitsigns.nvim",
@@ -310,14 +315,14 @@ local plugins = {
         end,
     },
 
-    {
+    --[[ {
         "ray-x/lsp_signature.nvim",
         event = "BufRead",
         config = function()
             require "lsp_signature".on_attach()
         end,
-    },
+    }, ]]
 }
 
 require("lazy").setup(plugins, require "plugins.configs.lazy")
-require("plugins.configs.lsp-signature")
+-- require("plugins.configs.lsp-signature")

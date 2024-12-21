@@ -16,16 +16,16 @@ function M.opts_extend(default, opts)
 end
 
 -- Compile dmenu, dwm, and st after :w in config.def.h || config.h
--- vim.api.nvim_create_autocmd("BufWritePost", {
---     pattern = {"config.def.h", "config.h"},
---     callback = function()
---         local dir = vim.fn.expand('%:p:h')
---         vim.cmd('cd ' .. dir)
---         vim.opt.makeprg = 'rm -rf config.h && doas make install clean'
---         vim.cmd('make')
---         vim.opt.makeprg = 'make'
---     end,
--- })
+ vim.api.nvim_create_autocmd("BufWritePost", {
+     pattern = {"config.def.h", "config.h"},
+     callback = function()
+         local dir = vim.fn.expand('%:p:h')
+         vim.cmd('cd ' .. dir)
+         vim.opt.makeprg = 'rm -rf config.h && doas make install clean'
+         vim.cmd('make')
+         vim.opt.makeprg = 'make'
+     end,
+ })
 
 -- -----------------------------------------------------
 vim.api.nvim_create_autocmd('TextYankPost', {
@@ -43,5 +43,16 @@ vim.api.nvim_create_autocmd({ "BufEnter", "FileType" }, {
     group = vim.api.nvim_create_augroup('dont-comment', { clear = true }),
     command = "setlocal formatoptions-=c formatoptions-=r formatoptions-=o",
 })
+
+
+-- -----------------------------------------------------
+vim.api.nvim_create_autocmd('TermOpen', {
+    group = vim.api.nvim_create_augroup('custom-term-open', { clear = true }),
+    callback = function()
+        vim.opt.number = false
+        vim.opt.relativenumber = false
+    end
+})
+
 
 return M

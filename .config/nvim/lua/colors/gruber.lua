@@ -7,7 +7,7 @@ vim.o.background = "dark"
 vim.g.colors_name = "gruber"
 
 local colors = {
-    black =     {"#111317", 234},
+    black =     {"#161616", 234},
     brown =     {"#af875f", 137},
     blue =      {"#7ba2e1", 235},
     lgreen =    {"#afd7af", 113},
@@ -48,8 +48,8 @@ hl("EndOfBuffer",   {fg = colors.black})
 hl("Error",         {fg = colors.red})
 hl("ErrorMsg",      {fg = colors.red})
 hl("FoldColumn",    {fg = colors.brown, bg = colors.blue})
-hl("Folded",        {fg = colors.brown, bg = colors.blue, style = "italic"})
-hl("Function",      {fg = colors.gray })
+hl("Folded",        {fg = colors.brown, bg = colors.black, style = "italic"})
+hl("Function",      {fg = colors.gray , style = "bold"})
 hl("identifier",    {fg = colors.white})
 hl("Ignore",        {fg = colors.black})
 hl("MatchParen",    {fg = colors.blue, style = "bold"})
@@ -57,9 +57,9 @@ hl("MoreMsg",       {fg = colors.lgreen})
 hl("NonText",       {fg = colors.white})
 hl("Normal",        {fg = colors.white, bg = colors.black})
 hl("Pmenu",         {fg = colors.white, bg = colors.black})
-hl("PmenuSbar",     {bg = colors.blue})
+hl("PmenuSbar",     {bg = colors.black})
+hl("PmenuThump",    {bg = colors.blue})
 hl("PmenuSel",      {fg = colors.black, bg = colors.blue, style = "bold"})
-hl("PmenuThumb",    {bg = colors.black})
 hl("PreProc",       {fg = colors.blue})
 hl("Question",      {fg = colors.white})
 hl("Special",       {fg = colors.white})

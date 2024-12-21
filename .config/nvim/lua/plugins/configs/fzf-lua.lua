@@ -9,7 +9,7 @@ require("fzf-lua").setup({
         ["--highlight-line"] = true,
     },
     oldfiles = {
-        include_current_session = true,
+        -- include_current_session = true,
     },
 
     winopts = {
