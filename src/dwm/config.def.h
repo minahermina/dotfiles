@@ -1,5 +1,5 @@
 /* appearance */
-static const unsigned int borderpx  = 2;        /* border pixel of windows */
+static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int gappx     = 10;       /* gaps between windows */
 static const unsigned int snap      = 20;       /* snap pixel */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
@@ -32,7 +32,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "0" };
+static const char *tags[] = { "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X" };
 
 
 #define BROWSER  "Brave-browser"
@@ -67,6 +67,8 @@ static const Layout layouts[] = {
 	/* symbol     arrange function */
 	{ "[T]",      tile },    /* first entry is default */
 	{ "<F>",      NULL },    /* no layout function means floating behavior */
+    { "{M}",    monocle} ,
+
 };
 
 /* key definitions */
@@ -88,9 +90,13 @@ static const char *termcmd[]  = { "st", NULL };
 static const Key keys[] = {
 	/* modifier                             key             function            argument */
     { MODKEY,                               XK_e,           togglefloating,     {0} },
-    { MODKEY|ShiftMask,                     XK_t,           setlayout,          {0} },
-    { MODKEY,                               XK_a,           shiftviewclients,   { .i = +1 } },         
-    { MODKEY|ShiftMask,                     XK_a,           shiftviewclients,   { .i = -1 } },         
+    { MODKEY|ShiftMask,                     XK_t,           setlayout,          {.v = &layouts[0]}},
+    { MODKEY,                               XK_t,           setlayout,          {.v = &layouts[1]}},
+    { MODKEY|ShiftMask,                     XK_m,           setlayout,          {.v = &layouts[2]}},
+    { MODKEY,                               XK_space,       setlayout,          {0} },
+
+    { MODKEY,                               XK_a,           shiftviewclients,   { .i = +1 } },
+    { MODKEY|ShiftMask,                     XK_a,           shiftviewclients,   { .i = -1 } },
 	{ MODKEY,                               XK_j,           focusstack,         {.i = +1 } },
 	{ MODKEY,                               XK_k,           focusstack,         {.i = -1 } },
 	{ MODKEY,                               XK_h,           setmfact,           {.f = -0.05} },
