@@ -54,8 +54,8 @@ map('n', '<leader>8', '<Cmd>LualineBuffersJum 8<CR>', options)
 map('n', "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],  { desc = "Replace Word Under cursor" })
 map('x', "<leader>s", [["zy:%s/<C-r>z/<C-r>z/gI<Left><Left><Left>]],           { desc = "Replacing visually highlighted text" })
 
-map('n', '<leader>g', ':silent grep <C-r><C-w> <CR>',                { desc = 'Grep word Under cursor' }, options)
-map('v', '<leader>g', 'y:silent grep -rn "<C-R>""<CR>',              { desc = 'Grep highlighted Text' }, options)
+map('n', '<leader>gg', ':silent grep <C-r><C-w> <CR>',                { desc = 'Grep word Under cursor' }, options)
+map('v', '<leader>gg', 'y:silent grep -rn "<C-R>""<CR>',              { desc = 'Grep highlighted Text' }, options)
 
 
 -- comment.nvim
