@@ -5,12 +5,9 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Iosevka Term Nerd Font :style=Medium:pixelsize=18:antialias=true:autohint=true";
-static char *font2[] = { 
-    "NotoColorEmoji:pixelsize=15:antialias=true:autohint=true"  ,// fallback font
-};
-
-static int borderpx = 0;
+static char *font = "IosevkaTerm Nerd Font :pixelsize=18:antialias=true:autohint=true";
+// static char *font = "JetBrainsMono Nerd Font :style=Italic:pixelsize=18:antialias=true:autohint=true";
+static int borderpx = 1;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -57,14 +54,14 @@ int allowwindowops = 0;
  * near minlatency, but it waits longer for slow updates to avoid partial draw.
  * low minlatency will tear/flicker more, as it can "detect" idle too early.
  */
-static double minlatency = 8;
+static double minlatency = 2;
 static double maxlatency = 33;
 
 /*
  * blinking timeout (set to 0 to disable blinking) for the terminal blinking
  * attribute.
  */
-static unsigned int blinktimeout = 500;
+static unsigned int blinktimeout = 600;
 
 /*
  * thickness of underline and bar cursors
@@ -96,11 +93,6 @@ char *termname = "st-256color";
  *	stty tabs
  */
 unsigned int tabspaces = 8;
-
-/* bg opacity */
-float alpha = 1.0;
-// float alpha = 0.0;
-// #include "./gruber-darker.h"
 #include "./mycolors.h"
 
 /*
@@ -152,7 +144,6 @@ static uint forcemousemod = ShiftMask;
  */
 static MouseShortcut mshortcuts[] = {
 	/* mask                 button   function        argument       release */
-	{ XK_ANY_MOD,           Button3, selpaste,       {.i = 0},      1 },
 	{ XK_ANY_MOD,           Button2, selpaste,       {.i = 0},      1 },
 	{ ShiftMask,            Button4, ttysend,        {.s = "\033[5;2~"} },
 	{ XK_ANY_MOD,           Button4, ttysend,        {.s = "\031"} },
@@ -170,12 +161,12 @@ static Shortcut shortcuts[] = {
 	{ ControlMask,          XK_Print,       toggleprinter,  {.i =  0} },
 	{ ShiftMask,            XK_Print,       printscreen,    {.i =  0} },
 	{ XK_ANY_MOD,           XK_Print,       printsel,       {.i =  0} },
-    { TERMMOD,              XK_plus,        zoom,           {.f = +1} },
-	{ TERMMOD,              XK_underscore,  zoom,           {.f = -1} },
+	{ TERMMOD,              XK_plus,       zoom,           {.f = +1} },
+	{ TERMMOD,              XK_underscore,        zoom,           {.f = -1} },
 	{ TERMMOD,              XK_BackSpace,        zoomreset,      {.f =  0} },
 	{ TERMMOD,              XK_Y,           clipcopy,       {.i =  0} },
 	{ TERMMOD,              XK_P,           clippaste,      {.i =  0} },
-	// { TERMMOD,              XK_P,           selpaste,       {.i =  0} },
+	// { TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
 	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
 };
@@ -449,4 +440,3 @@ static char ascii_printable[] =
 	" !\"#$%&'()*+,-./0123456789:;<=>?"
 	"@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_"
 	"`abcdefghijklmnopqrstuvwxyz{|}~";
-
