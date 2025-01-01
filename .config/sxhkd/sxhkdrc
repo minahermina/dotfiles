@@ -1,6 +1,9 @@
 super + w
     $BROWSER
 
+super + g
+    ~/.local/bin/llm
+
 super + BackSpace
    playerctl play-pause	
 

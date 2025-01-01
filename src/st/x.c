@@ -1143,8 +1143,8 @@ void
 xinit(int cols, int rows)
 {
 	XGCValues gcvalues;
-	Window parent, root;
 	Pixmap blankpm;
+	Window parent, root;
 	pid_t thispid = getpid();
 	XColor xmousefg, xmousebg;
 

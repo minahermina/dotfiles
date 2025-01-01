@@ -34,9 +34,9 @@ export PYTHON_HISTORY=$XDG_STATE_HOME/python/history
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
   --color=fg:#ffffff,fg+:#d0d0d0,bg:-1,bg+:#262626
   --color=hl:'"$MAIN_COLOR"',hl+:'"$MAIN_COLOR"',info:#afaf87,marker:#87ff00
-  --color=pointer:#73D936
+  --color=pointer:'"$MAIN_COLOR"'
   --preview-window noborder
-  --marker=">" --pointer="◆" --separator="─" --scrollbar="│"'
+  --marker=">" --separator="─" --scrollbar="│"'
 
 [ $(tty) = "/dev/tty1" ] && startx
 

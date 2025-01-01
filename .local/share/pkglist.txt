@@ -1,3 +1,4 @@
+7zip
 acpi
 alsa-tools
 alsa-utils
@@ -8,10 +9,12 @@ bat
 bind
 blueman
 bluez-utils
+bridge-utils
 brightnessctl
 btop
 clang
 cronie
+cups
 dash
 dbus-glib
 dhcp
@@ -76,7 +79,6 @@ openbsd-netcat
 opencl-nvidia
 opendoas
 os-prober
-p7zip
 pamixer
 pavucontrol
 picom
@@ -88,6 +90,8 @@ pulsemixer
 pyright
 python-black
 python-pip
+python-pyqt5
+python-pyqt5-webengine
 python-toml
 python-virtualenv
 qemu-audio-alsa
@@ -121,7 +125,6 @@ speedtest-cli
 strace
 sxhkd
 sxiv
-tcc
 texlive-binextra
 texlive-fontsextra
 texlive-fontsrecommended

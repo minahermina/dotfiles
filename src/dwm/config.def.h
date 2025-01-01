@@ -12,12 +12,12 @@ static const int topbar             = 0;        /* 0 means bottom bar */
 static const int splitstatus        = 0;        /* 1 for split status items */
 static const char *splitdelim        = ";";       /* Character used for separating status */
 
-static const char *fonts[]          = { 
-    "Iosevka Term Nerd Font :style=Medium:pixelsize=14:antialias=true:autohint=true",
+static const char *fonts[]          = {
+    "IosevkaTermSlab Nerd Font :style=Medium:pixelsize=14:antialias=true:autohint=true",
     "NotoColorEmoji:pixelsize=20:antialias=true:autohint=true" 
 }; 
-    
-    
+
+
 static const char dmenufont[]       = "Iosevka Term Nerd Font :style=Medium:pixelsize=14:antialias=true:autohint=true";
 static const char col_gray1[]       = "#161616";
 static const char col_gray2[]       = "#555555";
@@ -90,11 +90,10 @@ static const char *termcmd[]  = { "st", NULL };
 static const Key keys[] = {
 	/* modifier                             key             function            argument */
     { MODKEY,                               XK_e,           togglefloating,     {0} },
-    { MODKEY|ShiftMask,                     XK_t,           setlayout,          {.v = &layouts[0]}},
+    { MODKEY|ShiftMask,                     XK_t,           setlayout,          {.v = &layouts[0]}}, 
     { MODKEY,                               XK_t,           setlayout,          {.v = &layouts[1]}},
     { MODKEY|ShiftMask,                     XK_m,           setlayout,          {.v = &layouts[2]}},
     { MODKEY,                               XK_space,       setlayout,          {0} },
-
     { MODKEY,                               XK_a,           shiftviewclients,   { .i = +1 } },
     { MODKEY|ShiftMask,                     XK_a,           shiftviewclients,   { .i = -1 } },
 	{ MODKEY,                               XK_j,           focusstack,         {.i = +1 } },

@@ -2,7 +2,20 @@ local plugins = {
 
     -- Themes
     { "RRethy/base16-nvim" },
-    { "EdenEast/nightfox.nvim" },
+    {
+    "kawre/leetcode.nvim",
+    build = ":TSUpdate html", -- if you have `nvim-treesitter` installed
+    dependencies = {
+        "nvim-telescope/telescope.nvim",
+        -- "ibhagwan/fzf-lua",
+        "nvim-lua/plenary.nvim",
+        "MunifTanjim/nui.nvim",
+    },
+    opts = {
+        -- configuration goes here
+    },
+},
+    -- { "EdenEast/nightfox.nvim" },
 
     --[[ {
         "ej-shafran/compile-mode.nvim",
@@ -65,7 +78,7 @@ local plugins = {
 
 
     {
-        "mg979/vim-visual-multi" 
+        "mg979/vim-visual-multi"
     },
 
     {
@@ -95,6 +108,7 @@ local plugins = {
     },
 
     -- fill git integration in neovim
+
     --[[ {
         "chrisgrieser/nvim-tinygit",
         ft = { "gitrebase", "gitcommit" }, -- so ftplugins are loaded
@@ -208,7 +222,7 @@ local plugins = {
     -- we use cmp plugin only when in insert mode
     -- so lets lazyload it at InsertEnter event, to know all the events check h-events
     -- completion , now all of these plugins are dependent on cmp, we load them after cmp
-    {
+    --[[ {
         "hrsh7th/nvim-cmp",
         event = "InsertEnter",
         dependencies = {
@@ -225,18 +239,18 @@ local plugins = {
             "rafamadriz/friendly-snippets",
 
             -- snippets engine
-            --[[ {
+            {
                 "L3MON4D3/LuaSnip",
                 config = function()
                     require("luasnip.loaders.from_vscode").lazy_load()
                 end,
-            }, ]]
+            },
 
         },
         config = function()
              require "plugins.configs.cmp"
         end,
-    }, 
+    },  ]]
 
     -- Mason (package manager for LSP servers, Linters, Formatters, DAP servers)
     {

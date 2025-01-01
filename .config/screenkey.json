@@ -7,7 +7,7 @@
     "position": "fixed",
     "persist": true,
     "window": null,
-    "font_desc": "IosevkaTerm Nerd Font Medium 7",
+    "font_desc": "IosevkaTerm Nerd Font 7",
     "font_size": "small",
     "font_color": "white",
     "bg_color": "black",
@@ -20,10 +20,10 @@
     "vis_shift": true,
     "vis_space": true,
     "geometry": [
-        1323,
-        787,
-        597,
-        199
+        1504,
+        7,
+        322,
+        115
     ],
     "screen": 0,
     "start_disabled": false,
