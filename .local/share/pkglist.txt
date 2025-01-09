@@ -6,12 +6,14 @@ aria2
 base
 base-devel
 bat
+bc
 bind
 blueman
 bluez-utils
 bridge-utils
 brightnessctl
 btop
+busybox
 clang
 cronie
 cups

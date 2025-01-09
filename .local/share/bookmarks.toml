@@ -51,10 +51,6 @@ name = "Dotfiles"
 url = "https://github.com/minahermina/dotfiles"
 
 [[links]]
-name = "Linux-Programming-Interface-Journey"
-url = "https://github.com/minahermina/Linux-Programming-Interface-Journey"
-
-[[links]]
 name = "YTS"
 url = "https://yts.mx/"
 

@@ -74,7 +74,7 @@ super + shift + Delete
     slock
 
 # Take screenshot
-super + shift + s
+super + s
 	maim -us -m 10 -D  | xclip -selection clipboard -t image/png
 
 # Manipulate Sound

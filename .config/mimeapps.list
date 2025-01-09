@@ -22,6 +22,7 @@ text/plain=nvim.desktop
 text/x0c=nvim.desktop
 text/x-c=nvim.desktop
 application/vnd.openxmlformats-officedocument.presentationml.presentation=libreoffice-impress.desktop
+x-scheme-handler/postman=Postman.desktop
 
 [Added Associations]
 audio/*=mpv.desktop;

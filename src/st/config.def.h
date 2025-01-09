@@ -6,8 +6,8 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 static char *font = "IosevkaTermSlab Nerd Font :pixelsize=18:antialias=true:autohint=true";
-// static char *font = "JetBrainsMono Nerd Font :style=Italic:pixelsize=18:antialias=true:autohint=true";
-static int borderpx = 1;
+// static char *font = "DepartureMono Nerd Font Mono :style=Italic:pixelsize=18:antialias=true:autohint=true";
+static int borderpx = 0;
 
 /*
  * What program is execed by st depends of these precedence rules:
