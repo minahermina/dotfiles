@@ -15,12 +15,14 @@ brightnessctl
 btop
 busybox
 clang
+cmatrix
 cronie
 cups
 dash
 dbus-glib
 dhcp
 dnsmasq
+dunst
 efibootmgr
 emacs
 ffmpeg
@@ -47,6 +49,7 @@ irssi
 jdk-openjdk
 lazygit
 lf
+libqalculate
 libreoffice-fresh
 libvirt
 linux-firmware
@@ -120,6 +123,8 @@ qemu-ui-sdl
 qemu-user
 ripgrep
 rsync
+rust
+rust-analyzer
 screenkey
 slurp
 sof-firmware
@@ -136,6 +141,7 @@ tmux
 trash-cli
 tree
 ttf-font-awesome
+ttf-jetbrains-mono-nerd
 ueberzug
 ufw
 unrar-free
@@ -143,6 +149,7 @@ unzip
 usbutils
 virglrenderer
 virt-manager
+volumeicon
 wget
 xclip
 xcolor
@@ -188,6 +195,7 @@ xorg-xsetroot
 xorg-xwd
 xorg-xwininfo
 xournalpp
+xwallpaper
 yt-dlp
 zathura
 zathura-pdf-mupdf

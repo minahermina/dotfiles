@@ -222,7 +222,7 @@ local plugins = {
     -- we use cmp plugin only when in insert mode
     -- so lets lazyload it at InsertEnter event, to know all the events check h-events
     -- completion , now all of these plugins are dependent on cmp, we load them after cmp
-    --[[ {
+    {
         "hrsh7th/nvim-cmp",
         event = "InsertEnter",
         dependencies = {
@@ -250,7 +250,7 @@ local plugins = {
         config = function()
              require "plugins.configs.cmp"
         end,
-    },  ]]
+    }, 
 
     -- Mason (package manager for LSP servers, Linters, Formatters, DAP servers)
     {

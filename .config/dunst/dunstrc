@@ -12,6 +12,7 @@
     # "keyboard" needs a window manager that exports the _NET_ACTIVE_WINDOW property. This should be the case for almost all modern window managers.
     # If this option is set to mouse or keyboard, the monitor option will be ignored.
     follow = mouse
+    icon_position=off
 
     # The geometry of the window:
     #   [{width}]x{height}[+/-{x}+/-{y}]
