@@ -26,6 +26,7 @@ end
          vim.opt.makeprg = 'make'
      end,
  })
+
 -- Compiles any latex file
 vim.api.nvim_create_autocmd("BufWritePost", {
     pattern = {"*.tex", "*.latex"},
@@ -35,7 +36,7 @@ vim.api.nvim_create_autocmd("BufWritePost", {
         local file = vim.fn.expand('%:t')  -- Filename of the current file
         vim.cmd('cd ' .. dir)
         vim.opt.makeprg = 'pdflatex ' .. file
-        vim.cmd('silent make')
+        vim.cmd('silent make!')
         vim.opt.makeprg = 'make'
     end,
 })
