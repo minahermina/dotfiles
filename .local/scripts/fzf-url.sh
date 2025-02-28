@@ -36,7 +36,6 @@ selected_urls=$(echo "$items" | awk '{print $2}' | fzf)
 
 echo $selected_urls | xclip -selection clipboard
 
-notify-send $selected_urls
 
 
 [ -z "$selected_urls" ] && exit 

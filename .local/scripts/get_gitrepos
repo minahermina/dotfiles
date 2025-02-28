@@ -28,10 +28,11 @@ keys = list(links_dict.keys())
 repos_names = '\n'.join(keys)
 
 choice = run_dmenu(repos_names, "Choose a repo:", 10)
+browser = os.environ['BROWSER']
 
 if choice in links_dict :
     selected_url = links_dict[choice]
-    run_cmd(f'brave {selected_url}')
+    run_cmd(f'{browser} {selected_url}')
     move2_tagN(2)
 
 elif choice == 'new':

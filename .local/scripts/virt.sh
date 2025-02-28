@@ -11,7 +11,7 @@ qemu-system-x86_64 \
     -bios /usr/share/edk2-ovmf/x64/OVMF.4m.fd \
     -boot menu=on \
     -drive file=/home/mina/vms/"$diskImage" \
-    -m 6G \
+    -m 4G \
     -cpu host \
     -smp 4 \
     -vga virtio \

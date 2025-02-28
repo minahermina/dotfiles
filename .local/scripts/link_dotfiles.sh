@@ -13,6 +13,7 @@ dirs=(
         ".config/zathura"
         ".config/picom"
         ".config/kanata"
+        ".config/xmodmap"
         ".config/mpv"
         ".config/rofi"
         ".local/scripts"
