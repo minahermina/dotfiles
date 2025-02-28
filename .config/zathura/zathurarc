@@ -2,7 +2,7 @@
 set selection-clipboard clipboard
 # zathurarc-dark
 set sandbox none
-set font "inconsolata 11"
+set font "IosevkaSlabTerm 11"
 set default-bg "#000000" #00
 set default-fg "#F7F7F6" #01
 
