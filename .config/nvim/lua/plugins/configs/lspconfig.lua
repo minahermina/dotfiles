@@ -74,14 +74,21 @@ lspconfig.ts_ls.setup {
     }
 }
 
-lspconfig.ltex.setup {
+--[[ lspconfig.ltex.setup {
     cmd = { 'ltex-ls' },
+    filetypes  = {
+        "bib", "gitcommit", "markdown", 
+        "org", "plaintex", "rst", 
+        "rnoweb", "tex", "pandoc", 
+        "quarto", "rmd", "context", 
+        "html", "xhtml", "mail",
+    },
     on_attach = vim.lsp.common_on_attach,
     root_dir = vim.fn.expand('%:p:h'),
     single_file_support = true
-}
+} ]]
 
-local servers = { "jdtls", "rust_analyzer", "clangd", "lua_ls", "pyright", "ltex" }
+local servers = { "jdtls", "rust_analyzer", "clangd", "lua_ls", "pyright", --[[ "ltex" ]] }
 
 for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup {

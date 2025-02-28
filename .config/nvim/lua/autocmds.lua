@@ -22,7 +22,7 @@ end
          local dir = vim.fn.expand('%:p:h')
          vim.cmd('cd ' .. dir)
          vim.opt.makeprg = 'rm -rf config.h && doas make install clean'
-         vim.cmd('make')
+         vim.cmd('silent make')
          vim.opt.makeprg = 'make'
      end,
  })
