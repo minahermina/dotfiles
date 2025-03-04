@@ -35,25 +35,30 @@ static const char *colors[][3]      = {
 static const char *tags[] = { "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X" };
 
 
-#define BROWSER  "Brave-browser"
+#define BROWSER1  "Brave-browser"
+#define BROWSER2  "zen"
 
 static const Rule rules[] = {
 	/* xprop(1):
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-    /* class                    instance                title           tags mask     switchtotag    isfloating   monitor */
-    { "st-256color"             ,NULL ,                 NULL,           1 << 0,            1,           0,          -1 },
-    { BROWSER                   ,NULL ,                 NULL,           1 << 1,            1,           0,          -1 },
-    { "octave-gui"              ,NULL ,                 NULL,           1 << 2,            1,           0,          -1 },
-    { "Zathura"                 ,NULL ,                 NULL,           1 << 3,            1,           0,          -1 },
-    { "Com.github.xournalpp.xournalpp"                 ,NULL ,                 NULL,           1 << 3,            1,           0,          -1 },
-    { "mpv"                     ,NULL ,                 NULL,           1 << 4,            1,           0,          -1 },
-    { NULL                      ,NULL ,                 "gf2",          1 << 5,            1,           0,          -1 },
-	{ "qemu-system-x86_64"      ,NULL ,                 NULL,           1 << 6,            1,           0,          -1 },
-	{ "Emacs"                   ,NULL ,                 NULL,           1 << 7,            1,           0,          -1 },
-    { "Virt-manager"            ,NULL ,                 NULL,           1 << 8,            1,           0,          -1 },
-    // { NULL                      ,NULL ,                 NULL,           1 << 9,            1,           0,          -1 },
+    /* class                                instance                title           tags mask     switchtotag    isfloating   monitor */
+    { "st-256color"                         ,NULL ,                 NULL,           1 << 0,            1,           0,          -1 },
+    { BROWSER2                              ,NULL ,                 NULL,           1 << 1,            1,           0,          -1 },
+    { BROWSER1                              ,NULL ,                 NULL,           1 << 2,            1,           0,          -1 },
+    { "Zathura"                             ,NULL ,                 NULL,           1 << 3,            1,           0,          -1 },
+    { "Com.github.xournalpp.xournalpp",      NULL  ,                NULL,           1 << 3,            1,           0,          -1 },
+    { "mpv"                                 ,NULL ,                 NULL,           1 << 4,            1,           0,          -1 },
+    { NULL                                  ,NULL ,                 "gf2",          1 << 5,            1,           0,          -1 },
+	{ "qemu-system-x86_64"                  ,NULL ,                 NULL,           1 << 6,            1,           0,          -1 },
+	{ "Qemu-system-x86_64"                  ,NULL ,                 NULL,           1 << 6,            1,           0,          -1 },
+	{ "Emacs"                               ,NULL ,                 NULL,           1 << 7,            1,           0,          -1 },
+    { "Virt-manager"                        ,NULL ,                 NULL,           1 << 8,            1,           0,          -1 },
+    { NULL                                  ,"libreoffice" ,        NULL,           1 << 9,            1,           0,          -1 },
+    { "Logseq"                              ,NULL ,                 NULL,           1 << 9,            1,           0,          -1 },
+    //WM_CLASS(STRING) = "logseq", "Logseq"
+
 };
 
 /* layout(s) */
