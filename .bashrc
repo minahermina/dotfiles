@@ -10,7 +10,7 @@ HISTCONTROL=ignoredups
 
 alias 2..='../..'
 alias 3..='../../..'
-alias ls='ls --color=auto --group-directories-first'
+alias ls='ls --group-directories-first'
 alias ll='ls -lah'
 alias grep='grep --color=auto'
 alias cs='clear'
@@ -29,9 +29,13 @@ alias vt='nvim $XDG_CONFIG_HOME/tmux/tmux.conf'
 # Pacman Aliases
 alias i='doas pacman -S'
 alias r='doas pacman -Rns'
-alias q='doas pacman -Qs'
-alias u='doas pacman -Syu'
-alias s='doas pacman -Ss'
+alias q='doas pacman -Qe'
+alias qi='doas pacman -Qi'
+qf() {
+    pacman -Qlq "$1" | grep -v '/$' | xargs -r du -h | sort -h
+}
+alias pu='doas pacman -Syu'
+alias pi='doas pacman -Si'
 
 # yay Aliases
 alias yi='yay -S'
@@ -83,3 +87,7 @@ bind -m vi-insert -x '"\C-o": fzf_dir'
 export PS1="\n\[\e[32m\]\w\[\033[33m\]\$(parse_git_branch) \$(parse_venv) \[\033[37m\] \n❯❯ "
 
 set -o vi
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
