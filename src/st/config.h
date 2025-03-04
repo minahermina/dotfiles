@@ -6,7 +6,6 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 static char *font = "IosevkaTermSlab Nerd Font :pixelsize=18:antialias=true:autohint=true";
-// static char *font = "DepartureMono Nerd Font Mono :style=Italic:pixelsize=18:antialias=true:autohint=true";
 static int borderpx = 0;
 
 /*
