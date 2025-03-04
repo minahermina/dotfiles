@@ -14,6 +14,7 @@ bridge-utils
 brightnessctl
 btop
 clang
+cmake
 cmatrix
 cronie
 cups
@@ -24,6 +25,7 @@ dnsmasq
 dunst
 efibootmgr
 emacs
+emscripten
 ffmpeg
 ffmpegthumbnailer
 freeglut
@@ -40,7 +42,10 @@ gstreamer
 gvfs
 gvfs-mtp
 hplip
+htop
 i2c-tools
+imagemagick
+inetutils
 iptables-nft
 irssi
 lazygit
@@ -58,6 +63,7 @@ man-pages
 mesa-utils
 mpv
 musl
+nasm
 ncdu
 nemo
 neofetch
@@ -124,6 +130,8 @@ speedtest-cli
 strace
 sxhkd
 sxiv
+tcc
+texlive-binextra
 texlive-fontsextra
 texlive-fontsrecommended
 texlive-latexextra
@@ -137,8 +145,10 @@ ufw
 unrar-free
 unzip
 usbutils
+vim
 virglrenderer
 virt-manager
+wasmtime
 wget
 xclip
 xcolor
