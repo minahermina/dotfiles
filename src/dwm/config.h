@@ -19,7 +19,7 @@ static const char *fonts[]          = {
 
 
 static const char dmenufont[]       = "Iosevka Term Nerd Font :style=Medium:pixelsize=14:antialias=true:autohint=true";
-static const char col_gray1[]       = "#161616";
+static const char col_gray1[]       = "#131313";
 static const char col_gray2[]       = "#555555";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
