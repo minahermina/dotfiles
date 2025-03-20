@@ -69,4 +69,11 @@ vim.api.nvim_create_autocmd('TermOpen', {
 })
 
 
+-- --------------------------------------------------
+vim.api.nvim_create_user_command("Q", function()
+    vim.fn.setqflist({})
+end, {})
+
+
+
 return M

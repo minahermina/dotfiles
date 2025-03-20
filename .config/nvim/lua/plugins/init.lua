@@ -2,9 +2,8 @@ local plugins = {
 
     -- Themes
     { "RRethy/base16-nvim" },
-    -- { "EdenEast/nightfox.nvim" },
 
-    --[[ {
+    {
         "ej-shafran/compile-mode.nvim",
         tag = "v5.3.1",
         -- you can just use the latest version:
@@ -23,9 +22,9 @@ local plugins = {
                 baleia_setup = true,
             }
         end
-    }, ]]
+    },
 
-    --[[ {
+    {
         "m00qek/baleia.nvim",
         version = "*",
         config = function()
@@ -39,28 +38,9 @@ local plugins = {
             -- Command to show logs
             vim.api.nvim_create_user_command("BaleiaLogs", vim.g.baleia.logger.show, { bang = true })
         end,
-    }, ]]
-
-
-    { "tpope/vim-dadbod" },
-
-    {
-        'kristijanhusak/vim-dadbod-ui',
-        dependencies = {
-            { 'tpope/vim-dadbod',                     lazy = true },
-            { 'kristijanhusak/vim-dadbod-completion', ft = { 'sql', 'mysql', 'plsql' }, lazy = true }, -- Optional
-        },
-        cmd = {
-            'DBUI',
-            'DBUIToggle',
-            'DBUIAddConnection',
-            'DBUIFindBuffer',
-        },
-        init = function()
-            -- Your DBUI configuration
-            vim.g.db_ui_use_nerd_fonts = 1
-        end,
     },
+
+
 
 
 
@@ -126,15 +106,6 @@ local plugins = {
             require('nvim-highlight-colors').setup {}
         end
     },
-
-    -- :SymbolsOutline -> get list of symobls
-    {
-        'simrat39/symbols-outline.nvim',
-        config = function()
-            require("symbols-outline").setup()
-        end,
-    },
-
 
     {
         'stevearc/oil.nvim',

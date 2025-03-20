@@ -11,14 +11,14 @@ local colors = {
     brown =     {"#af875f", 137},
     blue =      {"#7797b8", 235},
     lgreen =    {"#afd7af", 113},
-    red =       {"#F38BA8", 203},
+    red =       {"#fc4e57 ", 203},
     white =     {"#ffffff", 254},
     non =       {"#2E2E2E" , 100},
     comment =   {"#6D6E85", 201 },
     gray =      {"#858C9C", 241 },
     variable =  {"#D2B48C", 176},
     yellow =    {"#FADF0F", 177},
-    green =    {"#73c936", 178}
+    green =     {"#73c936 ", 178}
 }
 
 local function hl(group, attrs)
@@ -96,10 +96,8 @@ hl("diffRemoved",   {fg = colors.red})
 hl("diffSubname",   {fg = colors.white})
 hl("NonText",       { fg = colors.non})
 -- Compile-mode nvim  plugin
-hl("CompileModeError",          { fg = colors.red, style = "bold"})
-hl("CompileModeWarning",        { fg = colors.variable, style = "bold"})
-hl("CompileModeInfo",           { fg = colors.lgreen, style = "bold"})
-hl("CompileModeMessageRow",     { fg = colors.blue, style = "bold"})
-hl("CompileModeMessageCol",     { fg = colors.blue, style = "bold"})
-hl("CompileModeOutputFile",     { fg = colors.blue, style = "bold"})
-hl("CompileModeCommandOutput",  { fg = colors.blue, style = "bold"})
+hl("CompileModeError",      { fg = colors.red, style = "bold"})
+hl("CompileModeWarning",    { fg = colors.variable, style = "bold"})
+hl("CompileModeInfo",       { fg = colors.green, style = "bold"})
+hl("CompileModeMessageRow", { fg = colors.yellow, style = "bold"})
+

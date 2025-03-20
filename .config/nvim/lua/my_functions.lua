@@ -31,19 +31,19 @@ function M.open_tmux_pane(dir)
 end
 
 function M.toggle_quickfix()
-  local quickfix_open = false
-  for _, win in ipairs(vim.fn.getwininfo()) do
-    if win['quickfix'] == 1 then
-      quickfix_open = true
-      break
+    local quickfix_open = false
+    for _, win in ipairs(vim.fn.getwininfo()) do
+        if win['quickfix'] == 1 then
+            quickfix_open = true
+            break
+        end
     end
-  end
 
-  if quickfix_open then
-    vim.cmd('cclose')
-  else
-    vim.cmd('copen')
-  end
+    if quickfix_open then
+        vim.cmd('cclose')
+    else
+        vim.cmd('copen')
+    end
 end
 
 return M

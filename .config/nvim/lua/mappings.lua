@@ -93,10 +93,10 @@ map('t', '<C-l>', '<C-\\><C-n><C-w>l' , options)
 map('t', '<leader>e', '<C-\\><C-n>' , options)
 
 -- Resize Buffers
-map('n', '<M-k>' , ':resize +3<CR>'      , options)
-map('n', '<M-j>' , ':resize -3<CR>'      , options)
-map('n', '<M-l>' , ':vert resize -3<CR>' , options)
-map('n', '<M-h>' , ':vert resize +3<CR>' , options)
+map('n', '<M-K>' , ':resize +3<CR>'      , options)
+map('n', '<M-J>' , ':resize -3<CR>'      , options)
+map('n', '<M-L>' , ':vert resize -3<CR>' , options)
+map('n', '<M-H>' , ':vert resize +3<CR>' , options)
 
 -- Stay in indent mode  
 map('v', '<', '<gv', options)
@@ -119,7 +119,9 @@ map('n', '-', function() require('oil').open_float() end, { desc = 'Open parent 
 
 local build = require('CustomScripts.build')
 
-map('n', '<F7>', function () build.test() end, options)
+map('n', '<leader>e', function () build.test() end, options)
+map('n', '<leader>ww', ":Compile<CR>", options)
+map('n', '<leader>wr', ":Recompile<CR>", options)
 
 local functions = require('my_functions')
 
@@ -129,4 +131,3 @@ map('n', '<leader>n' , ':cnext <CR>'                                , { desc = '
 map('n', '<leader>m' , ':cpre <CR>'                                 , { desc = 'Move to previous error' }                         , options)
 map('n', '<leader>tv', function () functions.open_tmux_pane(1) end  , { desc = 'Open Vertical Tmux Pane in current file dir' }    , options)
 map('n', '<leader>th', function () functions.open_tmux_pane(0) end  , { desc = 'Open Horizontal Tmux Pane in current file dir' }  , options)
-map('n', '<leader>c', ':Compile <CR>'                               , { desc = 'Run Compile command' }                            , options)
