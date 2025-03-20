@@ -3,7 +3,7 @@ setxkbmap -layout us,ara -variant ,digits -option grp:ctrl_space_toggle caps:esc
 xmodmap $XDG_CONFIG_HOME/xmodmap/Xmodmap
 sxhkd &
 ofh &
-xsetroot -solid "#161616"
+xsetroot -solid "#131313"
 xset r rate 200 30 &
 greenclip daemon &
 dwmblocks &

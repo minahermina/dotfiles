@@ -2,7 +2,7 @@ doas loadkeys ~/.config/loadkeysrc/loadkeysrc
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 export EDITOR="nvim"
-export MAIN_COLOR="#7ba2e1"
+export MAIN_COLOR="#7797b8"
 export MAINMOD="Super"
 export XMONAD_CONFIG_DIR="$XDG_CONFIG_HOME/xmonad/xmonad.hs"
 export HISTCONTROL=ignoreboth:erasedups

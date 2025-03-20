@@ -14,28 +14,29 @@ alias ls='ls --group-directories-first'
 alias ll='ls -lah'
 alias grep='grep --color=auto'
 alias cs='clear'
-alias vim='nvim'
 alias t='tmux'
 alias lf='lfub'
 alias sz='du -sh'
 alias lg='lazygit'
+alias v='nvim'
 
 
 alias vbr='nvim $HOME/.bashrc'
+alias so='source ./venv/bin/activate'
 alias vbp='nvim $HOME/.bash_profile'
 alias sb='source $HOME/.bashrc && source $HOME/.bashrc'
 alias vt='nvim $XDG_CONFIG_HOME/tmux/tmux.conf'
 
 # Pacman Aliases
 alias i='doas pacman -S'
-alias r='doas pacman -Rns'
+alias s='doas pacman -Ss'
+alias u='doas pacman -Syu'
+alias r='doas pacman -Rs'
 alias q='doas pacman -Qe'
 alias qi='doas pacman -Qi'
 qf() {
     pacman -Qlq "$1" | grep -v '/$' | xargs -r du -h | sort -h
 }
-alias pu='doas pacman -Syu'
-alias pi='doas pacman -Si'
 
 # yay Aliases
 alias yi='yay -S'
@@ -44,7 +45,6 @@ alias yq='yay -Qs'
 alias yu='yay -Syu'
 alias ys='yay -Ss'
 
- 
 goto(){
     local file=$(find . | fzf --header="Jump to location"  )
     [ -d "$file" ] && cd $file || cd $(dirname "$file")
