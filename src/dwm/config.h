@@ -36,7 +36,6 @@ static const char *tags[] = { "I", "II", "III", "IV", "V", "VI", "VII", "VIII", 
 
 
 #define BROWSER1  "Brave-browser"
-#define BROWSER2  "zen"
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -45,8 +44,7 @@ static const Rule rules[] = {
 	 */
     /* class                                instance                title           tags mask     switchtotag    isfloating   monitor */
     { "st-256color"                         ,NULL ,                 NULL,           1 << 0,            1,           0,          -1 },
-    { BROWSER2                              ,NULL ,                 NULL,           1 << 1,            1,           0,          -1 },
-    { BROWSER1                              ,NULL ,                 NULL,           1 << 2,            1,           0,          -1 },
+    { BROWSER1                              ,NULL ,                 NULL,           1 << 1,            1,           0,          -1 },
     { "Zathura"                             ,NULL ,                 NULL,           1 << 3,            1,           0,          -1 },
     { "Com.github.xournalpp.xournalpp",      NULL  ,                NULL,           1 << 3,            1,           0,          -1 },
     { "mpv"                                 ,NULL ,                 NULL,           1 << 4,            1,           0,          -1 },
