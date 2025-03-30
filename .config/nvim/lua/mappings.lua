@@ -57,12 +57,11 @@ map('x', "<leader>s", [["zy:%s/<C-r>z/<C-r>z/gI<Left><Left><Left>]],           {
 map('n', '<leader>gg', ':silent grep <C-r><C-w> <CR>',                { desc = 'Grep word Under cursor' }, options)
 map('v', '<leader>gg', 'y:silent grep -rn "<C-R>""<CR>',              { desc = 'Grep highlighted Text' }, options)
 
-
 -- comment.nvim
 map('n', '<leader>/', function() require('Comment.api').toggle.linewise.current() end ,                  { desc = 'Comment Current line' })
 map('v', '<leader>/', "<ESC><cmd>lua require('Comment.api').toggle.blockwise(vim.fn.visualmode())<CR>" , { desc = 'Comment Current Block' })
 
--- Fzf-lua & Telescope Keymaps 
+-- Fzf-lua & Telescope Keymaps
 map({ 'n', 'v', 'i' }, '<M-f>', function() fzf_lua.complete_path() end , { desc = 'Fuzzy complete path' }                    , options)
 map('n', '<leader>ff',  function() fzf_lua.files() end                      , { desc = 'Find files' }                             , options)
 map('n', '<leader>fl',  function() fzf_lua.resume() end                     , { desc = 'Resume fzf_lua' }                         , options)
@@ -79,10 +78,10 @@ map('n', '<leader>S' ,  '<cmd>SymbolsOutline <cr>'                          , { 
 map('n', 'gr', vim.lsp.buf.references                                       , { desc = 'Go to references' }                       , options)
 
 -- Git keymaps
-map('n', '<leader>gd', '<cmd> Gitsigns diffthis <CR>'                   , { desc = 'Diff Buffer' })
-map('n', '<leader>gr', '<cmd> Gitsigns reset_buffer <CR>'               , { desc = 'Reset Buffer' })
-map('n', '<leader>ga', '<cmd> Gitsigns stage_buffer<CR>'                , { desc = 'Stage Buffer' })
-map('n', '<leader>gs', '<cmd> FzfLua git_status <CR>'                   , { desc = 'Display git status' })
+map('n', '<leader>gd', '<cmd> Gitsigns diffthis <CR>'     , { desc = 'Diff Buffer' })
+map('n', '<leader>gr', '<cmd> Gitsigns reset_buffer <CR>' , { desc = 'Reset Buffer' })
+map('n', '<leader>ga', '<cmd> Gitsigns stage_buffer<CR>'  , { desc = 'Stage Buffer' })
+map('n', '<leader>gs', '<cmd> FzfLua git_status <CR>'     , { desc = 'Display git status' })
 
 -- Navigate Windows from terminal mode
 -- map('t', '<Esc>', '<C-\\><C-n>'       , options)
@@ -120,14 +119,35 @@ map('n', '-', function() require('oil').open_float() end, { desc = 'Open parent 
 local build = require('CustomScripts.build')
 
 map('n', '<leader>e', function () build.test() end, options)
-map('n', '<leader>ww', ":Compile<CR>", options)
-map('n', '<leader>wr', ":Recompile<CR>", options)
+
+vim.keymap.set('n', '<leader>r', function()
+  vim.cmd('copen')
+  vim.cmd('make')
+end, options)
+
+map('n', '<leader>c', function () build.run_shell_command() end, options)
+
+map('n', '<leader>ww', ":Compile<CR>" , options)
+map('n', '<leader>wr', ":Recompile<CR>"   , options)
 
 local functions = require('my_functions')
 
--- Opening a termial window from Nvim (just a tmux pane)
-map('n', '<leader>,' , function () functions.toggle_quickfix() end  , { desc = 'Toggle Quickfix list ' }                          , options)
-map('n', '<leader>n' , ':cnext <CR>'                                , { desc = 'Move to next error' }                             , options)
-map('n', '<leader>m' , ':cpre <CR>'                                 , { desc = 'Move to previous error' }                         , options)
-map('n', '<leader>tv', function () functions.open_tmux_pane(1) end  , { desc = 'Open Vertical Tmux Pane in current file dir' }    , options)
-map('n', '<leader>th', function () functions.open_tmux_pane(0) end  , { desc = 'Open Horizontal Tmux Pane in current file dir' }  , options)
+map('n', '<leader>,' , function () functions.toggle_quickfix() end  ,{ desc = 'Toggle Quickfix list ' }                          ,options)
+
+-- C-r in quickfixt list to run :silent make
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "qf",
+    callback = function()
+        vim.keymap.set(
+            "n",              -- Normal mode
+            "<C-r>",          -- Ctrl-R
+            ":silent make<CR>",      -- Runs :make
+            { buffer = true, silent = true } -- Buffer-local and silent
+        )
+    end,
+})
+
+map('n', '<leader>n' , ':cnext <CR>'                                ,{ desc = 'Move to next error' }                             ,options)
+map('n', '<leader>m' , ':cpre <CR>'                                 ,{ desc = 'Move to previous error' }                         ,options)
+map('n', '<leader>tv', function () functions.open_tmux_pane(1) end  ,{ desc = 'Open Vertical Tmux Pane in current file dir' }    ,options)
+map('n', '<leader>th', function () functions.open_tmux_pane(0) end  ,{ desc = 'Open Horizontal Tmux Pane in current file dir' }  ,options)

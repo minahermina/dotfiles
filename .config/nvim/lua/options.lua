@@ -47,6 +47,18 @@ opt.listchars = {
     trail = '•',
 }
 
+if vim.g.neovide then
+    vim.o.guifont = "IosevkaTermSlab Nerd Font:h9" -- text below applies for VimScript
+    vim.g.neovide_scale_factor = 1.0
+    vim.g.neovide_hide_mouse_when_typing = true
+    vim.g.neovide_cursor_animation_length = 0.0
+    vim.keymap.set({ "n", "v" }, "<C-+>", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + 0.1<CR>")
+    vim.keymap.set({ "n", "v" }, "<C-->", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.1<CR>")
+    vim.keymap.set({ "n", "v" }, "<C-=>", ":lua vim.g.neovide_scale_factor = 1<CR>")
+    vim.keymap.set({ "n", "v" }, "<C-P>", "\"+p")
+
+end
+
 
 -- add binaries installed by mason.nvim to path
 local is_windows = vim.loop.os_uname().sysname == "Windows_NT"
