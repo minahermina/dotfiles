@@ -2,12 +2,12 @@ doas loadkeys ~/.config/loadkeysrc/loadkeysrc
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 export EDITOR="nvim"
-export MAIN_COLOR="#7797b8"
+export MAIN_COLOR="#8f8f8f"
 export MAINMOD="Super"
 export XMONAD_CONFIG_DIR="$XDG_CONFIG_HOME/xmonad/xmonad.hs"
 export HISTCONTROL=ignoreboth:erasedups
 export EMACSDIR="$HOME/.config/emacs"
-export BROWSER="zen-browser"
+export BROWSER="brave"
 export REPOS="$HOME/repos"
 export DOTFILES="$REPOS/dotfiles"
 export SCRIPTS="$HOME/.local/scripts"
