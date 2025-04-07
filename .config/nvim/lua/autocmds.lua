@@ -35,7 +35,7 @@ vim.api.nvim_create_autocmd("BufWritePost", {
         local dir = vim.fn.expand('%:p:h')  -- Directory of the current file
         local file = vim.fn.expand('%:t')  -- Filename of the current file
         vim.cmd('cd ' .. dir)
-        vim.opt.makeprg = 'pdflatex ' .. file
+        vim.opt.makeprg = "pdflatex -interaction=nonstopmode " .. file
         vim.cmd('silent make!')
         vim.opt.makeprg = 'make'
     end,

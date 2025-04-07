@@ -67,7 +67,7 @@ local plugins = {
     }, ]]
 
     {
-        "ahmedkhalf/project.nvim",
+        "minahermina/project.nvim",
         lazy = false,
         config = function()
             require("project_nvim").setup {}
