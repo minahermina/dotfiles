@@ -91,7 +91,7 @@ lspconfig.ts_ls.setup {
 local servers = { "jdtls", "rust_analyzer", "clangd", "lua_ls", "pyright", --[[ "ltex" ]] }
 
 vim.diagnostic.config({
-  virtual_text = false,   -- Disable virtual text completely
+  virtual_text = false,    -- Disable virtual text completely
   signs = false,          -- Keep diagnostic signs in the gutter
   underline = false,      -- Keep underlining issues in the text
   update_in_insert = false,

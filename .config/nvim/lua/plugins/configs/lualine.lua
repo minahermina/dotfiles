@@ -1,7 +1,6 @@
 -- local bg_dark = "#1f2335"
 local white = "#ffffff"
--- local bg = "#24283b"
-local fg = "#6D8AA8"
+local fg = "#888888"
 require("lualine").setup {
 
     options = {

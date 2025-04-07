@@ -75,7 +75,8 @@ super + shift + Delete
 
 # Take screenshot
 super + s
-	maim -us -m 10 -D  | xclip -selection clipboard -t image/png
+	$SCRIPTS/screenshot.sh	
+	#scrot -s "/tmp/screenshot_$(date +%Y%m%d_%H%M%S).png" -e 'xclip -selection clipboard -t image/png -i $f'
 
 # Manipulate Sound
 super + {F1,F2,F3}
@@ -92,3 +93,5 @@ super + F6
 super + F11
     pamixer --default-source -t && pkill -RTMIN+10 dwmblocks
 
+super + u
+    setxkbmap -layout us,ara -variant ,digits -option grp:ctrl_space_toggle caps:escape

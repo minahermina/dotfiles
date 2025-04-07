@@ -28,22 +28,13 @@ alias sb='source $HOME/.bashrc && source $HOME/.bashrc'
 alias vt='nvim $XDG_CONFIG_HOME/tmux/tmux.conf'
 
 # Pacman Aliases
-alias i='doas pacman -S'
-alias s='doas pacman -Ss'
-alias u='doas pacman -Syu'
-alias r='doas pacman -Rs'
-alias q='doas pacman -Qe'
-alias qi='doas pacman -Qi'
-qf() {
-    pacman -Qlq "$1" | grep -v '/$' | xargs -r du -h | sort -h
-}
-
-# yay Aliases
-alias yi='yay -S'
-alias ycc='yay -Scc ; doas pacman -Sc'
-alias yq='yay -Qs'
-alias yu='yay -Syu'
-alias ys='yay -Ss'
+alias i='doas xbps-install -S'
+alias s='doas xbps-query -Rs'
+alias u='doas xbps-install -Syu'
+alias r='doas xbps-remove -R'
+alias q='doas xbps-query -s'
+alias qr='doas xbps-query -s'
+alias qf='doas xbps-query -f'
 
 goto(){
     local file=$(find . | fzf --header="Jump to location"  )
@@ -91,3 +82,5 @@ set -o vi
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+. "/home/mina/.deno/env"
+source /home/mina/.local/share/bash-completion/completions/deno.bash

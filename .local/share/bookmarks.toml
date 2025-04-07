@@ -3,12 +3,25 @@ name = "GitHub"
 url = "https://github.com/minahermina"
 
 [[links]]
+name = "UniKraft"
+url = "unikraft.org"
+
+[[links]]
+name = "Tldr Legal"
+url = "https://www.tldrlegal.com/"
+
+[[links]]
 name = "Ffmpeg irc"
 url = "https://web.libera.chat/"
 
 [[links]]
 name = "free-for.dev"
 url = "https://free-for.dev/#/"
+
+
+[[links]]
+name = "Void Linux"
+url = "https://voidlinux.org/"
 
 [[links]]
 name = "AWS Academy"

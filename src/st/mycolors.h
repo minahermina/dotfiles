@@ -11,14 +11,14 @@ static const char *colorname[] = {
 	"#F5F5F5",
 
 	/* 8 bright colors */
-    "#f2f2f2", /* bright black   */
+    "#295340", /* bright black   */
 	"#F38BA8",
-	"#FFFFFF",
+	"#8f8f8f",
 	"#F9E2AF",
 	"#8f8f8f",
-	"#F5C2E7",
+	"#ffffff",
 	"#94E2D5",
-	"#F5F5F5",
+    "#ffffff", /* bright black   */
 
 [256] = "#FFFFFF", /* default foreground colour */
 [257] = "#101010", /* default background colour */

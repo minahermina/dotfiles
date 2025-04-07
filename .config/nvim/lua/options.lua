@@ -56,6 +56,8 @@ if vim.g.neovide then
     vim.keymap.set({ "n", "v" }, "<C-->", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.1<CR>")
     vim.keymap.set({ "n", "v" }, "<C-=>", ":lua vim.g.neovide_scale_factor = 1<CR>")
     vim.keymap.set({ "n", "v" }, "<C-P>", "\"+p")
+    vim.g.neovide_cursor_smooth_blink = true
+    vim.cmd("set guicursor+=a:blinkoff500-blinkon500")
 
 end
 

@@ -8,7 +8,7 @@ diskImage=$(echo  "$diskImages" | dmenu -i -p "Choose a Disk Image:")
 
 qemu-system-x86_64 \
     -enable-kvm \
-    -bios /usr/share/edk2-ovmf/x64/OVMF.4m.fd \
+    -bios /usr/share/edk2/x64/OVMF.4m.fd \
     -boot menu=on \
     -drive file=/home/mina/vms/"$diskImage" \
     -m 4G \

@@ -18,9 +18,6 @@ set notification-error-fg "#151515" #00
 set notification-warning-bg "#AC4142" #08
 set notification-warning-fg "#151515" #00
 
-set highlight-color "#F4BF75" #0A
-set highlight-active-color "#6A9FB5" #0D
-
 set completion-highlight-fg "#151515" #02
 set completion-highlight-bg "#90A959" #0C
 
@@ -35,7 +32,6 @@ set recolor-lightcolor "#131515" #00
 set recolor-darkcolor "#FFFFFF" #06
 set recolor-reverse-video "true"
 set recolor-keephue "true"
-
 
 set render-loading "false"
 set scroll-step 50

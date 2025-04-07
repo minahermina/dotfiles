@@ -35,7 +35,7 @@ static const char *colors[][3]      = {
 static const char *tags[] = { "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X" };
 
 
-#define BROWSER1  "Brave-browser"
+#define BROWSER1  "Firefox"
 
 static const Rule rules[] = {
 	/* xprop(1):

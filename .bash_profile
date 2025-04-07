@@ -7,14 +7,15 @@ export MAINMOD="Super"
 export XMONAD_CONFIG_DIR="$XDG_CONFIG_HOME/xmonad/xmonad.hs"
 export HISTCONTROL=ignoreboth:erasedups
 export EMACSDIR="$HOME/.config/emacs"
-export BROWSER="brave"
+export BROWSER="firefox"
 export REPOS="$HOME/repos"
 export DOTFILES="$REPOS/dotfiles"
 export SCRIPTS="$HOME/.local/scripts"
 export PDFVIEWER="zathura"
 export dmenufont="Iosevka Term Nerd Font :style=Medium:size=11"
 export TERMINAL="st"
-export TERM="st-256color"
+export TERM=tmux-256color
+export COLORTERM=truecolor
 export TERM_PROGRAM="st"
 export CM_LAUNCHER="dmenu"
 export GTK_THEME="Adwaita:dark"
@@ -41,3 +42,5 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
 [ $(tty) = "/dev/tty1" ] && startx
 
 
+. "/home/mina/.deno/env"
+source /home/mina/.local/share/bash-completion/completions/deno.bash
