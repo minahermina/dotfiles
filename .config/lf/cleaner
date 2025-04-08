@@ -3,3 +3,4 @@ if [ -n "$FIFO_UEBERZUG" ]; then
 	printf '{"action": "remove", "identifier": "PREVIEW"}\n' > "$FIFO_UEBERZUG"
     rm -rf ~/.cache/lf/thumb*
 fi
+exit 0
