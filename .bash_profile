@@ -14,7 +14,7 @@ export SCRIPTS="$HOME/.local/scripts"
 export PDFVIEWER="zathura"
 export dmenufont="Iosevka Term Nerd Font :style=Medium:size=11"
 export TERMINAL="st"
-export TERM=tmux-256color
+export TERM=st-256color
 export COLORTERM=truecolor
 export TERM_PROGRAM="st"
 export CM_LAUNCHER="dmenu"

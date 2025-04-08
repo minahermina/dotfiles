@@ -30,7 +30,7 @@ alias vt='nvim $XDG_CONFIG_HOME/tmux/tmux.conf'
 # Pacman Aliases
 alias i='doas xbps-install -S'
 alias s='doas xbps-query -Rs'
-alias u='doas xbps-install -Syu'
+alias u='doas xbps-install -Su; doas xbps-install -u xbps; doas xbps-install -u'
 alias r='doas xbps-remove -R'
 alias q='doas xbps-query -s'
 alias qr='doas xbps-query -s'
