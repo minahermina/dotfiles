@@ -1,7 +1,6 @@
 #!/bin/bash
 DOTFILES="$HOME/repos/dotfiles"
 dirs=(  
-        ".config/fastfetch"
         ".config/nvim"
         ".config/dunst"
         ".config/lf"
@@ -11,17 +10,13 @@ dirs=(
         ".config/sxhkd"
         ".config/tmux"
         ".config/zathura"
-        ".config/picom"
-        ".config/kanata"
         ".config/xmodmap"
         ".config/mpv"
-        ".config/rofi"
         ".local/scripts"
         ".local/bin"
      )
 files=(
         ".local/share/pkglist.txt"
-        ".local/share/foreign_pkglist.txt"
         ".local/share/bookmarks.toml"
         ".config/screenkey.json"
         ".config/mimeapps.list"
