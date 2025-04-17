@@ -1,0 +1,96 @@
+super + w
+    $BROWSER
+
+super + g
+    ~/.local/bin/llm
+
+super + BackSpace
+   playerctl play-pause	
+
+super + bracketright
+   playerctl next
+
+super + bracketleft
+   playerctl previous
+
+super + Insert
+   ~/.local/bin/freee
+
+super + Return
+    $HOME/.local/scripts/tmux_new_window.sh
+
+super + p
+    dmenu_run -i
+
+super + r
+    boomer
+
+super + o
+    mpv $(xclip -o)
+
+super + Delete
+    xwallpaper --zoom $(find $HOME/Pictures/wallpapers -type f | shuf -n 1)
+
+super + v
+    $HOME/.local/scripts/tmux_new_window.sh nvim
+
+#super + f
+#    $SCRIPTS/tmux_new_window.sh lfub
+
+# Open List of Vms installed in ~/vms 
+super + Home
+	$SCRIPTS/virt.sh	
+
+# Opens clipboard manager 
+super + c
+    $SCRIPTS/clipboard_xorg.sh
+
+# Sytem Monitor (btop)
+super + m
+    $SCRIPTS/tmux_new_window.sh btop
+
+super + b
+    $SCRIPTS/get_gitrepos
+
+super + i
+    $SCRIPTS/bookmarks
+
+super + Print
+    $SCRIPTS/screencast.sh 
+
+super + End
+    $SCRIPTS/screencast.sh ; pkill -RTMIN+22 dwmblocks
+
+# launch powermenu
+super + shift + q
+	$SCRIPTS/powermenu.sh	
+
+# Sends dwmblocks signal to update lang
+ctrl + space
+    pkill -RTMIN+30 dwmblocks
+
+# Screen Locker
+super + shift + Delete
+    slock
+
+# Take screenshot
+super + s
+	scrot -s "/tmp/screenshot_$(date +%Y%m%d_%H%M%S).png" -e 'xclip -selection clipboard -t image/png -i $f'
+
+# Manipulate Sound
+super + {F1,F2,F3}
+    $SCRIPTS/sound.sh {=,-,+}
+
+# Decrease brightness
+super + F5
+    brightnessctl set 10%- && pkill -RTMIN+25 dwmblocks
+
+# Increase brightness
+super + F6
+    brightnessctl set +10% && pkill -RTMIN+25 dwmblocks
+
+super + F11
+    pamixer --default-source -t && pkill -RTMIN+10 dwmblocks
+
+super + u
+    setxkbmap -layout us,ara -variant ,digits -option grp:ctrl_space_toggle caps:escape
