@@ -1,0 +1,7 @@
+#!/bin/dash
+
+brave --app=https://excalidraw.com/ && xdotool key Alt+Shift+0 && xdotool key Alt+0
+
+xdotool key $MAINMOD+Shift+0
+xdotool key $MAINMOD+0
+
