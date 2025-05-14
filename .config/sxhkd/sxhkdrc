@@ -46,7 +46,7 @@ super + Home
 
 # Opens clipboard manager 
 super + c
-    clipmenu
+    $SCRIPTS/clipboard_xorg.sh
 
 # Sytem Monitor (btop)
 super + m
