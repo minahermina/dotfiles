@@ -21,7 +21,6 @@ files=(
         ".local/share/bookmarks.toml"
         ".config/screenkey.json"
         ".config/mimeapps.list"
-        ".config/greenclip.toml"
         ".bashrc"
         ".bash_profile"
         ".xinitrc"
