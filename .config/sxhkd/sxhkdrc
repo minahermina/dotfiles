@@ -7,7 +7,6 @@ super + g
 super + n
     $SCRIPTS/passman.sh
 
-
 super + BackSpace
    playerctl play-pause	
 
@@ -47,7 +46,7 @@ super + Home
 
 # Opens clipboard manager 
 super + c
-    $SCRIPTS/clipboard_xorg.sh
+    clipmenu
 
 # Sytem Monitor (btop)
 super + m

@@ -56,6 +56,6 @@ sxhkd &
 ofh &
 xsetroot -solid "#070707"
 xset r rate 200 30 &
-greenclip daemon &
+clipmenud &
 dwmblocks &
 dwm

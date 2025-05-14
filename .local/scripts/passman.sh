@@ -29,4 +29,7 @@ if [ -z "$result" ]; then
    result=$(pass show "$password" | awk 'NR==1')
 fi
 
+clipctl disable
 echo "$result" | xclip -sel clip
+clipctl enable
+
