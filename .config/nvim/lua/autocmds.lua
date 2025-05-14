@@ -29,7 +29,7 @@ end
 
 -- Auto-generate ctags when saving C, C++, Python, and Java files
 vim.api.nvim_create_autocmd("BufWritePost", {
-  pattern = {"*.c", "*.h", "*.cpp", "*.hpp", "*.cc", "*.py", "*.java"},
+  pattern = {"*.c", "*.h", "*.cpp", "*.hpp", "*.cc", "*.java"},
   callback = function()
     local exclude_dirs = {
       "node_modules",
