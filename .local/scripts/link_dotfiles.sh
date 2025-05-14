@@ -9,6 +9,7 @@ dirs=(
         ".config/nvim"
         ".config/sxhkd"
         ".config/tmux"
+        ".config/clipmenu"
         ".config/zathura"
         ".config/xmodmap"
         ".config/mpv"
