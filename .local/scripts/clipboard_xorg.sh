@@ -1,6 +1,6 @@
 #!/bin/dash
 set -e
-clipmenu
+clipmenu -i
 
 focused_window_name=$(xdotool getwindowname $(xdotool getactivewindow))
  

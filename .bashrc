@@ -19,6 +19,7 @@ alias lf='lfub'
 alias sz='du -sh'
 alias lg='lazygit'
 alias v='nvim'
+alias z='zathura'
 alias emacs='emacs --init-directory=$XDG_CONFIG_HOME/emacs/'
 
 
@@ -28,7 +29,7 @@ alias vbp='nvim $HOME/.bash_profile'
 alias sb='source $HOME/.bashrc && source $HOME/.bashrc'
 alias vt='nvim $XDG_CONFIG_HOME/tmux/tmux.conf'
 
-# Pacman Aliases
+# Package manager Aliases
 alias i='doas xbps-install -S'
 alias s='doas xbps-query -Rs'
 alias u='doas xbps-install -Su; doas xbps-install -u xbps; doas xbps-install -u'
@@ -86,5 +87,3 @@ set -o vi
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
-
-[ -f "/home/mina/.ghcup/env" ] && . "/home/mina/.ghcup/env" # ghcup-env

@@ -136,7 +136,7 @@ vim.api.nvim_create_autocmd("FileType", {
     end,
 })
 
-map('n', '<leader>n' , ':cnext <CR>'                                ,{ desc = 'Move to next error' }                             ,options)
-map('n', '<leader>m' , ':cpre <CR>'                                 ,{ desc = 'Move to previous error' }                         ,options)
+map('n', '<M-n>' , ':cnext <CR>'                                ,{ desc = 'Move to next error' }                             ,options)
+map('n', '<M-m>' , ':cpre <CR>'                                 ,{ desc = 'Move to previous error' }                         ,options)
 map('n', '<leader>tv', function () functions.open_tmux_pane(1) end  ,{ desc = 'Open Vertical Tmux Pane in current file dir' }    ,options)
 map('n', '<leader>th', function () functions.open_tmux_pane(0) end  ,{ desc = 'Open Horizontal Tmux Pane in current file dir' }  ,options)

@@ -8,7 +8,7 @@ super + n
     $SCRIPTS/passman.sh
 
 super + BackSpace
-   playerctl play-pause	
+   playerctl play-pause
 
 super + bracketright
    playerctl next
@@ -78,7 +78,7 @@ super + shift + Delete
 
 # Take screenshot
 super + s
-	scrot -s "/tmp/screenshot_$(date +%Y%m%d_%H%M%S).png" -e 'xclip -selection clipboard -t image/png -i $f'
+    scrot -s "/tmp/screenshot_$(date +%Y%m%d_%H%M%S).png" -e 'xclip -selection clipboard -t image/png -i $f'
 
 # Manipulate Sound
 super + {F1,F2,F3}

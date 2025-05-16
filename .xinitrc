@@ -7,4 +7,5 @@ xsetroot -solid "#070707"
 xset r rate 200 30 &
 clipmenud &
 dwmblocks &
+eval $(gpg-agent --daemon)
 dwm

@@ -13,7 +13,7 @@ static const int splitstatus        = 0;        /* 1 for split status items */
 static const char *splitdelim        = ";";       /* Character used for separating status */
 
 static const char *fonts[]          = {
-    "ZedMono Nerd Font:style=Medium:pixelsize=14:antialias=true:autohint=true",
+    "ZedMono Nerd Font:style=Medium:pixelsize=15:antialias=true:autohint=true",
     // "UbuntuMono Nerd Font Mono:style=Regular:pixelsize=16:antialias=true:autohint=true",
     "NotoColorEmoji:pixelsize=20:antialias=true:autohint=true" 
 }; 

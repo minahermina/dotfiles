@@ -9,7 +9,7 @@ static const Block blocks[] = {
     {"BR: ",   "echo $(( $(brightnessctl get) * 100 / $(brightnessctl max)))",          0,               25},
     {"BAT: ",  "cat /sys/class/power_supply/BAT0/capacity",                             2,               0},
     {"",       "nmcli -t -f NAME connection show --active | head -n 1",                 1,               0},
-    {"",       "date '+ %a %b %d %r' ",					                                1,               0},
+    {"",       "date '+%a %b %d %r' ",					                                1,               0},
 };
 
 // {"GPU: ", "nvidia-settings -q gpucoretemp -t", 5, 0},

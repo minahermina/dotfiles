@@ -5,4 +5,4 @@
 [ "$choice" = "poweroff" ] && doas poweroff
 [ "$choice" = "reboot" ] && doas reboot
 [ "$choice" = "suspend" ] && doas zzz
-[ "$choice" = "logout" ] && doas loginctl terminate-user "$USER" 
+[ "$choice" = "logout" ] && pkill dwm
