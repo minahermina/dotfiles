@@ -46,13 +46,64 @@ map('i' , '`', '``<Left>')
 map('n', '<leader>v', ":b ", { desc = 'Switch to buffer' }, options)
 
 map('n', "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],  { desc = "Replace Word Under cursor" })
-map('x', "<leader>s", [["zy:%s/<C-r>z/<C-r>z/gI<Left><Left><Left>]],           { desc = "Replacing visually highlighted text" })
+
+vim.keymap.set('v', '<leader>s', function()
+    vim.cmd([[normal! "zy]])
+
+    local text = vim.fn.getreg('z')
+
+    local escaped = vim.fn.escape(text, '\\/.*$^~[]')
+
+    local cmd = string.format([[%%s/%s/%s/gI]], escaped, escaped)
+
+    vim.api.nvim_feedkeys(":" .. cmd, 'n', false)
+end, { desc = 'Replace visually selected text (escaped)' })
+
 
 map('n', '<leader>gg', ':silent grep <C-r><C-w> <CR>',                { desc = 'Grep word Under cursor' }, options)
 map('v', '<leader>gg', 'y:silent grep -rn "<C-R>""<CR>',              { desc = 'Grep highlighted Text' }, options)
--- comment.nvim
+
+-- commenting
+local api = require('Comment.api')
+local config = require('Comment.config'):get()
 map('n', '<leader>/', function() require('Comment.api').toggle.linewise.current() end ,                  { desc = 'Comment Current line' })
-map('v', '<leader>/', "<ESC><cmd>lua require('Comment.api').toggle.blockwise(vim.fn.visualmode())<CR>" , { desc = 'Comment Current Block' })
+-- map('v', '<leader>/', "<ESC><cmd>lua require('Comment.api').toggle.blockwise(vim.fn.visualmode())<CR>" , { desc = 'Comment Current Block' })
+
+local esc = vim.api.nvim_replace_termcodes('<ESC>', true, false, true)
+
+vim.keymap.set('v', '<leader>/', function()
+    vim.api.nvim_feedkeys(esc, 'nx', false)
+
+    local mode = vim.fn.visualmode()
+    local start_pos = vim.fn.getpos("'<")[2]
+    local end_pos = vim.fn.getpos("'>")[2]
+
+    -- Get original lines
+    local original_lines = vim.api.nvim_buf_get_lines(0, start_pos - 1, end_pos, false)
+
+    -- Try blockwise toggle
+    api.toggle.blockwise(mode)
+
+    -- Get new lines after toggle
+    local new_lines = vim.api.nvim_buf_get_lines(0, start_pos - 1, end_pos, false)
+
+    -- Compare
+    local changed = false
+    for i = 1, #original_lines do
+        if original_lines[i] ~= new_lines[i] then
+            changed = true
+            break
+        end
+    end
+
+    -- Fallback to linewise if nothing changed
+    if not changed then
+        api.toggle.linewise(mode)
+        vim.notify("Blockwise failed; fallback to linewise", vim.log.levels.WARN)
+    end
+end)
+
+
 
 -- Fzf-lua & Telescope Keymaps
 map({ 'n', 'v', 'i' }, '<M-f>', function() fzf_lua.complete_path() end      , { desc = 'Fuzzy complete path' }                    , options)
