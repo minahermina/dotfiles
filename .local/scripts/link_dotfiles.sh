@@ -13,6 +13,7 @@ dirs=(
         ".config/zathura"
         ".config/xmodmap"
         ".config/mpv"
+        ".config/X11"
         ".local/scripts"
         ".local/bin"
      )
@@ -23,7 +24,6 @@ files=(
         ".config/mimeapps.list"
         ".bashrc"
         ".bash_profile"
-        ".xinitrc"
       )
          
 #ln -s ~/repos/dotfiles/.config/fastfetch ~/.config/fastfetch
