@@ -79,6 +79,9 @@ bind -m emacs-standard -x '"\C-o": fzf_dir'
 bind -m vi-command -x '"\C-o": fzf_dir'
 bind -m vi-insert -x '"\C-o": fzf_dir'
 
+bind '"\C-b": backward-delete-char'
+bind -m vi-insert '"\C-b": backward-delete-char'
+
 # export PS1="\n\[\e[32m\]\w\[\033[33m\]\$(parse_git_branch) \$(parse_venv) \[\033[37m\] \n❯| "
 export PS1="\n\[\e[32m\]\w\[\033[33m\]\$(parse_git_branch) \$(parse_venv) \[\033[37m\] \nϕ "
 
@@ -87,3 +90,5 @@ set -o vi
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+
