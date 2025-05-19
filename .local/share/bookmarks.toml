@@ -351,3 +351,7 @@ url = "https://www.libgen.rs/"
 [[links]]
 name = "C Utils Library"
 url = "https://github.com/barrust/c-utils?tab=readme-ov-file"
+
+[[links]]
+name = "Reuters"
+url = "https://www.reuters.com/"
