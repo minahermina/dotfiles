@@ -302,8 +302,8 @@ f	st.h	/^	float f;$/;"	m	union:__anon7c9e12e2020a	typeref:typename:float
 fg	st.h	/^	uint32_t fg;      \/* foreground  *\/$/;"	m	struct:__anon7c9e12e20108	typeref:typename:uint32_t
 flags	x.c	/^	int flags;$/;"	m	struct:__anon0b88b7ae0b08	typeref:typename:int	file:
 focus	x.c	/^focus(XEvent *ev)$/;"	f	typeref:typename:void
-font	config.def.h	/^static char *font = "ZedMono Nerd Font:style=Medium:pixelsize=18:antialias=true:autohint=true";$/;"	v	typeref:typename:char *
-font	config.h	/^static char *font = "ZedMono Nerd Font:style=Medium:pixelsize=18:antialias=true:autohint=true";$/;"	v	typeref:typename:char *
+font	config.def.h	/^static char *font = "UbuntuMono Nerd Font :style=Medium:pixelsize=20:antialias=true:autohint=tru/;"	v	typeref:typename:char *
+font	config.h	/^static char *font = "DepartureMono Nerd Font Mono:style=Regular:pixelsize=19:antialias=true:auto/;"	v	typeref:typename:char *
 font	x.c	/^	Font font, bfont, ifont, ibfont;$/;"	m	struct:__anon0b88b7ae0908	typeref:typename:Font	file:
 font	x.c	/^	XftFont *font;$/;"	m	struct:__anon0b88b7ae0b08	typeref:typename:XftFont *	file:
 font2	config.def.h	/^static char *font2[] = {$/;"	v	typeref:typename:char * []

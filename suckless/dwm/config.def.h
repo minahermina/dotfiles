@@ -36,8 +36,7 @@ static const char *colors[][3]      = {
 static const char *tags[] = { "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X" };
 
 
-#define BROWSER1  "zen"
-/*  WM_CLASS(STRING) = "dev.zed.Zed", "dev.zed.Zed" */
+#define BROWSER1  "waterfox"
 static const Rule rules[] = {
 	/* xprop(1):
 	 *	WM_CLASS(STRING) = instance, class
