@@ -6,7 +6,7 @@ export EDITOR="nvim"
 export MAIN_COLOR="#8f8f8f"
 export MAINMOD="Super"
 export HISTCONTROL=ignoreboth:erasedups
-export BROWSER="zen"
+export BROWSER="waterfox"
 export REPOS="$HOME/repos"
 export DOTFILES="$REPOS/dotfiles"
 export SCRIPTS="$HOME/.local/scripts"
@@ -19,12 +19,14 @@ export CM_LAUNCHER="dmenu"
 export GTK_THEME="Adwaita:dark"
 export GTK_FONT_NAME="Cairo:size=10"
 
-export PATH="$PATH:$HOME/.local/bin/"
-export EMACSDIR="$HOME/.config/emacs"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 export XDG_CACHE_HOME="$HOME/.cache"
+
+export PATH="$PATH:$HOME/.local/bin/"
+export EMACSDIR="$HOME/.config/emacs"
+export PASSWORD_STORE_DIR="$XDG_DATA_HOME/password-store"
 export INPUTRC="$XDG_CONFIG_HOME"/readline/inputrc
 export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
 export GIT_CONFIG_SYSTEM="$XDG_CONFIG_HOME"/git/config
