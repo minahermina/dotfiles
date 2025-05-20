@@ -51,4 +51,6 @@ export PYCHARM_JDK='/usr/lib/jvm/openjdk21/'
 export PATH=$JAVA_HOME/bin:$PATH
 
 export GPG_TTY=$(tty)
-gpg-connect-agent reloadagent /bye
+gpgconf --launch gpg-agent
+export SSH_AUTH_SOCK="$HOME/.gnupg/S.gpg-agent.ssh"
+
