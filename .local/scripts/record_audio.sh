@@ -22,6 +22,6 @@ if [ -z "$OUTFILE" ]; then
   exit 1
 fi
 
-ffmpeg -f pulse -i alsa_input.pci-0000_05_00.6.analog-stereo -ac "$CHANNELS" "$OUTFILE"
-
+pactl load-module module-echo-cancel use_master_format=1 aec_method=webrtc source_name=noise_cancel_source
+ffmpeg -f pulse -i noise_cancel_source  -ac "$CHANNELS" -af "afftdn=nf=-25" "$OUTFILE"
 

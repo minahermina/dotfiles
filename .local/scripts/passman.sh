@@ -1,5 +1,6 @@
 #!/bin/bash
 
+set -e
 shopt -s nullglob globstar
 
 # prompt list of passwords
@@ -12,7 +13,6 @@ password_files=( "${password_files[@]%.gpg}" )
 
 # get user choice of password
 password=$(printf '%s\n' "${password_files[@]}" | eval "$dmenu" )
-[ -z "$password" ] && exit
 
 # get password info from pass program
 password_info=$(pass "$password")
@@ -20,7 +20,6 @@ password_info=$(pass "$password")
 password_info_fields=$(echo "$password_info" | awk 'NR==1 {print "password" } NR>1 {print $1}' | sed 's/://')
 
 chosen_field=$(echo "$password_info_fields" | eval "$dmenu")
-[ -z "$chosen_field" ] && exit
 
 result=$(pass show "$password" | grep "$chosen_field" | sed "s/$chosen_field: //")
 

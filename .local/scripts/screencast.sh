@@ -16,12 +16,19 @@ start_recording() {
 
     echo "Starting recording..."
 
+    pactl load-module module-echo-cancel use_master_format=1 aec_method=webrtc source_name=noise_cancel_source
     # Run ffmpeg with the selected region
-    ffmpeg -f x11grab -framerate 120 -video_size "${width}x${height}" -i :0.0+$x,$y \
-        -f pulse -ac 2 -i alsa_output.pci-0000_05_00.6.analog-stereo.monitor \
+    ffmpeg \
+        -f x11grab -framerate 120 -video_size "${width}x${height}" -i :0.0+$x,$y \
+        -f pulse -i alsa_output.pci-0000_05_00.6.analog-stereo.monitor \
+        -f pulse -i noise_cancel_source \
+        -filter_complex "[2:a]volume=3.0,afftdn=nf=-25[mic]; [1:a][mic]amix=inputs=2:duration=longest[aout]" \
+        -map 0:v -map "[aout]" \
         -c:v h264_nvenc -preset fast -qp 23 \
         -c:a aac -b:a 192k \
-        "$output_file" &
+        "$output_file"
+
+
     pkill -RTMIN+22 dwmblocks
 }
 
@@ -29,17 +36,6 @@ stop_recording() {
     echo "Stopping recording..."
     pkill ffmpeg
     pkill dwmblocks && dwmblocks & disown
-}
-
-
-conv2mp4() {
-    out="${output_file%.mkv}"
-    ffmpeg -i "$output_file" \
-        -c:v libx264 -profile:v baseline -level 3.0 -preset fast -crf 23 \
-        -c:a aac -b:a 128k \
-        -movflags +faststart \
-        -max_muxing_queue_size 9999 \
-        -y "$out.mp4"
 }
 
 main(){
@@ -56,8 +52,6 @@ main(){
     fi
 
     start_recording
-    conv2mp4
-
 
 }
 
