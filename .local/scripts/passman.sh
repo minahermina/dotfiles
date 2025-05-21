@@ -1,18 +1,15 @@
-#!/bin/bash
+#!/bin/sh
 
 set -e
-shopt -s nullglob globstar
 
 # prompt list of passwords
-dmenu="dmenu \-p \"Choose a pass:\" -l 10 "
+dmenu="dmenu -p 'Choose a pass:' -l 10"
 
 prefix=${PASSWORD_STORE_DIR-~/.password-store}
-password_files=( "$prefix"/**/*.gpg )
-password_files=( "${password_files[@]#"$prefix"/}" )
-password_files=( "${password_files[@]%.gpg}" )
+passwords=$(find "$prefix" -type f -name '*.gpg' | sed "s|^$prefix/||; s|\.gpg$||")
 
 # get user choice of password
-password=$(printf '%s\n' "${password_files[@]}" | eval "$dmenu" )
+password=$(printf '%s\n' "$passwords" | eval "$dmenu" )
 
 # get password info from pass program
 password_info=$(pass "$password")
