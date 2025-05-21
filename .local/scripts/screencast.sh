@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 set -xe
 
 # i use this script in my Xorg environment
@@ -12,9 +12,15 @@ start_recording() {
     geometry=$(slop -f "%x %y %w %h")
 
     # Parse the geometry
-    read -r x y width height <<< "$geometry"
+    set -- $geometry
+    x=$1
+    y=$2
+    height=$4
+    width=$3
+
 
     echo "Starting recording..."
+    (sleep 0.2 && pkill -RTMIN+22 dwmblocks) &
 
     pactl load-module module-echo-cancel use_master_format=1 aec_method=webrtc source_name=noise_cancel_source
     # Run ffmpeg with the selected region
@@ -27,15 +33,18 @@ start_recording() {
         -c:v h264_nvenc -preset fast -qp 23 \
         -c:a aac -b:a 192k \
         "$output_file"
-
-
-    pkill -RTMIN+22 dwmblocks
 }
 
 stop_recording() {
     echo "Stopping recording..."
     pkill ffmpeg
-    pkill dwmblocks && dwmblocks & disown
+
+    # Wait for ffmpeg to fully terminate
+    while pgrep -x ffmpeg >/dev/null; do
+        sleep 0.1
+    done
+
+    pkill -RTMIN+22 dwmblocks
 }
 
 main(){
@@ -47,7 +56,7 @@ main(){
 
         if [ "$choice" = "Yes" ]; then
             stop_recording
-            exit 1
+            exit 0
         fi
     fi
 
