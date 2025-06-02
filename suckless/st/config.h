@@ -5,16 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-// static char *font = "IosevkaTermSlab Nerd Font :style=Medium:pixelsize=18:antialias=true:autohint=true";
-static char *font = "UbuntuMono Nerd Font :style=Medium:pixelsize=20:antialias=true:autohint=true";
-// static char *font = "Inconsolata LGC Nerd Font Mono:style=Medium:pixelsize=19:antialias=true:autohint=true";
-// static char *font = "GeistMono Nerd Font Propo:style=Medium:pixelsize=19:antialias=true:autohint=true";
-// static char *font = "DaddyTimeMono Nerd Font Mono:style=Medium:pixelsize=19:antialias=true:autohint=true";
-// static char *font = "DepartureMono Nerd Font Mono:style=Regular:pixelsize=19:antialias=true:autohint=true";
-// static char *font = "BitstromWera Nerd Font Mono:style=Regular:pixelsize=18:antialias=true:autohint=true";
-// static char *font = "ZedMono Nerd Font:style=Medium:pixelsize=18:antialias=true:autohint=true";
-// static char *font = "JetBrainsMono Nerd Font:style=Medium:pixelsize=18:antialias=true:autohint=true";
-
+static char *font = "Inconsolata Nerd Font:style=Medium:pixelsize=21:antialias=true:autohint=true";
 static char *font2[] = {
     "Symbols Nerd Font Mono:style=Regular:pixelsize=11:antialias=true:autohint=true"
 };
