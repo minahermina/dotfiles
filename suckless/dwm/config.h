@@ -13,8 +13,7 @@ static const int splitstatus        = 1;        /* 1 for split status items */
 static const char *splitdelim        = ";";       /* Character used for separating status */
 
 static const char *fonts[]          = {
-    "Inconsolata Nerd Font:style=Medium:pixelsize=16:antialias=true:autohint=true",
-    // "UbuntuMono Nerd Font Mono:style=Regular:pixelsize=16:antialias=true:autohint=true",
+    "monospace:style=Regular:pixelsize=15:antialias=true:autohint=true",
     "NotoColorEmoji:pixelsize=20:antialias=true:autohint=true" 
 }; 
 
@@ -23,7 +22,7 @@ static const char dmenufont[]       = "Iosevka Term Nerd Font :style=Medium:pixe
 static const char col_gray1[]       = "#070707";
 static const char col_gray2[]       = "#555555";
 static const char col_gray3[]       = "#bbbbbb";
-static const char col_gray4[]       = "#eeeeee";
+static const char col_gray4[]       = "#ffffff";
 static const char col_cyan[]        = "#6D8AA8";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */

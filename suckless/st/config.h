@@ -5,10 +5,11 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Inconsolata Nerd Font:style=Medium:pixelsize=21:antialias=true:autohint=true";
-static char *font2[] = {
-    "Symbols Nerd Font Mono:style=Regular:pixelsize=11:antialias=true:autohint=true"
+static char *font = "monospace:style=Medium:pixelsize=20:antialias=true:autohint=true";
+static char *font2[] = { 
+    "NotoColorEmoji:pixelsize=10:antialias=true:autohint=true" 
 };
+
 
 static int borderpx = 0;
 

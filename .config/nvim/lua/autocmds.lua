@@ -17,7 +17,7 @@ end
 
 -- Compile dmenu, dwm, and st after :w in config.def.h || config.h
  vim.api.nvim_create_autocmd("BufWritePost", {
-     pattern = {"config.def.h", "config.h"},
+     pattern = {"config.def.h"},
      callback = function()
          local dir = vim.fn.expand('%:p:h')
          vim.cmd('cd ' .. dir)

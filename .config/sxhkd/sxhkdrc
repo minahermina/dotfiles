@@ -4,7 +4,7 @@ super + w
     $BROWSER
 
 super + g
-    ~/.local/bin/llm
+    ~/.local/scripts/llm
 
 super + n
     $SCRIPTS/passman.sh
