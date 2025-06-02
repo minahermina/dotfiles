@@ -1,0 +1,46 @@
+#!/bin/dash
+CHATGPT=ChatGPT
+CLAUDE=Claude
+DEEPSEEK=DeepSeek
+GROK=Grok
+QWEN=Qwen
+browser=$BROWSER
+move2tag2(){
+    xdotool key $MAINMOD+2
+}
+
+choice=$(echo -n "$GROK\n$CHATGPT\n$QWEN\n$CLAUDE\n$DEEPSEEK" | dmenu -l 10 -i -p "Choose an LLM: ")
+case $choice in
+    $CHATGPT)
+        $BROWSER https://chat.openai.com/
+        move2tag2
+        ;;
+
+    $CLAUDE)
+        $BROWSER https://claude.ai/new
+        move2tag2
+        ;;
+
+    $GROK)
+        $BROWSER https://grok.com/chat
+        move2tag2
+        ;;
+
+    $DEEPSEEK)
+        $BROWSER https://chat.deepseek.com/
+        move2tag2
+        ;;
+
+    $QWEN)
+        $BROWSER https://chat.qwen.ai/
+        move2tag2
+        ;;
+
+
+    *)
+        exit
+        ;;
+
+    esac
+    # brave --app=https://chat.openai.com/
+
