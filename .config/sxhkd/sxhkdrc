@@ -49,7 +49,7 @@ super + m
     $SCRIPTS/tmux_new_window.sh btop
 
 super + b
-    $SCRIPTS/get_gitrepos
+    $SCRIPTS/gitrepos.sh
 
 super + i
     $SCRIPTS/bookmarks
