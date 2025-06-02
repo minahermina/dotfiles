@@ -1,0 +1,91 @@
+# vim: set filetype=config
+
+super + w
+    $BROWSER
+
+super + g
+    ~/.local/bin/llm
+
+super + n
+    $SCRIPTS/passman.sh
+
+super + BackSpace
+   playerctl play-pause
+
+super + bracketright
+   playerctl next
+
+super + bracketleft
+   playerctl previous
+
+super + Insert
+   ~/.local/bin/freee
+
+super + Return
+    $SCRIPTS/tmux_new_window.sh
+
+super + p
+    dmenu_run -i
+
+super + r
+    boomer
+
+super + o
+    mpv $(xclip -o)
+
+super + Delete
+    xwallpaper --zoom $(find $HOME/Pictures/wallpapers -type f | shuf -n 1)
+
+super + v
+    $SCRIPTS/tmux_new_window.sh nvim
+
+super + Home
+	$SCRIPTS/virt.sh	
+
+super + c
+    $SCRIPTS/clipboard_xorg.sh
+
+super + m
+    $SCRIPTS/tmux_new_window.sh btop
+
+super + b
+    $SCRIPTS/get_gitrepos
+
+super + i
+    $SCRIPTS/bookmarks
+
+super + Print
+    $SCRIPTS/screencast.sh 
+
+super + End
+    $SCRIPTS/screencast.sh ; pkill -RTMIN+22 dwmblocks
+
+super + shift + q
+	$SCRIPTS/powermenu.sh	
+
+ctrl + space
+    pkill -RTMIN+30 dwmblocks
+
+super + shift + Delete
+    slock
+
+super + s
+    maim -s | xclip -selection clipboard -t image/png
+
+super + shift + s
+    maim -ui $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
+
+super + {F1,F2,F3}
+    $SCRIPTS/sound.sh {=,-,+}
+
+super + F5
+    brightnessctl set 10%- && pkill -RTMIN+25 dwmblocks
+
+super + F6
+    brightnessctl set +10% && pkill -RTMIN+25 dwmblocks
+
+super + F11
+    pamixer --default-source -t && pkill -RTMIN+10 dwmblocks
+
+super + u
+    setxkbmap -layout us,ara -variant ,digits -option grp:ctrl_space_toggle caps:escape

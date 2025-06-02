@@ -1,0 +1,23 @@
+bind-key j down
+bind-key k up
+bind-key G end
+bind-key g home
+bind-key d pagedown
+bind-key u pageup
+bind-key l open
+bind h filebrowser,help,articlelist,article,tagselection,filterselection,urlview,podboat,dirbrowser,searchresultslist quit
+
+# Color config
+color background          color12  color0
+color listnormal          color12   color0
+color listnormal_unread   color13  color0
+color listfocus           color0    color12
+color listfocus_unread    color0    color12
+color info                color13   color0
+color article             color13   color0
+
+# Open video with mpv
+macro v set browser "setsid -f mpv --really-quiet --no-terminal" ; open-in-browser ; set browser waterfox 
+
+auto-reload yes
+reload-time 120

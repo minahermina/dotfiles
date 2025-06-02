@@ -1,0 +1,62 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/home/mina/repos/dotfiles/src/dwmblocks/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	//
+Block	dwmblocks.c	/^} Block;$/;"	t	typeref:struct:__anon7273fc5c0108	file:
+CC	Makefile	/^CC      := cc$/;"	m
+CFLAGS	Makefile	/^CFLAGS  := -pedantic -Wall -Wno-deprecated-declarations -Os$/;"	m
+CMDLENGTH	dwmblocks.c	/^#define CMDLENGTH	/;"	d	file:
+LDFLAGS	Makefile	/^LDFLAGS := -lX11$/;"	m
+LENGTH	dwmblocks.c	/^#define LENGTH(/;"	d	file:
+MIN	dwmblocks.c	/^#define MIN(/;"	d	file:
+PREFIX	Makefile	/^PREFIX  := \/usr\/local$/;"	m
+SIGMINUS	dwmblocks.c	/^#define SIGMINUS	/;"	d	file:
+SIGPLUS	dwmblocks.c	/^#define SIGPLUS	/;"	d	file:
+STATUSLENGTH	dwmblocks.c	/^#define STATUSLENGTH /;"	d	file:
+__anon7273fc5c0108	dwmblocks.c	/^typedef struct {$/;"	s	file:
+all	Makefile	/^all: options dwmblocks$/;"	t
+blocks	blocks.def.h	/^static const Block blocks[] = {$/;"	v	typeref:typename:const Block[]
+blocks	blocks.h	/^static const Block blocks[] = {$/;"	v	typeref:typename:const Block[]
+blocks.h	Makefile	/^blocks.h:$/;"	t
+clean	Makefile	/^clean:$/;"	t
+command	dwmblocks.c	/^	char* command;$/;"	m	struct:__anon7273fc5c0108	typeref:typename:char *	file:
+delim	blocks.def.h	/^static char delim[] = " | ";$/;"	v	typeref:typename:char[]
+delim	blocks.h	/^static char delim[] = " | ";$/;"	v	typeref:typename:char[]
+delimLen	blocks.def.h	/^static unsigned int delimLen = 5;$/;"	v	typeref:typename:unsigned int
+delimLen	blocks.h	/^static unsigned int delimLen = 5;$/;"	v	typeref:typename:unsigned int
+dpy	dwmblocks.c	/^    static Display *dpy;$/;"	v	typeref:typename:Display *	file:
+dummysighandler	dwmblocks.c	/^void dummysighandler(int signum)$/;"	f	typeref:typename:void
+dwmblocks	Makefile	/^dwmblocks: dwmblocks.c blocks.def.h blocks.h$/;"	t
+getcmd	dwmblocks.c	/^void getcmd(const Block *block, char *output)$/;"	f	typeref:typename:void
+getcmds	dwmblocks.c	/^void getcmds(int time)$/;"	f	typeref:typename:void
+getsigcmds	dwmblocks.c	/^void getsigcmds(unsigned int signal)$/;"	f	typeref:typename:void
+getstatus	dwmblocks.c	/^int getstatus(char *str, char *last)$/;"	f	typeref:typename:int
+icon	dwmblocks.c	/^	char* icon;$/;"	m	struct:__anon7273fc5c0108	typeref:typename:char *	file:
+install	Makefile	/^install: dwmblocks$/;"	t
+interval	dwmblocks.c	/^	unsigned int interval;$/;"	m	struct:__anon7273fc5c0108	typeref:typename:unsigned int	file:
+main	dwmblocks.c	/^int main(int argc, char** argv)$/;"	f	typeref:typename:int
+options	Makefile	/^options:$/;"	t
+pstdout	dwmblocks.c	/^void pstdout()$/;"	f	typeref:typename:void
+returnStatus	dwmblocks.c	/^static int returnStatus = 0;$/;"	v	typeref:typename:int	file:
+root	dwmblocks.c	/^    static Window root;$/;"	v	typeref:typename:Window	file:
+screen	dwmblocks.c	/^    static int screen;$/;"	v	typeref:typename:int	file:
+setroot	dwmblocks.c	/^void setroot()$/;"	f	typeref:typename:void
+setupX	dwmblocks.c	/^int setupX()$/;"	f	typeref:typename:int
+setupsignals	dwmblocks.c	/^void setupsignals()$/;"	f	typeref:typename:void
+sighandler	dwmblocks.c	/^void sighandler(int signum)$/;"	f	typeref:typename:void
+signal	dwmblocks.c	/^	unsigned int signal;$/;"	m	struct:__anon7273fc5c0108	typeref:typename:unsigned int	file:
+statusContinue	dwmblocks.c	/^static int statusContinue = 1;$/;"	v	typeref:typename:int	file:
+statusbar	dwmblocks.c	/^static char statusbar[LENGTH(blocks)][CMDLENGTH] = {0};$/;"	v	typeref:typename:char[][]	file:
+statusloop	dwmblocks.c	/^void statusloop()$/;"	f	typeref:typename:void
+statusstr	dwmblocks.c	/^static char statusstr[2][STATUSLENGTH];$/;"	v	typeref:typename:char[2][]	file:
+termhandler	dwmblocks.c	/^void termhandler()$/;"	f	typeref:typename:void
+uninstall	Makefile	/^uninstall:$/;"	t
+writestatus	dwmblocks.c	/^    static void (*writestatus) () = pstdout;$/;"	v	typeref:typename:void (*)()	file:
+writestatus	dwmblocks.c	/^    static void (*writestatus) () = setroot;$/;"	v	typeref:typename:void (*)()	file:

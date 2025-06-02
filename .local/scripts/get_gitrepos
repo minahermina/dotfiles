@@ -1,0 +1,48 @@
+#!/bin/python3
+
+import toml
+import os
+
+def run_dmenu(args, prompt, lines=0):
+    cmd = f'echo "{args}" | dmenu -i -p "{prompt}" '
+    if lines > 0 :
+        cmd += f'-l {lines}'
+    print(cmd)
+    return os.popen(cmd).read().strip()
+
+def move2_tagN(N):
+    cmd = f'xdotool key $MAINMOD+2'
+    os.popen(cmd).read().strip()
+
+def run_cmd(cmd):
+    os.popen(cmd).read().strip()
+
+def main():
+    # Loading the repos file
+    XDG_DATA_HOME = os.path.expandvars("$XDG_DATA_HOME")
+    file_path = os.path.expanduser(f'{XDG_DATA_HOME}/git_repos.toml')
+    data = toml.load(file_path)
+
+    # get repos names
+    links_dict = {link['name']: link['url'] for link in data['repos']}
+    keys = list(links_dict.keys())
+    repos_names = '\n'.join(keys)
+
+    choice = run_dmenu(repos_names, "Choose a repo:", 10)
+    browser = os.environ['BROWSER']
+
+    if choice in links_dict :
+        selected_url = links_dict[choice]
+        run_cmd(f'{browser} {selected_url}')
+        move2_tagN(2)
+
+    elif choice == 'new':
+        name = run_dmenu("", "Enter repo name:")
+        url = run_dmenu("", "Enter repo link:")
+        if name and url:
+            with open(file_path, "a") as file:
+                file.write(f'[[repos]]\nname = "{name}"\nurl = "{url}"\n')
+
+
+if __name__ == '__main__':
+    main()
