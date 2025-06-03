@@ -18,8 +18,8 @@ dirs=(
      )
 files=(
         ".local/share/pkglist.txt"
-        ".local/share/bookmarks.toml"
-        ".local/share/git_repos.toml"
+        ".local/share/bookmarks.txt"
+        ".local/share/git_repos.txt"
         ".config/screenkey.json"
         ".config/mimeapps.list"
         ".bashrc"

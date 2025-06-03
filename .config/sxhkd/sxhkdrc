@@ -28,7 +28,7 @@ super + p
     dmenu_run -i
 
 super + r
-    boomer
+    ~/.local/bin/boomer
 
 super + o
     mpv $(xclip -o)
@@ -52,7 +52,7 @@ super + b
     $SCRIPTS/gitrepos.sh
 
 super + i
-    $SCRIPTS/bookmarks
+    $SCRIPTS/bookmarks.sh
 
 super + Print
     $SCRIPTS/screencast.sh 
