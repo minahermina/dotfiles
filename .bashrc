@@ -10,8 +10,8 @@ HISTCONTROL=ignoredups
 
 alias 2..='../..'
 alias 3..='../../..'
-alias ls='ls --group-directories-first'
-alias ll='ls -lah'
+alias ls='ls -F --group-directories-first'
+alias ll='ls -lahF'
 alias grep='grep --color=auto'
 alias cs='clear'
 alias t='tmux'
@@ -87,3 +87,7 @@ bind -m vi-insert '"\C-b": backward-delete-char'
 export PS1="\n\[\e[32m\]\w\[\033[33m\]\$(parse_git_branch) \$(parse_venv) \[\033[37m\] \n> "
 
 set -o vi
+
+# bun
+export BUN_INSTALL="$HOME/.local/share/bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
