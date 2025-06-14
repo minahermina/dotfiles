@@ -36,6 +36,14 @@ export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/nv
 export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
 export PYTHON_HISTORY=$XDG_STATE_HOME/python/history
 export BUN_INSTALL="$XDG_DATA_HOME/bun"
+export PSQLRC="$XDG_CONFIG_HOME/pg/psqlrc"
+export PSQL_HISTORY="$XDG_STATE_HOME/psql_history"
+export PGPASSFILE="$XDG_CONFIG_HOME/pg/pgpass"
+export PGSERVICEFILE="$XDG_CONFIG_HOME/pg/pg_service.conf"
+export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
+export MANPAGER="nvim +Man!"
+
 
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
   --color=fg:#ffffff,fg+:#d0d0d0,bg:-1,bg+:#262626

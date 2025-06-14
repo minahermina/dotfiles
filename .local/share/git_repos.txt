@@ -26,3 +26,4 @@ https://github.com/minahermina/machine-vision
 https://github.com/minahermina/BigNum
 https://github.com/minahermina/usw-challenges
 https://github.com/minahermina/arena-allocator-in-C.git
+https://github.com/SelsabeelA/ArabicNLPTools

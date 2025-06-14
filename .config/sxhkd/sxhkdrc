@@ -3,10 +3,10 @@
 super + w
     $BROWSER
 
-super + g
+super + i
     ~/.local/scripts/llm
 
-super + n
+super + p
     $SCRIPTS/passman.sh
 
 super + BackSpace
@@ -24,17 +24,14 @@ super + Insert
 super + Return
     $SCRIPTS/tmux_new_window.sh
 
-super + p
+super + r
     dmenu_run -i
 
-super + r
+super + z
     ~/.local/bin/boomer
 
 super + o
     mpv $(xclip -o)
-
-super + Delete
-    xwallpaper --zoom $(find $HOME/Pictures/wallpapers -type f | shuf -n 1)
 
 super + v
     $SCRIPTS/tmux_new_window.sh nvim
@@ -48,10 +45,10 @@ super + c
 super + m
     $SCRIPTS/tmux_new_window.sh btop
 
-super + b
+super + g
     $SCRIPTS/gitrepos.sh
 
-super + i
+super + b
     $SCRIPTS/bookmarks.sh
 
 super + Print
@@ -61,7 +58,7 @@ super + End
     $SCRIPTS/screencast.sh ; pkill -RTMIN+22 dwmblocks
 
 super + shift + q
-	$SCRIPTS/powermenu.sh	
+	$SCRIPTS/powermenu.sh
 
 ctrl + space
     pkill -RTMIN+30 dwmblocks

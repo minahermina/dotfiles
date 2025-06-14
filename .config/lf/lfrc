@@ -166,7 +166,6 @@ map O choose_pdf_app
 # Basic Functions
 map . set hidden!
 map dt trash
-map dfd final_delete
 map dr restore_trash
 map p paste
 map dd cut
@@ -178,8 +177,8 @@ map md mkdir
 map c :clear;unselect
 
 # Movement
-map gdf cd ~/hdd/D/Mina/Films/
-map gdr cd ~/hdd/D/Mina/recordings/
+map gdf cd ~/hdd/D/mina/films/
+map gdr cd ~/hdd/D/mina/recordings/
 map gdd cd ~/hdd/D
 map gdm cd ~/hdd/D/music
 map gff cd ~/hdd/F

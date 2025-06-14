@@ -22,6 +22,11 @@ alias v='nvim'
 alias z='zathura'
 alias mutt='mbsync -a && neomutt'
 alias emacs='emacs --init-directory=$XDG_CONFIG_HOME/emacs/'
+alias dk='docker'
+alias dcon='docker container'
+alias dimg='docker image'
+alias dvol='docker volume'
+alias dnet='docker network'
 
 
 alias vbr='nvim $HOME/.bashrc'

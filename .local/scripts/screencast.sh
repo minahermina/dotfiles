@@ -22,7 +22,6 @@ start_recording() {
     echo "Starting recording..."
     (sleep 0.2 && pkill -RTMIN+22 dwmblocks) &
 
-    pactl load-module module-echo-cancel use_master_format=1 aec_method=webrtc source_name=noise_cancel_source
     # Run ffmpeg with the selected region
     ffmpeg \
         -f x11grab -framerate 120 -video_size "${width}x${height}" -i :0.0+$x,$y \

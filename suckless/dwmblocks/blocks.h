@@ -5,7 +5,7 @@ static const Block blocks[] = {
     {";",        "~/.local/scripts/get_mic_status.sh" ,                             0,               10},
     {"| ",       "xkb-switch | sed 's/(.*//' " ,                                    0,               30},
     {"| Vol: ",  "~/.local/scripts/get_sound_status.sh",                           0,               20},
-    {"| MEM: ",  "free -h | awk 'NR==2{print $3}' | tr -d 'Gi'",	               1,               0},
+    {"| MEM: ",  "free -h | awk 'NR==2{print $3}' | tr -d 'i'",	               1,               0},
     {"| BR: ",   "echo $(( $(brightnessctl get) * 100 / $(brightnessctl max)))",   0,               25},
     {"| BAT: ",  "cat /sys/class/power_supply/BAT0/capacity",                      2,               0},
     {"| ",       "nmcli -t -f NAME connection show --active | head -n 1",          1,               0},
