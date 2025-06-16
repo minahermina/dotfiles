@@ -4,6 +4,13 @@ local plugins = {
     { "RRethy/base16-nvim" },
 
     {
+        "ptzz/lf.vim",
+        dependencies = {
+            'voldikss/vim-floaterm',
+        }
+    },
+
+    {
         "ej-shafran/compile-mode.nvim",
         tag = "v5.3.1",
         -- you can just use the latest version:

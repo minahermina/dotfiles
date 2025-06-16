@@ -16,9 +16,11 @@ opt.ttimeoutlen=0
 -- Indenting
 opt.shiftwidth = 4
 opt.smartindent = true
+opt.autoindent = true
+opt.cindent = true
 opt.tabstop = 4
 opt.softtabstop = 4
-opt.expandtab = true
+opt.expandtab = false
 opt.swapfile = false
 
 opt.ignorecase = true
@@ -41,6 +43,7 @@ opt.updatetime = 250
 opt.list = true
 
 vim.opt.list = true
+vim.opt.listchars = { tab = '> ', trail = '·', extends = '›', precedes = '‹', nbsp = '·' }
 
 
 -- add binaries installed by mason.nvim to path

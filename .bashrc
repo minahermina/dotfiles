@@ -11,6 +11,7 @@ HISTCONTROL=ignoredups
 alias 2..='../..'
 alias 3..='../../..'
 alias ls='ls -F --group-directories-first'
+alias nnn='nnn -de'
 alias ll='ls -lahF'
 alias grep='grep --color=auto'
 alias cs='clear'
@@ -45,7 +46,7 @@ alias qr='doas xbps-query -s'
 alias qf='doas xbps-query -f'
 
 goto(){
-    local file=$(find . | fzf --header="Jump to location"  )
+    local file=$(find . | fzf --reverse --height=50% --header="Jump to location"  )
     [ -d "$file" ] && cd $file || cd $(dirname "$file")
 }
 
@@ -88,8 +89,8 @@ bind -m vi-insert -x '"\C-o": fzf_dir'
 bind '"\C-b": backward-delete-char'
 bind -m vi-insert '"\C-b": backward-delete-char'
 
-# export PS1="\n\[\e[32m\]\w\[\033[33m\]\$(parse_git_branch) \$(parse_venv) \[\033[37m\] \n❯| "
-export PS1="\n\[\e[32m\]\w\[\033[33m\]\$(parse_git_branch) \$(parse_venv) \[\033[37m\] \n> "
+export PS1="\n\[\e[32m\]\w\[\033[33m\]\$(parse_git_branch) \$(parse_venv) \[\033[37m\] \n< "
+# export PS1="\n\[\e[32m\]\w\[\033[33m\]\$(parse_git_branch) \$(parse_venv) \[\033[37m\] \n> "
 
 set -o vi
 

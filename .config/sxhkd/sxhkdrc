@@ -3,6 +3,9 @@
 super + w
     $BROWSER
 
+super + n
+    lfub
+
 super + i
     ~/.local/scripts/llm
 

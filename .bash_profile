@@ -62,4 +62,6 @@ export PATH=$JAVA_HOME/bin:$PATH
 export GPG_TTY=$(tty)
 gpgconf --launch gpg-agent
 export SSH_AUTH_SOCK="$HOME/.gnupg/S.gpg-agent.ssh"
+export NNN_FIFO="/tmp/nnn.fifo"
+export NNN_PLUG="p:preview-tui;"
 
