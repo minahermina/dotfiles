@@ -16,11 +16,9 @@ opt.ttimeoutlen=0
 -- Indenting
 opt.shiftwidth = 4
 opt.smartindent = true
-opt.autoindent = true
-opt.cindent = true
 opt.tabstop = 4
 opt.softtabstop = 4
-opt.expandtab = false
+opt.expandtab = true
 opt.swapfile = false
 
 opt.ignorecase = true
