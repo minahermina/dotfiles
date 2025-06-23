@@ -41,7 +41,7 @@ opt.updatetime = 250
 opt.list = true
 
 vim.opt.list = true
-vim.opt.listchars = { tab = '> ', trail = '·', extends = '›', precedes = '‹', nbsp = '·' }
+vim.opt.listchars = { tab = '> ', trail = '-', extends = '›', precedes = '‹', nbsp = '·' }
 
 
 -- add binaries installed by mason.nvim to path

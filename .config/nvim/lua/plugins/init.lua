@@ -47,10 +47,6 @@ local plugins = {
         end,
     },
 
-
-
-
-
     {
         "mg979/vim-visual-multi"
     },

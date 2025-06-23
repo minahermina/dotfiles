@@ -8,10 +8,12 @@ acpi
 alsa-plugins-pulseaudio
 arandr
 aria2
+atool
 autoconf
 base-system
 bash-completion
 bat
+bind-utils
 blueman
 bluez
 bmake
@@ -19,7 +21,9 @@ bridge-utils
 brightnessctl
 btop
 caligula
+cargo
 chrony
+chrpath
 clang
 cryptsetup
 ctags
@@ -27,6 +31,7 @@ cups
 curl
 dialog
 docker
+docker-compose
 dunst
 edk2-ovmf
 emacs-x11
@@ -115,6 +120,8 @@ qemu-user-amd64
 ripgrep
 rsync
 runit-iptables
+rust
+screenFetch
 shellcheck
 slop
 speedtest-cli
@@ -139,7 +146,6 @@ void-repo-nonfree
 vsv
 w3m
 wget
-xcb-util-image-devel
 xclip
 xcolor
 xdg-utils

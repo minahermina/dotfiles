@@ -4,7 +4,7 @@ super + w
     $BROWSER
 
 super + n
-    lfub
+    $SCRIPTS/tmux_new_window.sh lfub
 
 super + i
     ~/.local/scripts/llm
