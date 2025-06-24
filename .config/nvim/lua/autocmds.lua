@@ -28,7 +28,7 @@ end
  })
 
 -- Auto-generate ctags when saving C, C++, Python, and Java files
-vim.api.nvim_create_autocmd("BufWritePost", {
+--[[ vim.api.nvim_create_autocmd("BufWritePost", {
   pattern = {"*.c", "*.h", "*.cpp", "*.hpp", "*.cc", "*.java"},
   callback = function()
     local exclude_dirs = {
@@ -54,7 +54,7 @@ vim.api.nvim_create_autocmd("BufWritePost", {
     vim.fn.jobstart("cd " .. vim.fn.shellescape(cwd) .. " && ctags -R " .. exclude_args .. " .", {detach = true})
   end,
   desc = "Auto-generate ctags for C, C++, Python, and Java files on save",
-})
+}) ]]
 
 -- Compiles any latex file
 vim.api.nvim_create_autocmd("BufWritePost", {
