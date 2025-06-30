@@ -3,7 +3,7 @@
 set -xe
 
 git_repos_file="$XDG_DATA_HOME/git_repos.txt"
-repos=$( sed 's#.*/##; s/\.git$//' "$git_repos_file")
+repos=$(sed -E 's#.*/([^/]+/[^/]+)/*$#\1#' "$git_repos_file")
 choice=$(echo "$repos" | dmenu -i -l 10 -p "Choose a repo:")
 
 if [ "$choice" = "'new" ]; then
