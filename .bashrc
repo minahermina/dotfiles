@@ -10,9 +10,9 @@ HISTCONTROL=ignoredups
 
 alias 2..='../..'
 alias 3..='../../..'
-alias ls='ls -F --group-directories-first'
+alias ls='ls --file-type --group-directories-first'
 alias nnn='nnn -de'
-alias ll='ls -lahF'
+alias ll='ls -lah'
 alias grep='grep --color=auto'
 alias cs='clear'
 alias t='tmux'
