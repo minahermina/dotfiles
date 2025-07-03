@@ -45,6 +45,13 @@ export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 export MANPAGER="nvim +Man!"
 
 
+export BUN_INSTALL="$HOME/.local/share/bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+export IDEA_JDK='/usr/lib/jvm/openjdk21/'
+export PYCHARM_JDK='/usr/lib/jvm/openjdk21/'
+export PATH=$JAVA_HOME/bin:$PATH
+
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
   --color=fg:#ffffff,fg+:#d0d0d0,bg:-1,bg+:#262626
   --color=hl:'"$MAIN_COLOR"',hl+:'"$MAIN_COLOR"',info:#afaf87,marker:#87ff00
@@ -55,13 +62,6 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
 [ $(tty) = "/dev/tty1" ] && startx
 
 
-export IDEA_JDK='/usr/lib/jvm/openjdk21/'
-export PYCHARM_JDK='/usr/lib/jvm/openjdk21/'
-export PATH=$JAVA_HOME/bin:$PATH
-
 export GPG_TTY=$(tty)
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 gpgconf --launch gpg-agent
-export SSH_AUTH_SOCK="$HOME/.gnupg/S.gpg-agent.ssh"
-export NNN_FIFO="/tmp/nnn.fifo"
-export NNN_PLUG="p:preview-tui;"
-
