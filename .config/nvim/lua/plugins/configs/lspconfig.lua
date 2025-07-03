@@ -53,7 +53,7 @@ capabilities.textDocument.completion.completionItem = {
 -- Setup language servers.
 local lspconfig = require "lspconfig"
 
-lspconfig.clangd.setup {
+--[[ lspconfig.clangd.setup {
     cmd = { 'clangd', '--background-index' },
     filetypes = { 'c', 'cpp', 'objc', 'objcpp' },
     on_attach = vim.lsp.common_on_attach,
@@ -62,17 +62,16 @@ lspconfig.clangd.setup {
             disableSuggestions = true,
         }
     }
+} ]]
 
-}
-
-lspconfig.ts_ls.setup {
+--[[ lspconfig.ts_ls.setup {
     on_attach = vim.lsp.common_on_attach,
     init_options = {
         preferences = {
             disableSuggestions = true,
         }
     }
-}
+} ]]
 
 --[[ lspconfig.ltex.setup {
     cmd = { 'ltex-ls' },
@@ -90,7 +89,7 @@ lspconfig.ts_ls.setup {
 
 local servers = { "jdtls", "rust_analyzer", "clangd", "lua_ls", "pyright", --[[ "ltex" ]] }
 
-vim.diagnostic.config({
+--[[ vim.diagnostic.config({
   virtual_text = false,    -- Disable virtual text completely
   signs = false,          -- Keep diagnostic signs in the gutter
   underline = false,      -- Keep underlining issues in the text
@@ -100,10 +99,10 @@ vim.diagnostic.config({
     border = "rounded",
     source = "always",
   },
-})
+}) ]]
 
-for _, lsp in ipairs(servers) do
+--[[ for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup {
         capabilities = capabilities,
     }
-end
+end ]]
