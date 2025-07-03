@@ -1,0 +1,21 @@
+# vim: filetype=neomuttrc
+# muttrc file for account mina.albert33@gmail.com
+set real_name = "mina.albert33"
+set from = "mina.albert33@gmail.com"
+set sendmail = "msmtp -a mina.albert33@gmail.com"
+alias me mina.albert33 <mina.albert33@gmail.com>
+set folder = "/home/mina/.local/share/mail/mina.albert33@gmail.com"
+set header_cache = "/home/mina/.cache/mutt-wizard/mina.albert33_gmail.com/headers"
+set message_cachedir = "/home/mina/.cache/mutt-wizard/mina.albert33_gmail.com/bodies"
+set mbox_type = Maildir
+set hostname = "gmail.com"
+source /usr/local/share/mutt-wizard/switch.muttrc
+set spool_file = "+INBOX"
+set postponed = "+Drafts"
+set trash = "+Trash"
+set record = "+Sent"
+
+macro index o "<shell-escape>mbsync mina.albert33@gmail.com<enter>" "sync mina.albert33@gmail.com"
+
+macro index,pager i2 '<sync-mailbox><enter-command>source /home/mina/.config/neomutt/accounts/mina.albert33@gmail.com.muttrc<enter><change-folder>!<enter>;<check-stats>' "switch to mina.albert.saeed@gmail.com"
+mailboxes "=&-JxQ-" "=&-JxQnFA-" "=INBOX" "=Quora" "=Sent" "=[Gmail]/All Mail" "=[Gmail]/Drafts" "=[Gmail]/Important" "=[Gmail]/Sent Mail" "=[Gmail]/Spam" "=[Gmail]/Starred" "=[Gmail]/Trash" "=&JxQ-" "=&JxQnFA-"
