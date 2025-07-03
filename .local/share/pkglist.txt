@@ -40,7 +40,6 @@ fd
 ffmpeg
 ffmpegthumbnailer
 fzf
-gcc
 gdb
 gettext
 git
