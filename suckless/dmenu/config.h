@@ -6,7 +6,7 @@ static int fuzzy  = 1;                      /* -F  option; if 0, dmenu doesn't u
 /* -fn option overrides fonts[0]; default X11 font or font set */
 static const char *fonts[] = {
     "monospace:pixelsize=17:antialias=true:autohint=true"  // fallback font
-    "NotoColorEmoji:pixelsize=15:antialias=true:autohint=true"  // fallback font
+    "Symbols Nerd Font Mono:pixelsize=15:antialias=true:autohint=true"  // fallback font
 };
 static const char *prompt = NULL;      /* -p  option; prompt to the left of input field */
 static const char *colors[SchemeLast][2] = {
