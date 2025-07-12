@@ -7,7 +7,7 @@
  */
 static char *font = "monospace:style=Medium:pixelsize=19:antialias=true:autohint=true";
 static char *font2[] = { 
-    "Symbols Nerd Font Mono:style=Regular" 
+    "Symbols Nerd Font:style=Regular" 
 };
 
 static int borderpx = 0;

@@ -15,6 +15,7 @@ require("lualine").setup {
             -- "mode",
             {
                 "filename",
+                icons_enabled = true,
                 path = 4,
                 color = { bg = black, fg = '#ffffff' },
                 separator = { left = '', right = ''}
@@ -37,6 +38,9 @@ require("lualine").setup {
         },
 
         lualine_x = {
+            {
+                'location',
+            },
             {
                 'searchcount',
                 maxcount = 999,

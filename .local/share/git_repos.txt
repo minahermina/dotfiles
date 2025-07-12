@@ -9,7 +9,7 @@ https://github.com/minahermina/Data-Structures
 https://github.com/minahermina/Digital-Signals-Processing
 https://gitlab.com/minahermina/dotfiles
 https://github.com/minahermina/Higher-Studies-System
-https://github.com/minahermina/imglib
+https://gitlab.com/minahermina/imglib
 https://github.com/minahermina/linux-notes
 https://github.com/minahermina/minaalbert33
 https://github.com/minahermina/missing-with-linux-kernel-modules
