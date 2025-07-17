@@ -1,3 +1,4 @@
+source ~/.local/scripts/fzf-git.sh
 shopt -s autocd 
 shopt -s histappend
 stty -ixon
@@ -35,15 +36,36 @@ alias so='source ./venv/bin/activate'
 alias vbp='nvim $HOME/.bash_profile'
 alias sb='source $HOME/.bashrc && source $HOME/.bashrc'
 alias vt='nvim $XDG_CONFIG_HOME/tmux/tmux.conf'
+alias gh='_fzf_git_hashes'
 
 # Package manager Aliases
-alias i='doas xbps-install -S'
-alias s='doas xbps-query -Rs'
-alias u='doas xbps-install -Su; doas xbps-install -u xbps; doas xbps-install -u'
-alias r='doas xbps-remove -R'
-alias q='doas xbps-query -s'
-alias qr='doas xbps-query -s'
-alias qf='doas xbps-query -f'
+case "$(uname)" in
+    Linux)
+        alias i='doas xbps-install -S'
+        alias s='doas xbps-query -Rs'
+        alias u='doas xbps-install -Su; doas xbps-install -u xbps; doas xbps-install -u'
+        alias r='doas xbps-remove -R'
+        alias q='doas xbps-query -s'
+        alias qr='doas xbps-query -s'
+        alias qf='doas xbps-query -f'
+        ;;
+    OpenBSD)
+        alias i='doas pkg_add'
+        alias s='doas pkg_info -Rs'
+        alias r='doas pkg_ -R'
+        alias q='doas pkg_ -s'
+        ;;
+    FreeBSD)
+        alias i='doas pkg install '
+        alias s='doas pkg search'
+        alias r='doas pkg delete'
+        alias q='doas pkg info'
+        ;;
+    *)
+        echo "Unknown OS: $(uname)"
+        ;;
+esac
+
 
 goto(){
     local file=$(find . | fzf --reverse --height=50% --header="Jump to location"  )
@@ -92,4 +114,3 @@ bind -m vi-insert '"\C-b": backward-delete-char'
 export PS1="\n\[\e[32m\]\w\[\033[33m\]\$(parse_git_branch) \$(parse_venv) \[\033[37m\] \n< "
 
 set -o vi
-

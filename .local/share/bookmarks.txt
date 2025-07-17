@@ -1,4 +1,4 @@
-"GitHub"=https://github.com/minahermina
+"GitHub"=https://github.com/
 "regexr"=https://regexr.com/
 "C libraries"=https://ccodearchive.net/list.html
 "UniKraft"=unikraft.org
@@ -87,4 +87,4 @@
 "Library Genesis"=https://www.libgen.rs/
 "C Utils Library"=https://github.com/barrust/c-utils?tab=readme-ov-file
 "Reuters"=https://www.reuters.com/
-"Gitlab"=https://gitlab.com/
+"Gitlab"=https://gitlab.com/minahermina

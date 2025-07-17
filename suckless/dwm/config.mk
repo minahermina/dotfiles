@@ -17,9 +17,14 @@ XINERAMAFLAGS = -DXINERAMA
 # freetype
 FREETYPELIBS = -lfontconfig -lXft
 FREETYPEINC = /usr/include/freetype2
+
 # OpenBSD (uncomment)
 #FREETYPEINC = ${X11INC}/freetype2
 #MANPREFIX = ${PREFIX}/man
+
+# FreeBSD (uncomment)
+# X11INC = /usr/local/include
+# FREETYPEINC = /usr/local/include/freetype2
 
 # includes and libs
 INCS = -I${X11INC} -I${FREETYPEINC}

@@ -5,7 +5,7 @@ clipmenu -i
 focused_window_name=$(xdotool getwindowname $(xdotool getactivewindow))
  
 case "$focused_window_name" in
-    *"Waterfox"*) 
+    *"Firefox"*) 
         xdotool key Ctrl+v
     ;;
     *"tmux"*) 
