@@ -20,7 +20,7 @@ https://github.com/minahermina/xv6-riscv
 https://github.com/minahermina/resume.git
 https://github.com/minahermina/minahermina.github.io
 https://github.com/minahermina/Kernel-Config-with-lockdep-module
-https://github.com/minahermina/Linux-Programming-Interface-Journey
+https://gitlab.com/minahermina/Linux-Programming-Interface-Journey
 https://github.com/moazadly/cairo_dictionary_main
 https://github.com/minahermina/machine-vision
 https://github.com/minahermina/BigNum

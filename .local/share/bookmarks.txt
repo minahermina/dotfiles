@@ -88,3 +88,4 @@
 "C Utils Library"=https://github.com/barrust/c-utils?tab=readme-ov-file
 "Reuters"=https://www.reuters.com/
 "Gitlab"=https://gitlab.com/minahermina
+"Typst Docs"=https://typst.app/docs/reference/
