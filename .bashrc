@@ -14,7 +14,6 @@ alias 3..='../../..'
 alias ls='ls --file-type --group-directories-first'
 alias nnn='nnn -de'
 alias ll='ls -lah'
-alias grep='grep --color=auto'
 alias cs='clear'
 alias t='tmux'
 alias lf='lfub'
@@ -51,9 +50,9 @@ case "$(uname)" in
         ;;
     OpenBSD)
         alias i='doas pkg_add'
-        alias s='doas pkg_info -Rs'
-        alias r='doas pkg_ -R'
-        alias q='doas pkg_ -s'
+        alias s='doas pkg_info -a -Q'
+        alias r='doas pkg_delete'
+        alias q='doas pkg_info -a | grep'
         ;;
     FreeBSD)
         alias i='doas pkg install '
