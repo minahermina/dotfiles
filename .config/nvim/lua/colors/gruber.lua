@@ -1,43 +1,43 @@
 vim.cmd('highlight clear')
 if vim.fn.exists("syntax_on") == 1 then
-	vim.cmd('syntax reset')
+    vim.cmd('syntax reset')
 end
 
 vim.o.background = "dark"
 vim.g.colors_name = "gruber"
 
 local colors = {
-	black     = {"#070707", 234},
-	brown     = {"#af875f", 137},
-	blue      = {"#6D8AA8", 235},
-	lgreen    = {"#afd7af", 113},
-	red       = {"#F38BA8", 203},
-	-- white     = {"#F8F8FF", 254},
-	white     = {"#DEDEDE", 254},
-	non       = {"#777777", 100},
-	comment   = {"#6D6E85", 201},
-	gray      = {"#727272", 241},
-	variable  = {"#F9E2AF", 176},
-	yellow    = {"#FADF0F", 177},
-	green     = {"#9f9f9f", 178},
-	lolo      = {"#222222", 180},
+    black     = {"#070707", 234},
+    brown     = {"#af875f", 137},
+    blue      = {"#6D8AA8", 235},
+    lgreen    = {"#afd7af", 113},
+    red       = {"#F38BA8", 203},
+    -- white     = {"#F8F8FF", 254},
+    white     = {"#DEDEDE", 254},
+    non       = {"#777777", 100},
+    comment   = {"#6D6E85", 201},
+    gray      = {"#727272", 241},
+    variable  = {"#F9E2AF", 176},
+    yellow    = {"#FADF0F", 177},
+    green     = {"#9f9f9f", 178},
+    lolo      = {"#222222", 180},
 }
 
 local function hl(group, attrs)
-	local command = {"highlight", group}
-	if attrs.fg then
-		table.insert(command, "guifg=" .. attrs.fg[1])
-		table.insert(command, "ctermfg=" .. attrs.fg[2])
-	end
-	if attrs.bg then
-		table.insert(command, "guibg=" .. attrs.bg[1])
-		table.insert(command, "ctermbg=" .. attrs.bg[2])
-	end
-	if attrs.style then
-		table.insert(command, "gui=" .. attrs.style)
-		table.insert(command, "cterm=" .. attrs.style)
-	end
-	vim.cmd(table.concat(command, " "))
+    local command = {"highlight", group}
+    if attrs.fg then
+        table.insert(command, "guifg=" .. attrs.fg[1])
+        table.insert(command, "ctermfg=" .. attrs.fg[2])
+    end
+    if attrs.bg then
+        table.insert(command, "guibg=" .. attrs.bg[1])
+        table.insert(command, "ctermbg=" .. attrs.bg[2])
+    end
+    if attrs.style then
+        table.insert(command, "gui=" .. attrs.style)
+        table.insert(command, "cterm=" .. attrs.style)
+    end
+    vim.cmd(table.concat(command, " "))
 end
 
 hl("CursorLine",    {bg = colors.lolo})

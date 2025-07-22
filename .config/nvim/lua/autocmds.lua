@@ -16,16 +16,16 @@ function M.opts_extend(default, opts)
 end
 
 -- Compile dmenu, dwm, and st after :w in config.def.h || config.h
- vim.api.nvim_create_autocmd("BufWritePost", {
-     pattern = {"config.def.h"},
-     callback = function()
-         local dir = vim.fn.expand('%:p:h')
-         vim.cmd('cd ' .. dir)
-         vim.opt.makeprg = 'rm -rf config.h && doas make install clean'
-         vim.cmd('silent make')
-         vim.opt.makeprg = 'make'
-     end,
- })
+vim.api.nvim_create_autocmd("BufWritePost", {
+    pattern = {"config.def.h"},
+    callback = function()
+        local dir = vim.fn.expand('%:p:h')
+        vim.cmd('cd ' .. dir)
+        vim.opt.makeprg = 'rm -rf config.h && doas make install clean'
+        vim.cmd('silent make')
+        vim.opt.makeprg = 'make'
+    end,
+})
 
 -- Auto-generate ctags when saving C, C++, Python, and Java files
 --[[ vim.api.nvim_create_autocmd("BufWritePost", {
@@ -41,15 +41,15 @@ end
       "__pycache__",
       "target"  -- for Rust/Java projects
     }
-    
+
     local exclude_args = ""
     for _, dir in ipairs(exclude_dirs) do
       exclude_args = exclude_args .. "--exclude=" .. dir .. " "
     end
-    
+
     -- Get the current working directory
     local cwd = vim.fn.getcwd()
-    
+
     -- Run ctags in the current working directory
     vim.fn.jobstart("cd " .. vim.fn.shellescape(cwd) .. " && ctags -R " .. exclude_args .. " .", {detach = true})
   end,

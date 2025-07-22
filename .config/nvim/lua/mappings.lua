@@ -163,8 +163,8 @@ local build = require('CustomScripts.build')
 map('n', '<leader>e', function () build.test() end, options)
 
 vim.keymap.set('n', '<leader>r', function()
-  vim.cmd('copen')
-  vim.cmd('make')
+    vim.cmd('copen')
+    vim.cmd('make')
 end, options)
 
 map('n', '<leader>ww', ":Compile<CR>" , options)
