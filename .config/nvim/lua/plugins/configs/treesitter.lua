@@ -1,20 +1,25 @@
 require("nvim-treesitter.configs").setup {
-  ensure_installed =
+    ensure_installed =
         {
-        "c",
-        "cpp",
-        "toml",
-        "python",
-        "html",
-        "java",
-        "make",
-        "markdown",
-        "typst",
+            "c",
+            "cpp",
+            "java",
+            "rust",
+            "scheme",
+            "python",
+            "lua",
+            "typst",
+            "html",
+            "css",
+            "make",
+            "toml",
+            "markdown",
+            "dockerfile",
         },
 
-  highlight = {
-    enable = true,
-    use_languagetree = true,
-  },
-  indent = { enable = true },
+    highlight = {
+        enable = true,
+        use_languagetree = true,
+    },
+    indent = { enable = true },
 }
