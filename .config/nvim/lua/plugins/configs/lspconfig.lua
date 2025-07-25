@@ -89,20 +89,20 @@ local lspconfig = require "lspconfig"
 
 local servers = { "jdtls", "rust_analyzer", "clangd", "lua_ls", "pyright", --[[ "ltex" ]] }
 
---[[ vim.diagnostic.config({
-  virtual_text = false,    -- Disable virtual text completely
-  signs = false,          -- Keep diagnostic signs in the gutter
-  underline = false,      -- Keep underlining issues in the text
+vim.diagnostic.config({
+  virtual_text = true,    -- Disable virtual text completely
+  signs = true,          -- Keep diagnostic signs in the gutter
+  underline = true,      -- Keep underlining issues in the text
   update_in_insert = false,
   severity_sort = true,
   float = {
     border = "rounded",
     source = "always",
   },
-}) ]]
+})
 
---[[ for _, lsp in ipairs(servers) do
+for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup {
         capabilities = capabilities,
     }
-end ]]
+end
