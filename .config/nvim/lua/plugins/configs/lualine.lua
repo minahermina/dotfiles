@@ -1,14 +1,63 @@
 -- local bg_dark = "#1f2335"
 local fg = "#ffffff"
-local bg_color = "#888888"
-local black = "#070707"
-require("lualine").setup {
+local bg_color = "#070707"
 
+local custom_theme = {
+    normal = {
+        a = { bg = bg_color, fg = fg },
+        b = { bg = bg_color, fg = fg },
+        c = { bg = bg_color, fg = fg },
+        x = { bg = bg_color, fg = fg },
+        y = { bg = bg_color, fg = fg },
+        z = { bg = bg_color, fg = fg },
+    },
+    insert = {
+        a = { bg = bg_color, fg = fg },
+        b = { bg = bg_color, fg = fg },
+        c = { bg = bg_color, fg = fg },
+        x = { bg = bg_color, fg = fg },
+        y = { bg = bg_color, fg = fg },
+        z = { bg = bg_color, fg = fg },
+    },
+    visual = {
+        a = { bg = bg_color, fg = fg },
+        b = { bg = bg_color, fg = fg },
+        c = { bg = bg_color, fg = fg },
+        x = { bg = bg_color, fg = fg },
+        y = { bg = bg_color, fg = fg },
+        z = { bg = bg_color, fg = fg },
+    },
+    replace = {
+        a = { bg = bg_color, fg = fg },
+        b = { bg = bg_color, fg = fg },
+        c = { bg = bg_color, fg = fg },
+        x = { bg = bg_color, fg = fg },
+        y = { bg = bg_color, fg = fg },
+        z = { bg = bg_color, fg = fg },
+    },
+    command = {
+        a = { bg = bg_color, fg = fg },
+        b = { bg = bg_color, fg = fg },
+        c = { bg = bg_color, fg = fg },
+        x = { bg = bg_color, fg = fg },
+        y = { bg = bg_color, fg = fg },
+        z = { bg = bg_color, fg = fg },
+    },
+    inactive = {
+        a = { bg = bg_color, fg = fg },
+        b = { bg = bg_color, fg = fg },
+        c = { bg = bg_color, fg = fg },
+        x = { bg = bg_color, fg = fg },
+        y = { bg = bg_color, fg = fg },
+        z = { bg = bg_color, fg = fg },
+    },
+}
+
+require("lualine").setup {
     options = {
         globalstatus = true,
-        -- theme = 'auto'
+        theme = custom_theme
     },
-
     sections = {
         -- a b c     x y z
         lualine_a = {
@@ -17,26 +66,19 @@ require("lualine").setup {
                 "filename",
                 icons_enabled = true,
                 path = 4,
-                color = { bg = black, fg = '#ffffff' },
                 separator = { left = '', right = ''}
             },
             {
                 "progress", padding = { left = 1, right = 1 },
-                color = { bg = black, fg = '#ffffff' },
             },
-
             {
                 "branch",
-                color = { bg = black, fg = '#ffffff' },
             },
         },
-
         lualine_c =  {
         },
-
         lualine_b = {
         },
-
         lualine_x = {
             {
                 'location',
@@ -45,26 +87,19 @@ require("lualine").setup {
                 'searchcount',
                 maxcount = 999,
                 timeout = 10000,
-                color = { bg = black, fg = '#ffffff' },
             },
-
         },
-
         lualine_y = {
             {
                 "filetype",
-                color = { bg = black, fg = '#ffffff' },
             },
         },
-
         lualine_z = {
             {
                 'encoding',
                 -- Show '[BOM]' when the file has a byte-order mark
                 show_bomb = false,
-                color = { bg = black, fg = '#ffffff' },
             },
         },
-
     },
 }
