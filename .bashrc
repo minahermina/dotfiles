@@ -113,3 +113,4 @@ bind -m vi-insert '"\C-b": backward-delete-char'
 export PS1="\n\[\e[32m\]\w\[\033[33m\]\$(parse_git_branch) \$(parse_venv) \[\033[37m\] \n< "
 
 set -o vi
+eval "$(zoxide init bash)"
