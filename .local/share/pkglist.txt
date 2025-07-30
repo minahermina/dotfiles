@@ -16,7 +16,6 @@ bat
 bind-utils
 blueman
 bluez
-bmake
 bridge-utils
 brightnessctl
 btop
@@ -24,14 +23,11 @@ caligula
 cargo
 chez-scheme
 chrony
-chrpath
 clang
 cryptsetup
 ctags
 cups
 curl
-dclock
-dialog
 djvulibre
 docker
 docker-compose
@@ -49,7 +45,6 @@ gdb
 gettext
 git
 git-filter-repo
-global
 gmp-devel
 gnupg
 grub-i386-efi
@@ -103,7 +98,6 @@ pass
 patch
 pavucontrol
 pinentry-dmenu
-pinentry-gtk
 pkg-config
 poppler-utils
 pulseaudio

@@ -59,7 +59,6 @@
 "Linux Inside Booting"=https://0xax.gitbooks.io/linux-insides/content/Booting/linux-bootstrap-1.html
 "KOCW Document"=http://contents.kocw.net/KOCW/document/2014/Yeungnam/KWAKJongwook/111.pdf
 "Outlier"=https://app.outlier.ai/en/expert
-"Twitter"=https://twitter.com/home?lang=en
 "NetAcad"=https://www.netacad.com/portal/learning
 "Skills for All"=https://skillsforall.com/launch?id=ec0847b7-e6fc-4597-bc31-38ddd6b07a2f&tab=curriculum&view=e4438117-81a5-5b37-81a5-dc26c153963d
 "Discord"=https://discord.com/channels/@me
@@ -69,7 +68,6 @@
 "Facebook"=https://www.facebook.com/
 "Telegram Web"=https://web.telegram.org/a/
 "Quora"=https://www.quora.com/
-"Twitter"=https://twitter.com/home?lang=en
 "Animelek"=https://animelek.me/
 "Learn to Play Go"=https://online-go.com/learn-to-play-go
 "Oxford Learner's Dictionaries"=https://www.oxfordlearnersdictionaries.com/definition/english/
@@ -89,3 +87,4 @@
 "Reuters"=https://www.reuters.com/
 "Gitlab"=https://gitlab.com/minahermina
 "Typst Docs"=https://typst.app/docs/reference/
+"Programming Languages DB"=https://pldb.io/

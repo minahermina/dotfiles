@@ -29,3 +29,5 @@ https://github.com/minahermina/arena-allocator-in-C.git
 https://github.com/SelsabeelA/ArabicNLPTools
 https://github.com/NourhanMahmoudd/Cairo-Dictionary-AI_IT
 https://gitlab.com/minahermina/procaudit
+https://github.com/unikraft/unikraft.git
+https://gitlab.com/minahermina/c-toolkit
