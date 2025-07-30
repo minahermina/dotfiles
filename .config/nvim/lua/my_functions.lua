@@ -1,33 +1,36 @@
 local M = {}
 
--- 0 -> horizontal
--- 1 -> vertical
 function M.open_tmux_pane(dir)
     local file_path = vim.api.nvim_buf_get_name(0)
     local file_dir = vim.fn.fnamemodify(file_path, ":p:h")
-    tmux = vim.fn.exists('$TMUX')
+    local tmux = vim.fn.exists('$TMUX')
 
     if file_dir == "" then
         print("No file is open")
         return
     end
 
+    -- Calculate 30% of current nvim window height
+    local ui = vim.api.nvim_list_uis()[1]
+    local percent_height = math.floor(ui.height * 0.3)
+
     if tmux == 1 then
         local tmux_cmd = ""
 
         if dir == 0 then
-            tmux_cmd = string.format("tmux split-window -v -l 10 -c '%s'", file_dir)
+            tmux_cmd = string.format("tmux split-window -v -l %d -c '%s'", percent_height, file_dir)
         else
             tmux_cmd = string.format("tmux split-window -h -l 60 -c '%s'", file_dir)
         end
 
         vim.fn.system(tmux_cmd)
     else
-        vim.cmd('20 | sp | term')
+        vim.cmd("sp | term")
+        vim.cmd("resize " .. percent_height)
     end
-
-
 end
+
+
 
 function M.toggle_quickfix()
     local quickfix_open = false

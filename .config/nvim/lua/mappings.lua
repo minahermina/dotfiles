@@ -118,6 +118,7 @@ map('n', '<leader>fs',  function() fzf_lua.lsp_document_symbols() end       , { 
 map('n', '<leader>fo',  function() fzf_lua.oldfiles() end                   , { desc = 'Search old files' }                       , options)
 map('n', '<leader>fm',  function() fzf_lua.man_pages() end                  , { desc = 'Show man_pages' }                         , options)
 map('n', '<leader>fc',  function() fzf_lua.command_history() end            , { desc = 'Show Command History' }                   , options)
+map('n', '<leader>fz',  function() fzf_lua.zoxide() end            , { desc = 'Show Command History' }                   , options)
 
 -- Git keymaps
 map('n', '<leader>gd', '<cmd> Gitsigns diffthis <CR>'     , { desc = 'Diff Buffer' })
