@@ -1,5 +1,5 @@
 require("fzf-lua").setup({
-    'fzf-tmux',
+    'default',
     fzf_opts = {
         ["--ansi"]           = true,
         ["--info"]           = "inline-right",

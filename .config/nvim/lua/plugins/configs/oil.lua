@@ -1,6 +1,7 @@
 require("oil").setup({
     constrain_cursor = "name",
     use_default_keymaps = false,
+    watch_for_changes = true,
 
     keymaps = {
         ["<CR>"] = "actions.select",

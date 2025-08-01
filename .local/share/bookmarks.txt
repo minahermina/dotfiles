@@ -88,3 +88,4 @@
 "Gitlab"=https://gitlab.com/minahermina
 "Typst Docs"=https://typst.app/docs/reference/
 "Programming Languages DB"=https://pldb.io/
+"Witanime"=https://witanime.world/

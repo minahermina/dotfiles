@@ -1,7 +1,7 @@
 #!/bin/sh
 
 diskImages=$(ls ~/vms/)
-diskImage=$(echo "$diskImages" | dmenu -i -p "Choose a Disk Image:")
+diskImage=$(echo "$diskImages" | dmenu -l 5 -i -p "Choose a Disk Image:")
 
 # Check if port is free using fuser or netcat
 is_port_free() {

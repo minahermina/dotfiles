@@ -11,8 +11,6 @@ HISTCONTROL=ignoredups
 
 alias 2..='../..'
 alias 3..='../../..'
-alias ls='ls --file-type --group-directories-first'
-alias nnn='nnn -de'
 alias ll='ls -lah'
 alias cs='clear'
 alias t='tmux'
@@ -68,7 +66,7 @@ esac
 
 goto(){
     local file=$(find . | fzf --reverse --height=50% --header="Jump to location"  )
-    [ -d "$file" ] && cd $file || cd $(dirname "$file")
+    [ -f "$file" ] && xdg-open "$file" || cd $(dirname "$file")
 }
 
 alias ff=goto
