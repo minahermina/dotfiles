@@ -2,13 +2,13 @@
 set info size
 set ignorecase true
 set mouse true
+set watch true
 set icons true
 set drawbox false
 set cleaner '~/.config/lf/cleaner'
 set previewer '~/.config/lf/scope'
 set preview true
 set ratios 4:3
-
 # Custom Functions
 #-----------------------------------------------------------------------
 cmd mkdir ${{
@@ -26,138 +26,137 @@ cmd mkfile ${{
 
 #-----------------------------------------------------------------------
 cmd select-type &{{
-	set -f
-	[ "$#" -eq 0 ] && exit
-	files="$(
-		find "$PWD" -mindepth 1 -maxdepth 1 -type "$1" $([ "$lf_hidden" = false ] && printf '%s\n' -not -name '.*') -print0 |
-			sed -z 's/\\/\\\\/g;s/"/\\"/g;s/\n/\\n/g;s/^/"/;s/$/"/' |
-			tr '\0' ' ')"
+    set -f
+    [ "$#" -eq 0 ] && exit
+    files="$(
+            find "$PWD" -mindepth 1 -maxdepth 1 -type "$1" $([ "$lf_hidden" = false ] && printf '%s\n' -not -name '.*') -print0 |
+            sed -z 's/\\/\\\\/g;s/"/\\"/g;s/\n/\\n/g;s/^/"/;s/$/"/' |
+            tr '\0' ' ')"
 
-		lf -remote "send $id :unselect; toggle $files"
-	}}
+        lf -remote "send $id :unselect; toggle $files"
+}}
 
 cmd selectdirs select-type d
 cmd selectfiles select-type f
 
 #-----------------------------------------------------------------------
 cmd openwith ${{
-	printf "Enter program name: "
-	read ans
-	if [ "$ans" = "nvim" ]; then
-		$ $DOTFILES/.local/scripts/tmux_new_window.sh "nvim $f"
-	else
-		"$ans" "$f" > /dev/null 2>&1 & disown
-				fi
-			}}
+    printf "Enter program name: "
+    read ans
+    if [ "$ans" = "nvim" ]; then
+        $ $DOTFILES/.local/scripts/tmux_new_window.sh "nvim $f"
+    else
+        "$ans" "$f" > /dev/null 2>&1 & disown
+            fi
+}}
 
 #-----------------------------------------------------------------------
 cmd choose_pdf_app ${{
-	filename="$fx"
-	printf "Choose an App\n"
-	printf "1) Zathura\n"
-	printf "2) Xournal++\n"
-	read -p "Enter a choice (1) OR (2): " choice
-	if [ "$choice" -eq 1 ]; then
-		$PDFVIEWER "$filename" & disown
-	else 
-		xournalpp "$filename" & disown
-				fi
-			}}
+    filename="$fx"
+    printf "Choose an App\n"
+    printf "1) Zathura\n"
+    printf "2) Xournal++\n"
+    read -p "Enter a choice (1) OR (2): " choice
+    if [ "$choice" -eq 1 ]; then
+        $PDFVIEWER "$filename" & disown
+    else
+        xournalpp "$filename" & disown
+    fi
+}}
 
 #-----------------------------------------------------------------------
 cmd open &{{
-	test -L $f && f=$(readlink -f $f)    
-	case "$(file --mime-type "$f" -b)" in    
-		text/*) $DOTFILES/.local/scripts/tmux_new_window.sh "nvim "$f" " & disown  ;;    
-		application/pdf) $PDFVIEWER "$f" & disown;;
-		application/gzip) xournalpp "$f" & disown;;
-		image/*) sxiv "$f" & disown;;
-		audio/*) mpv --player-operation-mode=pseudo-gui "$f" & disown;; 
-		video/*) mpv --player-operation-mode=pseudo-gui "$f" & disown;;
-		application/vnd.openxmlformats-officedocument.presentationml.presentation) libreoffice --impress "$f" & disown;;
-		application/vnd.openxmlformats-officedocument.wordprocessingml.document) libreoffice --writer "$f" & disown;;
-		*) for f in $fx; do xdg-open $f > /dev/null 2> /dev/null & done;;    
-	esac
+    test -L $f && f=$(readlink -f $f)
+    case "$(file --mime-type "$f" -b)" in
+        text/*) $DOTFILES/.local/scripts/tmux_new_window.sh "nvim "$f" " & disown  ;;
+        application/pdf) $PDFVIEWER "$f" & disown;;
+        application/gzip) xournalpp "$f" & disown;;
+        image/*) sxiv "$f" & disown;;
+        audio/*) mpv --player-operation-mode=pseudo-gui "$f" & disown;; 
+        video/*) mpv --player-operation-mode=pseudo-gui "$f" & disown;;
+        application/vnd.openxmlformats-officedocument.presentationml.presentation) libreoffice --impress "$f" & disown;;
+        application/vnd.openxmlformats-officedocument.wordprocessingml.document) libreoffice --writer "$f" & disown;;
+        *) for f in $fx; do xdg-open $f > /dev/null 2> /dev/null & done;;    
+    esac
 }}
 
 #-----------------------------------------------------------------------
 cmd unarchive ${{
-	case "$f" in
-		*.zip) unzip "$f" ;;
-		*.tar.gz) tar -xzvf "$f" ;;
-		*.tar.bz2) tar -xjvf "$f" ;;
-		*.tar.xz) tar -xvf "$f" ;;
-		*.tar) tar -xvf "$f" ;;
-		*.rar) unrar e "$f" ;;
-		*) lf -remote "send $id echoerr This format is not supported." ;;
-	esac
+    case "$f" in
+        *.zip) unzip "$f" ;;
+        *.tar.gz) tar -xzvf "$f" ;;
+        *.tar.bz2) tar -xjvf "$f" ;;
+        *.tar.xz) tar -xvf "$f" ;;
+        *.tar) tar -xvf "$f" ;;
+        *.rar) unrar e "$f" ;;
+        *) lf -remote "send $id echoerr This format is not supported." ;;
+    esac
 }}
 
 #-----------------------------------------------------------------------
 cmd trash ${{
-	files=$(printf "$fx" | tr "\n" ';')
-	while [ "$files" ]; do
-		file=${files%%;*}
-
-		trash-put "$(basename "$file")"
-		if [ "$files" = "$file" ]; then
-			files=''
-		else
-			files="${files#*;}"
-fi
-done
+    files=$(printf "$fx" | tr "\n" ';')
+    while [ "$files" ]; do
+        file=${files%%;*}
+        trash-put "$(basename "$file")"
+        if [ "$files" = "$file" ]; then
+            files=''
+        else
+            files="${files#*;}"
+        fi
+    done
 }}
 
 #-----------------------------------------------------------------------
 cmd restore_trash ${{
-	trash-restore
+    trash-restore
 }}
 
 #-----------------------------------------------------------------------
 cmd final_delete ${{
-	files=$(printf "$fx" | tr "\n" ';')
-	while [ "$files" ]; do
-		file=${files%%;*}
-
-		rm -rf "$(basename "$file")"
-		if [ "$files" = "$file" ]; then
-			files=''
-		else
-			files="${files#*;}"
-fi
-done
+    files=$(printf "$fx" | tr "\n" ';')
+    while [ "$files" ]; do
+        file=${files%%;*}
+        rm -rf "$(basename "$file")"
+        if [ "$files" = "$file" ]; then
+            files=''
+        else
+            files="${files#*;}"
+        fi
+    done
 }}
 
 #-----------------------------------------------------------------------
 cmd fzf_jump ${{
-	res="$(find . | fzf --reverse --height=40% --header='Jump to location')"
-	if [ -n "$res" ]; then
-		if [ -d "$res" ]; then
-			cmd="cd"
-		else
-			cmd="select"
-fi
-res="$(printf '%s' "$res" | sed 's/\\/\\\\/g;s/"/\\"/g')"
-lf -remote "send $id $cmd \"$res\""
-fi
+    res="$(find . | fzf --reverse --height=40% --header='Jump to location')"
+    if [ -n "$res" ]; then
+        if [ -d "$res" ]; then
+            cmd="cd"
+        else
+            cmd="select"
+        fi
+
+            res="$(printf '%s' "$res" | sed 's/\\/\\\\/g;s/"/\\"/g')"
+        lf -remote "send $id $cmd \"$res\""
+    fi
 }}
 
 cmd copy_img ${{
-	xclip -selection clipboard "$f" -t image/png
+    xclip -selection clipboard "$f" -t image/png
 }}
 
 #-----------------------------------------------------------------------
 
 # Bindings
 map E ${{
-	clear
-	cmd=$(
-		lf -remote "query $id history" |
-			awk -F'\t' 'NR > 1 { print $NF}' |
-			sort -u |
-			fzf --reverse --prompt='Execute command: '
-		)
-		lf -remote "send $id $cmd"
+    clear
+    cmd=$(
+        lf -remote "query $id history" |
+        awk -F'\t' 'NR > 1 { print $NF}' |
+        sort -u |
+        fzf --reverse --prompt='Execute command: '
+     )
+    lf -remote "send $id $cmd"
 }}
 
 map d
