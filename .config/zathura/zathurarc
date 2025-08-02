@@ -1,13 +1,13 @@
 set selection-clipboard clipboard
 # zathurarc-dark
-set font "IosevkaSlabTerm 11"
-set default-bg "#000000" #00
+set font "monospace 12"
+set default-bg "#707070" #00
 set default-fg "#F7F7F6" #01
 
-set statusbar-fg "#B0B0B0" #04
-set statusbar-bg "#202020" #01
+set statusbar-fg "#F7F7F6" #04
+set statusbar-bg "#070707" #01
 
-set inputbar-bg "#151515" #00 currently not used
+set inputbar-bg "#070707" #00 currently not used
 set inputbar-fg "#FFFFFF" #02
 
 set notification-error-bg "#AC4142" #08
@@ -25,7 +25,7 @@ set completion-fg "#E0E0E0" #0C
 set notification-bg "#90A959" #0B
 set notification-fg "#151515" #00
 
-set recolor "true"
+set recolor "false"
 set recolor-lightcolor "#131515" #00
 set recolor-darkcolor "#FFFFFF" #06
 set recolor-reverse-video "true"

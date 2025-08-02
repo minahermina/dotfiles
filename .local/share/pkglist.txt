@@ -26,7 +26,6 @@ chrony
 clang
 cryptsetup
 ctags
-cups
 curl
 djvulibre
 docker
@@ -50,8 +49,6 @@ gnupg
 grub-i386-efi
 grub-x86_64-efi
 harfbuzz-devel
-hplip
-hplip-gui
 isync
 lazygit
 lf
