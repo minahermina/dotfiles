@@ -1,7 +1,7 @@
 set selection-clipboard clipboard
 # zathurarc-dark
 set font "monospace 12"
-set default-bg "#707070" #00
+set default-bg "#9f9f9f" #00
 set default-fg "#F7F7F6" #01
 
 set statusbar-fg "#F7F7F6" #04
@@ -22,8 +22,8 @@ set completion-highlight-bg "#90A959" #0C
 set completion-bg "#303030" #02
 set completion-fg "#E0E0E0" #0C
 
-set notification-bg "#90A959" #0B
-set notification-fg "#151515" #00
+set notification-bg "#070707" #04
+set notification-fg "#f7f7f7" #01
 
 set recolor "false"
 set recolor-lightcolor "#131515" #00
