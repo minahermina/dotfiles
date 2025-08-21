@@ -27,10 +27,11 @@ alias dcon='docker container'
 alias dimg='docker image'
 alias dvol='docker volume'
 alias dnet='docker network'
+alias discord='~/temp/discord/discord'
 
 
 alias vbr='nvim $HOME/.bashrc'
-alias so='source ./venv/bin/activate'
+alias so='source .venv/bin/activate'
 alias vbp='nvim $HOME/.bash_profile'
 alias sb='source $HOME/.bashrc && source $HOME/.bashrc'
 alias vt='nvim $XDG_CONFIG_HOME/tmux/tmux.conf'
@@ -75,8 +76,6 @@ alias transa='trans :en+ara'
 alias gput='nvidia-settings -q gpucoretemp -t'
 alias dot='cd $REPOS/dotfiles/'
 alias pkgs='tmux neww "nvim $HOME/.local/share/pkglist.txt" '
-alias zed='~/temp/zed.app/bin/zed'
-
 
 parse_git_branch() {
      git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
