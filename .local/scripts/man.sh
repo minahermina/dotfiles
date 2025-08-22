@@ -1,14 +1,22 @@
-#!/bin/sh
+#!/bin/bash
 
 set -eu
+set -x
 
 get_pages() {
     paths=$(echo "/usr/share/man:/usr/man:/usr/local/share/man:/opt/local/share/man:/usr/local/man")
 
     paths=$(echo "$paths" | tr ':' ' ')
 
-    find $paths -type f \( -name "*.[1-9]" -o -name "*.[1-9]*" -o -name "*.gz" -o -name "*.bz2" -o -name "*.xz" -o -name "*.Z" \) 2>/dev/null | \
-        sed -n '
+    find $paths -type f \(  \
+        -name "*.[1-9]" -o  \
+        -name "*.[1-9]*" -o \
+        -name "*.gz" -o     \
+        -name "*.bz2" -o    \
+        -name "*.xz" -o     \
+        -name "*.Z"         \
+    \) 2>/dev/null | \
+    sed -n '
     # Handle compressed files (.gz, .bz2, .xz, .Z)
     s|.*/\([^/]*\)\.\([1-9][^.]*\)\.\(gz\|bz2\|xz\|Z\)$|\1(\2)|p
     # Handle uncompressed files

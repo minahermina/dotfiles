@@ -35,7 +35,9 @@ static const char *colors[][3]      = {
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "0" };
 
 
-#define BROWSER1  "Firefox"
+#ifndef BROWSER
+#define BROWSER "firefox"  // default fallback
+#endif
 static const Rule rules[] = {
 	/* xprop(1):
 	 *	WM_CLASS(STRING) = instance, class
@@ -43,7 +45,7 @@ static const Rule rules[] = {
 	 */
     /* class                                instance                title           tags mask     switchtotag    isfloating   monitor */
     { "st-256color"                         ,NULL ,                 NULL,           1 << 0,            1,           0,          -1 },
-    { BROWSER1                              ,NULL ,                 NULL,           1 << 1,            1,           0,          -1 },
+    { BROWSER                              ,NULL ,                 NULL,           1 << 1,            1,           0,          -1 },
     { "dev.zed.Zed"                         ,NULL ,                 NULL,           1 << 2,            1,           0,          -1 },
     { "Zathura"                             ,NULL ,                 NULL,           1 << 3,            1,           0,          -1 },
     { "Com.github.xournalpp.xournalpp",      NULL  ,                NULL,           1 << 3,            1,           0,          -1 },
@@ -55,6 +57,7 @@ static const Rule rules[] = {
     { "Virt-manager"                        ,NULL ,                 NULL,           1 << 8,            1,           0,          -1 },
     { NULL                                  ,"libreoffice" ,        NULL,           1 << 9,            1,           0,          -1 },
     { "Logseq"                              ,NULL ,                 NULL,           1 << 9,            1,           0,          -1 },
+    { "discord"                             ,NULL ,                 NULL,           1 << 9,            1,           0,          -1 },
     //WM_CLASS(STRING) = "logseq", "Logseq"
 
 };
