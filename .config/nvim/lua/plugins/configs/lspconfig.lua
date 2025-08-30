@@ -7,6 +7,8 @@ vim.keymap.set("n", "<space>a", vim.diagnostic.open_float)
 vim.api.nvim_create_autocmd("LspAttach", {
     group = vim.api.nvim_create_augroup("UserLspConfig", {}),
     callback = function(ev)
+        if vim.fn.has("linux") == 0 then return end -- only on Linux
+
         vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
 
         local opts = { buffer = ev.buf }
@@ -53,8 +55,8 @@ capabilities.textDocument.completion.completionItem = {
 -- Setup language servers.
 local lspconfig = require "lspconfig"
 
---[[ lspconfig.clangd.setup {
-    cmd = { 'clangd', '--background-index' },
+lspconfig.clangd.setup {
+    cmd = { 'clangd',  '-std=c++23', '--background-index' },
     filetypes = { 'c', 'cpp', 'objc', 'objcpp' },
     on_attach = vim.lsp.common_on_attach,
     init_options = {
@@ -62,7 +64,7 @@ local lspconfig = require "lspconfig"
             disableSuggestions = true,
         }
     }
-} ]]
+}
 
 --[[ lspconfig.ts_ls.setup {
     on_attach = vim.lsp.common_on_attach,
@@ -87,18 +89,18 @@ local lspconfig = require "lspconfig"
     single_file_support = true
 } ]]
 
-local servers = { "jdtls", "rust_analyzer", "clangd", "lua_ls", "pyright", --[[ "ltex" ]] }
+local servers = { "jdtls", "rust_analyzer", "clangd", "emmylua_ls", "pyright", --[[ "ltex" ]] }
 
 vim.diagnostic.config({
-  virtual_text = true,    -- Disable virtual text completely
-  signs = true,          -- Keep diagnostic signs in the gutter
-  underline = true,      -- Keep underlining issues in the text
-  update_in_insert = false,
-  severity_sort = true,
-  float = {
-    border = "rounded",
-    source = "always",
-  },
+    virtual_text = false,    -- Disable virtual text completely
+    signs = false,          -- Keep diagnostic signs in the gutter
+    underline = false,      -- Keep underlining issues in the text
+    update_in_insert = false,
+    severity_sort = true,
+    float = {
+        border = "rounded",
+        source = "always",
+    },
 })
 
 for _, lsp in ipairs(servers) do

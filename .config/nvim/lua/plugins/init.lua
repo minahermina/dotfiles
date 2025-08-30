@@ -1,8 +1,4 @@
 local plugins = {
-
-    -- Themes
-    { "RRethy/base16-nvim" },
-
     {
         "ej-shafran/compile-mode.nvim",
         tag = "v5.3.1",
@@ -162,13 +158,13 @@ local plugins = {
     },
 
     -- lsp
-    --[[ {
+    {
         "neovim/nvim-lspconfig",
         event = { "BufReadPre", "BufNewFile" },
         config = function()
             require "plugins.configs.lspconfig"
         end,
-    }, ]]
+    },
 
     -- fzf-lua
     {
