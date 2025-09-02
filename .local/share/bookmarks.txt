@@ -90,3 +90,6 @@
 "Programming Languages DB"=https://pldb.io/
 "Witanime"=https://witanime.world/
 "ITI"=https://internal.iti.gov.eg
+"PC Build Picker"=https://pcpartpicker.com/
+"ZTT build help"=https://www.zachstechturf.com/buildhelp
+"awsacademy"=https://awsacademy.instructure.com/courses/111638

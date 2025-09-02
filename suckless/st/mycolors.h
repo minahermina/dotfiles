@@ -13,7 +13,7 @@ static const char *colorname[] = {
     /* 8 bright colors */
     "#6D8AA8",
     "#CC241D",
-    "#8f8f8f",
+    "#f5f5f5",
     "#F9E2AF",
     "#8f8f8f",
     "#f5f5f5",

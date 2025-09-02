@@ -11,21 +11,21 @@ atool
 audit
 autoconf
 base-system
+bash
 bash-completion
 bat
 bind-utils
 blueman
 bluez
+bmake
 bridge-utils
 brightnessctl
 btop
 caligula
 cargo
-chez-scheme
 chrony
-clang
+clang19
 cryptsetup
-ctags
 curl
 djvulibre
 docker
@@ -36,7 +36,6 @@ farbfeld
 fd
 ffmpeg
 ffmpegthumbnailer
-firefox
 fzf
 gambit
 gcc
@@ -46,6 +45,7 @@ git
 git-filter-repo
 gmp-devel
 gnupg
+go
 grub-i386-efi
 grub-x86_64-efi
 harfbuzz-devel
@@ -62,7 +62,6 @@ libsixel
 libuv-devel
 libvips
 libxkbcommon-devel
-linux
 lsof
 lvm2
 lynx
@@ -78,6 +77,7 @@ ncurses-devel
 ncurses-libtinfo-devel
 neofetch
 neomutt
+neovide
 neovim
 network-manager-applet
 newsboat
@@ -116,6 +116,7 @@ runit-iptables
 rust
 shellcheck
 slop
+smartmontools
 speedtest-cli
 strace
 swtpm
@@ -141,6 +142,7 @@ void-repo-nonfree
 vsv
 w3m
 wget
+xbps
 xclip
 xcolor
 xdg-utils
