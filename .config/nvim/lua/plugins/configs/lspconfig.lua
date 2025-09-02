@@ -14,7 +14,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
         local opts = { buffer = ev.buf }
         vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
         vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
-        -- vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+        vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
         -- vim.keymap.set("n", "<C-k> ", vim.lsp.buf.hover, opts)
         -- vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
         -- vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
@@ -89,13 +89,20 @@ lspconfig.clangd.setup {
     single_file_support = true
 } ]]
 
-local servers = { "jdtls", "rust_analyzer", "clangd", "emmylua_ls", "pyright", --[[ "ltex" ]] }
+local servers = { 
+    "jdtls",
+    "rust_analyzer",
+    "clangd",
+    "lua_ls",
+    "pyright",
+    "tinymist"
+}
 
 vim.diagnostic.config({
     virtual_text = false,    -- Disable virtual text completely
     signs = false,          -- Keep diagnostic signs in the gutter
     underline = false,      -- Keep underlining issues in the text
-    update_in_insert = false,
+    update_in_insert = true,
     severity_sort = true,
     float = {
         border = "rounded",

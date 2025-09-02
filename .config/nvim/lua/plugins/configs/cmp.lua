@@ -2,6 +2,7 @@ local cmp = require "cmp"
 
 cmp.setup {
 
+    preselect = cmp.PreselectMode.None,
     formatting = {
         fields = { "kind", "abbr", "menu" },
         format = function(entry, vim_item)
@@ -27,6 +28,13 @@ cmp.setup {
         ["<C-f>"] = cmp.mapping.scroll_docs(4),
         ["<C-e>"] = cmp.mapping.abort(),
         ["<CR>"] = cmp.mapping.confirm { select = true },
+        ["<C-n>"] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+                cmp.select_next_item()
+            else
+                cmp.complete()  -- Open completion menu
+            end
+        end, { "i" }),
 
         -- luasnip
         ["<Tab>"] = cmp.mapping(function(fallback)
@@ -60,5 +68,14 @@ cmp.setup {
         { name = "buffer" },
         { name = "nvim_lua" },
         { name = "path" },
+    },
+
+    window = {
+        documentation = cmp.config.disable
+    },
+
+    completion = {
+        autocomplete = false
+
     },
 }
