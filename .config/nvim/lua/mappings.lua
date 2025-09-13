@@ -158,7 +158,7 @@ map('n', '<C-k>', ':TmuxNavigateUp    <cr>')
 map('n', '<C-l>', ':TmuxNavigateRight <cr>')
 map('n', '<C-]>', ':TmuxNavigatePrevious <cr>')
 
-map('n', '-', function() require('oil').open_float() end, { desc = 'Open parent directory as a Buffer' })
+map('n', '-', ":Dired %:p <CR>", { desc = 'Open parent directory as a Buffer' })
 
 local build = require('CustomScripts.build')
 
@@ -189,7 +189,8 @@ vim.api.nvim_create_autocmd("FileType", {
     end,
 })
 
-map('n', '<M-n>' , ':cnext <CR>'                                ,{ desc = 'Move to next error' }                             ,options)
-map('n', '<M-m>' , ':cpre <CR>'                                 ,{ desc = 'Move to previous error' }                         ,options)
+map('n', '<M-n>' , ':cnext <CR>'                                    ,{ desc = 'Move to next error' }                             ,options)
+map('n', '<M-m>' , ':cpre <CR>'                                     ,{ desc = 'Move to previous error' }                         ,options)
 map('n', '<leader>tv', function () functions.open_tmux_pane(1) end  ,{ desc = 'Open Vertical Tmux Pane in current file dir' }    ,options)
 map('n', '<leader>th', function () functions.open_tmux_pane(0) end  ,{ desc = 'Open Horizontal Tmux Pane in current file dir' }  ,options)
+map('n', '<leader>m', ":MarkdownPreview <CR> "                      ,{ desc = 'Run MarkdownPreview Command' }                    ,options)

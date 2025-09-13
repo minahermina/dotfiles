@@ -87,12 +87,12 @@ local plugins = {
         end
     },
 
-    {
+    --[[ {
         'stevearc/oil.nvim',
         config = function()
             require("plugins.configs.oil");
         end,
-    },
+    }, ]]
 
     {
         "iamcco/markdown-preview.nvim",
@@ -140,7 +140,7 @@ local plugins = {
     },
 
     -- Mason (package manager for LSP servers, Linters, Formatters, DAP servers)
-    {
+    --[[ {
         "williamboman/mason.nvim",
         build = ":MasonUpdate",
         cmd = { "Mason", "MasonInstall" },
@@ -182,6 +182,23 @@ local plugins = {
         config = function()
             require("plugins.configs.cmp")
         end,
+    }, ]]
+
+    {
+        "X3eRo0/dired.nvim",
+        dependencies = {
+            "MunifTanjim/nui.nvim"
+        },
+        config = function()
+            require("dired").setup {
+                path_separator = "/",
+                show_banner = false,
+                show_icons = false,
+                show_hidden = true,
+                show_dot_dirs = true,
+                show_colors = true,
+            }
+        end
     },
 
     -- fzf-lua
