@@ -1,7 +1,10 @@
 #!/bin/sh
 
 export TERM=screen
-dir=$(find $REPOS  -mindepth 1 -maxdepth 1 -type d ! -path "*.git"| tr ' ' '\n' | fzf)
+dir="$(find $REPOS  $HOME/codes/ -mindepth 1 -maxdepth 1 -type d ! -path "*/.git" \
+        | sed "s|^$HOME/||" \
+        | fzf
+    )"
 session_name=$(basename "$dir")
 
 [ -z "$dir" ] && exit 1
