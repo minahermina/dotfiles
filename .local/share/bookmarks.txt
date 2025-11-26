@@ -92,4 +92,5 @@
 "ITI"=https://internal.iti.gov.eg
 "PC Build Picker"=https://pcpartpicker.com/
 "ZTT build help"=https://www.zachstechturf.com/buildhelp
-"awsacademy"=https://awsacademy.instructure.com/courses/111638
+"Deloitte"=https://middleeastjobs.deloitte.com/careersME/Profile
+"buildroot docs"=https://buildroot.org/downloads/manual/manual.html

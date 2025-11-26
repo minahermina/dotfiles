@@ -88,4 +88,4 @@ super + F11
     pamixer --default-source -t && pkill -RTMIN+10 dwmblocks
 
 super + u
-    setxkbmap -layout us,ara -variant ,digits -option grp:ctrl_space_toggle caps:escape
+    ~/temp/discord/discord

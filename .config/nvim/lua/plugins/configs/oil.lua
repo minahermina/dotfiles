@@ -16,7 +16,7 @@ require("oil").setup({
         show_hidden = true,
     },
 
-    float = {
+    --[[ float = {
         -- Padding around the floating window
         padding = 2,
         max_width = 120,
@@ -25,7 +25,7 @@ require("oil").setup({
         win_options = {
             winblend = 0,
         },
-    },
+    }, ]]
 
     columns = {
         "icon",

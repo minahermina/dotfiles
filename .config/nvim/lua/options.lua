@@ -43,6 +43,30 @@ opt.list = true
 vim.opt.list = true
 vim.opt.listchars = { tab = '> ', trail = '-', extends = '›', precedes = '‹', nbsp = '·' }
 
+vim.g.neovide_cursor_trail_length = 0.0
+vim.g.neovide_cursor_vfx_mode = "" -- Railgun particles behind cursor
+vim.g.neovide_cursor_vfx_opacity = 0.0
+vim.g.neovide_cursor_vfx_particle_lifetime = 0.0
+vim.g.neovide_cursor_vfx_particle_density = 0.0
+vim.g.neovide_cursor_vfx_particle_speed = 0.0
+vim.g.neovide_cursor_vfx_particle_phase = 0.0
+vim.g.neovide_cursor_vfx_particle_curl = 0.0
+vim.g.neovide_cursor_unfocused_outline_width = 0.0
+vim.g.neovide_scale_factor = 0.7
+
+vim.g.neovide_padding_top = 0
+vim.g.neovide_padding_bottom = 0
+vim.g.neovide_padding_right = 0
+vim.g.neovide_padding_left = 0
+vim.g.neovide_cursor_animation_length = 0.01
+
+if vim.g.neovide then
+    vim.keymap.set({ "n", "v" }, "<C-+>", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + 0.1<CR>")
+    vim.keymap.set({ "n", "v" }, "<C-->", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.1<CR>")
+    vim.keymap.set({ "n", "v" }, "<C-0>", ":lua vim.g.neovide_scale_factor = 1<CR>")
+end
+
+vim.g.neovide_scroll_animation_length = 0.9
 
 -- add binaries installed by mason.nvim to path
 local is_windows = vim.loop.os_uname().sysname == "Windows_NT"

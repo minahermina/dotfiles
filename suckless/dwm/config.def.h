@@ -36,7 +36,7 @@ static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "0" }
 
 
 #ifndef BROWSER
-#define BROWSER "firefox"  // default fallback
+#define BROWSER "Firefox"  // default fallback
 #endif
 static const Rule rules[] = {
 	/* xprop(1):
@@ -56,7 +56,6 @@ static const Rule rules[] = {
 	{ "Emacs"                               ,NULL ,                 NULL,           1 << 7,            1,           0,          -1 },
     { "Virt-manager"                        ,NULL ,                 NULL,           1 << 8,            1,           0,          -1 },
     { NULL                                  ,"libreoffice" ,        NULL,           1 << 9,            1,           0,          -1 },
-    { "Logseq"                              ,NULL ,                 NULL,           1 << 9,            1,           0,          -1 },
     { "discord"                             ,NULL ,                 NULL,           1 << 9,            1,           0,          -1 },
     //WM_CLASS(STRING) = "logseq", "Logseq"
 

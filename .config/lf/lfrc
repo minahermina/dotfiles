@@ -4,7 +4,7 @@ set ignorecase true
 set mouse true
 set watch true
 set icons true
-set drawbox false
+set drawbox true
 set cleaner '~/.config/lf/cleaner'
 set previewer '~/.config/lf/scope'
 set preview true

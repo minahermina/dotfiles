@@ -9,7 +9,7 @@ session_name=$(basename "$dir")
 
 [ -z "$dir" ] && exit 1
 
-session_exist=$(tmux ls  | awk '{print $1}' | grep "$session_name")
+session_exist=$(tmux ls  | awk '{print $1}' | grep -w "$session_name")
 if [ "$session_exist" = "" ]; then
     tmux new-session -d -s "$session_name" -c "$dir" && tmux switch-client -t "$session_name"
 else

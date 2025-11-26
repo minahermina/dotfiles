@@ -26,7 +26,7 @@ start_recording() {
 	ffmpeg \
 		-f x11grab -framerate 120 -video_size "${width}x${height}" -i :0.0+$x,$y \
 		-f pulse -i alsa_output.pci-0000_05_00.6.analog-stereo.monitor \
-		-c:v h264_nvenc -preset fast -qp 23 \
+		-c:v libx264 -preset veryfast -crf 23 \
 		-c:a aac -b:a 192k \
 		"$output_file"
 	}

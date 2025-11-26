@@ -6,7 +6,7 @@ export EDITOR="nvim"
 export MAIN_COLOR="#8f8f8f"
 export MAINMOD="Super"
 export HISTCONTROL=ignoreboth:erasedups
-export BROWSER="zen"
+export BROWSER="firefox"
 export REPOS="$HOME/repos"
 export DOTFILES="$REPOS/dotfiles"
 export SCRIPTS="$HOME/.local/scripts"
@@ -45,14 +45,16 @@ export PGSERVICEFILE="$XDG_CONFIG_HOME/pg/pg_service.conf"
 export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 export MANPAGER="nvim +Man!"
-
-
 export BUN_INSTALL="$HOME/.local/share/bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+export PATH="/usr/local/aarch64-unknown-linux-gnu/bin:$PATH"
+export AARCH64_SYSROOT="/usr/local/aarch64-unknown-linux-gnu/aarch64-unknown-linux-gnu/sysroot"
 
 export IDEA_JDK='/usr/lib/jvm/openjdk21/'
 export PYCHARM_JDK='/usr/lib/jvm/openjdk21/'
 export PATH=$JAVA_HOME/bin:$PATH
+
+export KRAFTKIT_BUILDKIT_HOST=docker-container://buildkitd
 
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
   --color=fg:#ffffff,fg+:#d0d0d0,bg:-1,bg+:#262626
