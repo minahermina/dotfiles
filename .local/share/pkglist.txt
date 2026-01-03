@@ -1,4 +1,3 @@
-7zip-unrar
 ImageMagick
 NetworkManager
 Thunar
@@ -79,7 +78,6 @@ msmtp
 ncdu
 ncurses-devel
 ncurses-libtinfo-devel
-neofetch
 neomutt
 neovide
 neovim

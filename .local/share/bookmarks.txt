@@ -1,4 +1,5 @@
 "GitHub"=https://github.com/
+"Notion"=https://notion.so/
 "regexr"=https://regexr.com/
 "C libraries"=https://ccodearchive.net/list.html
 "UniKraft"=unikraft.org

@@ -34,5 +34,7 @@ set recolor-keephue "true"
 set render-loading "false"
 set scroll-step 50
 unmap f
+unmap w
 map f toggle_fullscreen
+map w toggle_statusbar
 map [fullscreen] f toggle_fullscreen
