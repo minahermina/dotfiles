@@ -21,7 +21,7 @@ super + bracketright
 super + bracketleft
    playerctl previous
 
-super + Insert
+super + F12
    ~/.local/bin/freee
 
 super + Return
@@ -88,4 +88,4 @@ super + F11
     pamixer --default-source -t && pkill -RTMIN+10 dwmblocks
 
 super + u
-    ~/temp/discord/discord
+    /usr/bin/DiscordCanary

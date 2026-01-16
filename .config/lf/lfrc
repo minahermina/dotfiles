@@ -187,16 +187,16 @@ map md mkdir
 map C :clear;unselect
 
 # Movement
-map gdf cd ~/hdd/D/mina/films/
-map gdr cd ~/hdd/D/mina/recordings/
-map gdd cd ~/hdd/D
-map gdm cd ~/hdd/D/music
-map gff cd ~/hdd/F
-map gfc cd ~/hdd/F/college
+map gdf cd ~/HDD/D/mina/films/
+map gdr cd ~/HDD/D/mina/recordings/
+map gdd cd ~/HDD/D
+map gdm cd ~/HDD/D/music
+map gff cd ~/HDD/F
+map gfc cd ~/HDD/F/college
 map gt cd ~/.local/share/Trash/files/
 map gD cd ~/Downloads/
 map gl cd ~/.local
-map gdb cd ~/hdd/D/books/
+map gdb cd ~/HDD/D/books/
 map gb cd ~/books
 map gc cd ~/.config
 map gr cd ~/repos

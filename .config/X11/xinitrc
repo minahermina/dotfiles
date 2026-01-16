@@ -6,6 +6,7 @@ sxhkd &
 ofh &
 xsetroot -solid "#070707"
 xset r rate 200 30 &
+xset b off &
 clipmenud &
 dwmblocks &
 eval $(gpg-agent --daemon)
