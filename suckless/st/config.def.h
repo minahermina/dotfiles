@@ -5,7 +5,8 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "monospace:style=Medium:pixelsize=20:antialias=true:autohint=true";
+// static char *font = "monospace:style=Medium:pixelsize=20:antialias=true:autohint=true";
+static char *font = "IosevkaTerm Nerd Font:style=Regular:pixelsize=21:antialias=true:autohint=true";
 static char *font2[] = { 
     "Symbols Nerd Font:style=Regular" 
 };

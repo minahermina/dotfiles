@@ -6,7 +6,7 @@ stty quit '^q'
 HISTSIZE=100000000
 HISTFILESIZE=100000000
 HISTFILE=~/.bash_history
-PROMPT_COMMAND="history -a; history -n; $PROMPT_COMMAND"
+# PROMPT_COMMAND="history -a; history -n; $PROMPT_COMMAND"
 HISTCONTROL=ignoredups
 
 alias 2..='../..'

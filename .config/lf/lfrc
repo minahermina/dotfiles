@@ -14,7 +14,7 @@ set ratios 4:3
 cmd mkdir ${{
 	printf "Directory Name: "
 	read ans
-	mkdir $ans
+	mkdir "$ans"
 }}
 
 #-----------------------------------------------------------------------

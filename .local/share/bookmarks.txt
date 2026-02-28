@@ -20,7 +20,7 @@
 "Google Drive"=https://drive.google.com/
 "Youtube"=https://www.youtube.com/
 "Dotfiles"=https://github.com/minahermina/dotfiles
-"YTS"=https://yts.mx/
+"YTS"=https://yts.bz/
 "Bing"=https://www.bing.com/
 "IBM Dynamic Libraries"=https://developer.ibm.com/tutorials/l-dynamic-libraries/
 "Beautiful"=https://www.beautiful.ai/
