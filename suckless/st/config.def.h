@@ -11,7 +11,7 @@ static char *font2[] = {
     "Symbols Nerd Font:style=Regular" 
 };
 
-static int borderpx = 0;
+static int borderpx = 3;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -168,8 +168,8 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_plus,       zoom,           {.f = +1} },
 	{ TERMMOD,              XK_underscore,        zoom,           {.f = -1} },
 	{ TERMMOD,              XK_BackSpace,        zoomreset,      {.f =  0} },
-	{ TERMMOD,              XK_Y,           clipcopy,       {.i =  0} },
-	{ TERMMOD,              XK_P,           clippaste,      {.i =  0} },
+	{ TERMMOD,              XK_C,           clipcopy,       {.i =  0} },
+	{ TERMMOD,              XK_V,           clippaste,      {.i =  0} },
 	// { TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
 	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
