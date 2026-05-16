@@ -6,13 +6,13 @@ export EDITOR="nvim"
 export MAIN_COLOR="#8f8f8f"
 export MAINMOD="Super"
 export HISTCONTROL=ignoreboth:erasedups
-export BROWSER="firefox"
+export BROWSER="brave"
 export REPOS="$HOME/repos"
 export DOTFILES="$REPOS/dotfiles"
 export SCRIPTS="$HOME/.local/scripts"
 export PDFVIEWER="zathura"
 export TERMINAL="st"
-export TERM=st-256color
+export TERM=xterm-256color
 export COLORTERM=truecolor
 export TERM_PROGRAM="st"
 export CM_LAUNCHER="dmenu"
@@ -64,8 +64,3 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
   --marker=">" --separator="─" --scrollbar="│"'
 
 [ $(tty) = "/dev/tty1" ] && startx
-
-
-export GPG_TTY=$(tty)
-export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-gpgconf --launch gpg-agent

@@ -11,14 +11,13 @@ HISTCONTROL=ignoredups
 
 alias 2..='../..'
 alias 3..='../../..'
-alias ll='ls -lah'
+alias l='ls -lah'
 alias cs='clear'
 alias t='tmux'
 alias lf='lfub'
 alias sz='du -sh'
 alias lg='lazygit'
 alias v='nvim'
-alias pdf='zathura'
 alias mutt='mbsync -a && neomutt'
 alias emacs='emacs --init-directory=$XDG_CONFIG_HOME/emacs/'
 alias notes='nvim ~/.local/mine/notes/'
@@ -67,8 +66,13 @@ esac
 
 
 goto(){
-    local file=$(find . | fzf --reverse --height=50% --header="Jump to location"  )
-    [ -f "$file" ] && xdg-open "$file" || cd $(dirname "$file")
+    local file
+    file=$(find . | fzf --reverse --height=50% --header="Jump to location"  )
+    if [[ -f "${file}" ]]; then
+        xdg-open "${file}" 
+    else 
+        cd "$(dirname "${file}")" || return
+    fi
 }
 
 alias ff=goto
@@ -82,20 +86,25 @@ parse_git_branch() {
 }
 
 fzf_history(){
-    local selected_command=$(tac ~/.bash_history | fzf --reverse --height=40% )
+    local selected_command
+    selected_command=$(tac ~/.bash_history | fzf --reverse --height=40% )
     READLINE_LINE="${READLINE_LINE:+$READLINE_LINE }$selected_command"
     READLINE_POINT=${#READLINE_LINE}
 }
 
 fzf_dir() {
-    local selected_dir=$(find "$HOME" -type d | fzf --reverse --height=50% )
+    local selected_dir
+    selected_dir=$(find "$HOME" -type d | fzf --reverse --height=50% )
     cd "$selected_dir" && echo "cd $selected_dir"
-}  
+}
 
 parse_venv() {
     echo "$VIRTUAL_ENV_PROMPT"
 }
 
+pdf() {
+    "${PDFVIEWER}" "$1" & disown
+}
 
 bind -m emacs-standard -x '"\C-r": fzf_history'
 bind -m vi-command -x '"\C-r": fzf_history'
@@ -112,4 +121,7 @@ export PS1="\n\[\e[32m\]\w\[\033[33m\]\$(parse_git_branch) \$(parse_venv) \[\033
 
 set -o vi
 eval "$(zoxide init --cmd cd bash)"
-source /home/mina/.bash_kraft_completion;
+source /home/mina/.bash_kraft_completion
+
+# opencode
+export PATH=/home/mina/.opencode/bin:$PATH
