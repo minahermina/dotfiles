@@ -4,7 +4,7 @@ set -xe
 # i use this script in my Xorg environment
 
 # Set the output file name and path
-output_file="$HOME/hdd/D/mina/recordings/screencast_$(date +"%Y_%m_%d_%H_%M_%S").mkv"
+output_file="$HOME/HDD/D/mina/recordings/screencast_$(date +"%Y_%m_%d_%H_%M_%S").mkv"
 
 # Set the screen size
 start_recording() {
