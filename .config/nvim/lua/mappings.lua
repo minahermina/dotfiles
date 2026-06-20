@@ -193,4 +193,4 @@ map('n', '<M-n>' , ':cnext <CR>'                                    ,{ desc = 'M
 map('n', '<M-m>' , ':cpre <CR>'                                     ,{ desc = 'Move to previous error' }                         ,options)
 map('n', '<leader>tv', function () functions.open_tmux_pane(1) end  ,{ desc = 'Open Vertical Tmux Pane in current file dir' }    ,options)
 map('n', '<leader>th', function () functions.open_tmux_pane(0) end  ,{ desc = 'Open Horizontal Tmux Pane in current file dir' }  ,options)
-map('n', '<leader>m', ":MarkdownPreview <CR> "                      ,{ desc = 'Run MarkdownPreview Command' }                    ,options)
+-- map('n', '<leader>m', ":MarkdownPreview <CR> "                      ,{ desc = 'Run MarkdownPreview Command' }                    ,options)

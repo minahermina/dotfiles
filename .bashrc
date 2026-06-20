@@ -26,7 +26,6 @@ alias dcon='docker container'
 alias dimg='docker image'
 alias dvol='docker volume'
 alias dnet='docker network'
-alias discord='~/temp/discord/discord'
 
 
 alias vbr='nvim $HOME/.bashrc'

@@ -1,5 +1,19 @@
 local plugins = {
     {
+        "selimacerbas/markdown-preview.nvim",
+        dependencies = { "selimacerbas/live-server.nvim" },
+        config = function()
+            require("markdown_preview").setup({
+                -- all optional; sane defaults shown
+                instance_mode = "takeover",  -- "takeover" (one tab) or "multi" (tab per instance)
+                port = 0,                    -- 0 = auto (8421 for takeover, OS-assigned for multi)
+                open_browser = true,
+                debounce_ms = 300,
+            })
+        end,
+    }, 
+
+    {
         "ej-shafran/compile-mode.nvim",
         tag = "v5.3.1",
         -- you can just use the latest version:
@@ -95,14 +109,18 @@ local plugins = {
     }, ]]
 
     {
-        "iamcco/markdown-preview.nvim",
-        lazy = true,
-        cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-        ft = { "markdown" },
+        "selimacerbas/markdown-preview.nvim",
+        dependencies = { "selimacerbas/live-server.nvim" },
         config = function()
-            vim.fn["mkdp#util#install"]()
+            require("markdown_preview").setup({
+                -- all optional; sane defaults shown
+                instance_mode = "takeover",  -- "takeover" (one tab) or "multi" (tab per instance)
+                port = 0,                    -- 0 = auto (8421 for takeover, OS-assigned for multi)
+                open_browser = true,
+                debounce_ms = 300,
+            })
         end,
-    },
+    }, 
 
     -- icons, for UI related plugins
     {

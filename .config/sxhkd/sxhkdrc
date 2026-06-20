@@ -88,4 +88,4 @@ super + F11
     pamixer --default-source -t && pkill -RTMIN+10 dwmblocks
 
 super + u
-    /usr/bin/DiscordCanary
+    discord
