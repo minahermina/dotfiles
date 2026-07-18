@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 file="$XDG_DATA_HOME/bookmarks.txt"
 bookmarks_names="$(sed -n 's/^"\([^"]*\)".*/\1/p' "$file")"

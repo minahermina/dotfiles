@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 set -xe
 
@@ -8,7 +8,7 @@ choice=$(echo "$repos" | dmenu -i -l 10 -p "Choose a repo:")
 
 if [ "$choice" = "'new" ]; then
     new_repo=$(printf "" | dmenu -i -l 10 -p "Enter repo's link:")
-    echo $new_repo >> "$git_repos_file"
+    echo "${new_repo}" >> "$git_repos_file"
 elif [ "$choice" = "'rm" ]; then
     repo2rm=$(echo "$repos" | dmenu -i -l 10 -p "Choose a repo 2 remove:")
     tmpfile=$(mktemp /tmp/test.txt.XXXXXX)
