@@ -1,11 +1,12 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
 DOTFILES="$HOME/repos/dotfiles"
-dirs=(  
+
+targets=(
         ".config/nvim"
         ".config/dunst"
         ".config/lf"
         ".config/loadkeysrc"
-        ".config/nvim"
         ".config/sxhkd"
         ".config/tmux"
         ".config/neomutt"
@@ -16,8 +17,6 @@ dirs=(
         ".config/X11"
         ".local/scripts"
         ".local/bin"
-     )
-files=(
         ".local/share/pkglist.txt"
         ".local/share/bookmarks.txt"
         ".local/share/git_repos.txt"
@@ -26,19 +25,13 @@ files=(
         ".bashrc"
         ".bash_profile"
       )
-         
-#ln -s ~/repos/dotfiles/.config/fastfetch ~/.config/fastfetch
-for dir in "${dirs[@]}"; do
-    echo "--> Executing rm -rf "$HOME/$dir""
-    rm -rf "$HOME/$dir"
-    echo "--> Executing ln -s $DOTFILES/$dir $HOME/$dir"
-    ln -s $DOTFILES/$dir $HOME/$dir
-    echo ""
-done
 
-for file in "${files[@]}"; do
-    echo "--> Executing rm -rf $HOME/$file"
-    rm -rf "$HOME/$file"
-    echo "--> Executing ln -s $DOTFILES/$file $HOME/$file"
-    ln -s $DOTFILES/$file $HOME/$file
+#ln -s ~/repos/dotfiles/.config/fastfetch ~/.config/fastfetch
+
+for target in "${targets[@]}"; do
+    echo "--> Executing rm -rf \"$HOME/$target\""
+    rm -rf "${HOME:?}/${target:?}"
+    echo "--> Executing ln -s $DOTFILES/$target $HOME/$target"
+    ln -s "$DOTFILES/$target" "$HOME/$target"
+    echo ""
 done
