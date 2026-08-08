@@ -1,4 +1,3 @@
-source ~/.local/scripts/fzf-git.sh
 shopt -s autocd 
 shopt -s histappend
 stty -ixon
@@ -120,7 +119,6 @@ export PS1="\n\[\e[32m\]\w\[\033[33m\]\$(parse_git_branch) \$(parse_venv) \[\033
 
 set -o vi
 eval "$(zoxide init --cmd cd bash)"
-source /home/mina/.bash_kraft_completion
 
 # opencode
 export PATH=/home/mina/.opencode/bin:$PATH
